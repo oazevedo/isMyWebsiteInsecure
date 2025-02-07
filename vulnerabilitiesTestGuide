@@ -1,4 +1,5 @@
 # Note: Perform these tests only on websites and web platforms for which you have explicit authorization. Unauthorized testing is illegal and unethical.
+# Note: Most of these tools are available in Kali Linux.
 
 # WHOIS lookup for domain information
 whois <domain>
