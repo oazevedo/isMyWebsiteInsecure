@@ -40,7 +40,7 @@ sudo nmap <host>
 # Comprehensive Nmap scan with vulnerability scripts
 sudo nmap -sV -sC --script vuln* -O -p <port1,port2,...> <host>
 
-# IP enrichment
+# Shodan scan
 echo <IPv4> | nrich -
 
 # Lighthouse for performance and security insights
