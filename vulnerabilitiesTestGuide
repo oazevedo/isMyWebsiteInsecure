@@ -2,9 +2,9 @@
 whois <domain>
 
 # DNS reconnaissance
-dnsrecon -d <domain | host>
+dnsrecon -d <domain>
 
-# Identify technologies used on the website
+# Identify technologies used on the website, https://www.morningstarsecurity.com/research/whatweb
 whatweb <url>
 
 # Check MySQL or MariaDB database version
