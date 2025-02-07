@@ -1,0 +1,33 @@
+whois <domain>
+
+dnsrecon -d <domain | host>
+
+whatweb <url>
+
+nc <host> 3306  # to get MySQL or MariaDB database version
+
+wpscan --stealthy --url <url>  # only for Wordpress websites
+
+curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" <url>   # host header injection test
+
+sslscan <url | host>
+
+sudo nmap <host>
+
+sudo nmap -sV -sC --script vuln* -O -p <port1,port2,...> <host>
+
+echo <IPv4> | nrich -
+
+chrome Browser > developer tools > lighthouse
+
+# Web vulnerability scanner
+OWASP ZAP https://www.zaproxy.org/
+Burp Site https://portswigger.net/burp/pro/
+
+# Host vulnerability scanner
+Tenable Nessus https://www.tenable.com/products/nessus
+Greenbone OpenVAS https://openvas.org/
+
+isMyWebsiteInsecure.bat  # test for vulnerabilities and configuration errors
+
+
