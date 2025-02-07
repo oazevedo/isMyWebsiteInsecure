@@ -1,33 +1,62 @@
+# WHOIS lookup for domain information
 whois <domain>
 
+# DNS reconnaissance
 dnsrecon -d <domain | host>
 
+# Identify technologies used on the website
 whatweb <url>
 
-nc <host> 3306  # to get MySQL or MariaDB database version
+# Check MySQL or MariaDB database version
+nc <host> 3306
 
-wpscan --stealthy --url <url>  # only for Wordpress websites
+# Wordpress vulnerability scan
+wpscan --stealthy --url <url>
 
-curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" <url>   # host header injection test
+# SQL Injection test
+sqlmap -u <url> --batch --dbs
 
+# XSS test
+curl -s -o /dev/null -w "%{http_code}" -d "<script>alert(1)</script>" <url>
+
+# CSRF test
+curl -s -o /dev/null -w "%{http_code}" -X POST -d "param=value" <url>
+
+# Directory traversal test
+curl -s -o /dev/null -w "%{http_code}" <url>/../../etc/passwd
+
+# Command injection test
+curl -s -o /dev/null -w "%{http_code}" <url>?cmd=ls
+
+# Host header injection test
+curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" <url>
+
+# SSL/TLS scan
 sslscan <url | host>
 
+# Basic Nmap scan
 sudo nmap <host>
 
+# Comprehensive Nmap scan with vulnerability scripts
 sudo nmap -sV -sC --script vuln* -O -p <port1,port2,...> <host>
 
+# IP enrichment
 echo <IPv4> | nrich -
 
+# Lighthouse for performance and security insights
 chrome Browser > developer tools > lighthouse
 
-# Web vulnerability scanner
+# Web vulnerability scanners
 OWASP ZAP https://www.zaproxy.org/
-Burp Site https://portswigger.net/burp/pro/
+Burp Suite https://portswigger.net/burp/pro/
 
-# Host vulnerability scanner
+# Host vulnerability scanners
 Tenable Nessus https://www.tenable.com/products/nessus
 Greenbone OpenVAS https://openvas.org/
 
-isMyWebsiteInsecure.bat  # test for vulnerabilities and configuration errors
+# Test for vulnerabilities and configuration errors
+isMyWebsiteInsecure.bat
+
+
 
 
