@@ -1,5 +1,5 @@
 #!/bin/bash
-# isMyWebsiteInsecure.sh
+# isMyWebsiteInsecure-1.sh
 # developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
 # v1.0
 
