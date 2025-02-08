@@ -60,67 +60,65 @@ main() {
     echo "Url=$url"
     echo
 
-start %browser% -new-window -%private% -disable-extensions %url%
-timeout /t 2 >nul
+    firefox --new-window --private-window "$url"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://pentest-tools.com/network-vulnerability-scanning/tcp-port-scanner-online-nmap/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://pentest-tools.com/network-vulnerability-scanning/tcp-port-scanner-online-nmap/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.wpsec.com/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.wpsec.com/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://sitecheck.sucuri.net/results/%host%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://sitecheck.sucuri.net/results/$host"
+    sleep 2
 
+    firefox --new-tab --private-window "https://powerdmarc.com/dkim-record-lookup/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://powerdmarc.com/dkim-record-lookup/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://domain-checker.valimail.com/dmarc/$domain"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://domain-checker.valimail.com/dmarc/%domain%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.ssllabs.com/ssltest/analyze.html?d=$url&hideResults=on&latest"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.ssllabs.com/ssltest/analyze.html?d=%url%&hideResults=on&latest"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://securityheaders.com/?followRedirects=on&hide=on&q=$url"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://securityheaders.com/?followRedirects=on&hide=on&q=%url%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://report-uri.com/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://report-uri.com/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://developer.mozilla.org/en-US/observatory/analyze?host=$host"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://developer.mozilla.org/en-US/observatory/analyze?host=%host%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://internet.nl/site/$host/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://internet.nl/site/%host%/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.immuniweb.com/websec/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.immuniweb.com/websec/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://pentest-tools.com/website-vulnerability-scanning/website-scanner"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://pentest-tools.com/website-vulnerability-scanning/website-scanner"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.zaproxy.org/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.zaproxy.org/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.tenable.com/products/nessus/nessus-essentials"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.tenable.com/products/nessus/nessus-essentials"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://snyk.io/product/snyk-code/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://snyk.io/product/snyk-code/"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://www.cookiebot.com/en/compliance-test/?domain=$host"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://www.cookiebot.com/en/compliance-test/?domain=%host%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://developers.google.com/speed/pagespeed/insights/?url=$url"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://developers.google.com/speed/pagespeed/insights/?url=%url%"
-timeout /t 2 >nul
+    firefox --new-tab --private-window "https://validator.w3.org/nu/?showsource=no&doc=$url/"
+    sleep 2
 
-start %browser% -new-tab -%private% "https://validator.w3.org/nu/?showsource=no&doc=%url%/"
-timeout /t 2 >nul
-
-start %browser% -new-tab -%private% "https://jigsaw.w3.org/css-validator/validator?uri=%url%&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"
-timeout /t 2 >nul
-
+    firefox --new-tab --private-window "https://jigsaw.w3.org/css-validator/validator?uri=$url&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"
+    sleep 2
 }
 
 # Execute main function
