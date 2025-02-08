@@ -94,8 +94,8 @@ main() {
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo "wpscan --stealthy --url \"$url\""
-    wpscan --stealthy --url "$url"
+    echo "wpscan --no-banner --stealthy --url \"$url\""
+    wpscan --no-banner --stealthy --url "$url"
     echo -e "\n\n"
 
     # Moodle vulnerability scan
