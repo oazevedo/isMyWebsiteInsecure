@@ -22,7 +22,7 @@ check_tools() {
 # Main script
 main() {
     # Display ethical use warning
-    echo "Warning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical."
+    echo -e "\n\e[31mWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
 
     # Check if a URL parameter is provided
     if [ "$#" -ne 1 ]; then
