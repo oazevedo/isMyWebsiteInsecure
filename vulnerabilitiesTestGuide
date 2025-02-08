@@ -1,4 +1,7 @@
 #!/bin/bash
+# isMyWebsiteInsecure.sh
+# developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
+# v1.0
 
 # Function to validate URL format
 validate_url() {
