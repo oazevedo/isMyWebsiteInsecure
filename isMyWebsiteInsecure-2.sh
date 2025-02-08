@@ -11,17 +11,6 @@ validate_url() {
     fi
 }
 
-# Function to check if required tools are installed
-check_tools() {
-    required_tools=(whois dnsrecon whatweb nc wpscan sqlmap curl nmap sslscan nrich dig)
-    for tool in "${required_tools[@]}"; do
-        if ! command -v $tool &> /dev/null; then
-            echo "$tool is not installed. Please install it before running the script."
-            exit 1
-        fi
-    done
-}
-
 # Main script
 main() {
     # Display ethical use warning
@@ -43,9 +32,6 @@ main() {
     # Validate the URL format
     url="$1"
     validate_url "$url"
-
-    # Check if required tools are installed
-    check_tools
 
     # Extract host and domain
     host=$(echo "$url" | awk -F[/:] '{print $4}')
