@@ -61,5 +61,10 @@ main() {
     echo
 
 
+
+}
+
+# Execute main function
+main "$@"
     
 
