@@ -60,7 +60,66 @@ main() {
     echo "Url=$url"
     echo
 
+start %browser% -new-window -%private% -disable-extensions %url%
+timeout /t 2 >nul
 
+start %browser% -new-tab -%private% "https://pentest-tools.com/network-vulnerability-scanning/tcp-port-scanner-online-nmap/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.wpsec.com/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://sitecheck.sucuri.net/results/%host%"
+timeout /t 2 >nul
+
+
+start %browser% -new-tab -%private% "https://powerdmarc.com/dkim-record-lookup/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://domain-checker.valimail.com/dmarc/%domain%"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.ssllabs.com/ssltest/analyze.html?d=%url%&hideResults=on&latest"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://securityheaders.com/?followRedirects=on&hide=on&q=%url%"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://report-uri.com/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://developer.mozilla.org/en-US/observatory/analyze?host=%host%"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://internet.nl/site/%host%/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.immuniweb.com/websec/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://pentest-tools.com/website-vulnerability-scanning/website-scanner"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.zaproxy.org/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.tenable.com/products/nessus/nessus-essentials"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://snyk.io/product/snyk-code/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://www.cookiebot.com/en/compliance-test/?domain=%host%"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://developers.google.com/speed/pagespeed/insights/?url=%url%"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://validator.w3.org/nu/?showsource=no&doc=%url%/"
+timeout /t 2 >nul
+
+start %browser% -new-tab -%private% "https://jigsaw.w3.org/css-validator/validator?uri=%url%&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"
+timeout /t 2 >nul
 
 }
 
