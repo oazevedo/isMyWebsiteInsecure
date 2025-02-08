@@ -27,6 +27,13 @@ main() {
     # Display ethical use warning
     echo -e "\n\e[31mWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
 
+    # Ask user if they want to continue
+    read -p "Do you want to continue running the script? (yes/no): " choice
+    if [[ "$choice" != "yes" ]]; then
+        echo "Exiting script."
+        exit 0
+    fi
+
     # Check if a URL parameter is provided
     if [ "$#" -ne 1 ]; then
         echo -e "\e[32mUsage: $0 <url>\e[0m"
