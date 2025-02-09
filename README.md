@@ -3,7 +3,7 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
 
 1. "Hardening" do Alojamento / Website / Plataforma Web 
    - alojamento dedicado
-   - versões de software (os, db, cms, frameworks, library, themes, etc.) mais recentes sem vulnerabilidades de segurança e "adquiridas" a entidades credíveis
+   - versões de software (os, db, cms, frameworks, library, themes, etc.) mais recentes sem vulnerabilidades de segurança, e "adquiridas" a entidades credíveis
    - atualizações de segurança automáticas
    - antivirus
    - firewall
@@ -19,6 +19,12 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
      - implementam a sequência de autenticação: login + password complexa + reCaptcha + 2FA
    - backup's diários online e offline
 
-2. Cibersegurança
-  - a forma mais simples é utilizar uma vm com o Kali Linux ( https://www.kali.org ) que já tem as ferramentas pré-instaladas
-  - 
+2. "Testes" Cibersegurança
+   - pretende-se que a solução/plataforma não apresente erros ou vulnerabilidades de grau superior a "informativo"
+   - a forma mais simples é utilizar uma vm com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas:
+      - isMyWebsiteInsecure-1.sh ( download deste repositório )
+      - isMyWebsiteInsecure-2.sh ( download deste repositório )
+      - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
+      - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )
+    
+      - 
