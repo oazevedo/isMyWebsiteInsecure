@@ -224,15 +224,16 @@ main() {
 
     # Comprehensive Nmap scan with vulnerability scripts
     echo -e "\e[38;5;208m[+] Running comprehensive Nmap scan with vulnerability scripts...\e[0m"
-    echo -e "\e[32msudo nmap -sV -sC --script vuln* -O \"$host\"\e[0m"
-    sudo nmap -sV -sC --script vuln* -O "$host"
+    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -O \"$host\"\e[0m"
+    sudo nmap -sV -sC --script=vuln* -A $host
     echo -e "\n\n"
 
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
     echo -e "\e[32mecho \"$ipv4\" | nrich -\e[0m"
-    echo "$ipv4" | nrich -
+    echo $ipv4 | nrich -
     echo -e "\n\n"
+
 }
 
 # Execute main function
