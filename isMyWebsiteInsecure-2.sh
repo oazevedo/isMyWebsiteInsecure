@@ -63,7 +63,7 @@ main() {
                          --new-tab "https://www.immuniweb.com/websec/" \
                          --new-tab "https://pentest-tools.com/website-vulnerability-scanning/website-scanner" \
                          --new-tab "https://www.shodan.io/domain/$domain" \
-                         --new-tab "https://www.shodan.io/host/$IPv4" \
+                         --new-tab "https://www.shodan.io/host/$ipv4" \
                          --new-tab "https://www.zaproxy.org/" \
                          --new-tab "https://www.tenable.com/products/nessus/nessus-essentials" \
                          --new-tab "https://snyk.io/product/snyk-code/" \
