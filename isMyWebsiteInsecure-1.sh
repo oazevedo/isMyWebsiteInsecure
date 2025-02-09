@@ -158,10 +158,22 @@ main() {
     echo -e "\n\n"
 
     # Host header injection test
+    # echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
+    # echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -H \"Host: malicious.example.com\" \"$url\"\e[0m"
+    # curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" "$url"
+    # echo -e "\n\n"
+
+    # Host header injection test
     echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -H \"Host: malicious.example.com\" \"$url\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" "$url"
+    host_header_injection_command="curl -s -o /dev/null -w \"%{http_code}\" -H \"Host: malicious.example.com\" \"$url\""
+    echo -e "\e[32m${host_header_injection_command}\e[0m"
+    host_header_injection_status=$(eval $host_header_injection_command)
+    echo -e "Host header injection test: HTTP code: $host_header_injection_status"
+    if [ "$host_header_injection_status" -ne 200 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
+    
 
     # Path traversal test
     echo -e "\e[38;5;208m[+] Running Path traversal test...\e[0m"
@@ -182,9 +194,20 @@ main() {
     echo -e "\n\n"
 
     # XML External Entity (XXE) test
+    # echo -e "\e[38;5;208m[+] Running XML External Entity (XXE) test...\e[0m"
+    # echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -d '<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' \"$url\"\e[0m"
+    # curl -s -o /dev/null -w "%{http_code}" -d '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' "$url"
+    # echo -e "\n\n"
+
+    # XML External Entity (XXE) test
     echo -e "\e[38;5;208m[+] Running XML External Entity (XXE) test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -d '<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' \"$url\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" -d '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' "$url"
+    xxe_command="curl -s -o /dev/null -w \"%{http_code}\" -d '<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' \"$url\""
+    echo -e "\e[32m${xxe_command}\e[0m"
+    xxe_status=$(eval $xxe_command)
+    echo -e "XML External Entity (XXE) test: HTTP code: $xxe_status"
+    if [ "$xxe_status" -ne 200 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # SSL/TLS scan
