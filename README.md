@@ -19,12 +19,20 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
      - implementam a sequência de autenticação: login + password complexa + reCaptcha + 2FA
    - backup's diários online e offline
 
-2. "Testes" Cibersegurança
-   - pretende-se que a solução/plataforma não apresente erros ou vulnerabilidades de grau superior a "informativo"
-   - a forma mais simples é utilizar uma vm com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas:
+2. "Ferramentas" Cibersegurança
+   - a forma mais simples é utilizar uma VM com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas:
       - isMyWebsiteInsecure-1.sh ( download deste repositório )
       - isMyWebsiteInsecure-2.sh ( download deste repositório )
       - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
       - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )
-    
-      - 
+
+3. "Testes" Cibersegurança
+   - não são exaustivos. Não são aceites testes com outras ferramentas a não ser se expressamente autorizado.
+   - pretende-se que a solução/plataforma não apresente erros ou vulnerabilidades de grau superior a "informativo"
+   - sequência aconselhada de testes (devem ser todos executados):
+      - isMyWebsiteInsecure-1.sh <url>  # testa 1º página e alojamento
+      - isMyWebsiteInsecure-2.sh <url>  # testa 1º página e alojamento
+      - ZAP <url> ou Burp Suite <url>   # testa toda a aplicação/plataforma web
+      - Nessus <host> or Greenbone OpenVAS <host>  # testa o alojamento/aplicação
+      - chrome browser > lighthouse <url>  # testa página web e performance
+   - nota: devem ser enviados os relatórios de cibersegurança sempre que solicitados.
