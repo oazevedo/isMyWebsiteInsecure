@@ -34,5 +34,5 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
       - isMyWebsiteInsecure-2.sh \<url\> &nbsp;&nbsp; # testa 1º página e alojamento
       - ZAP <url> ou Burp Suite \<url\>  &nbsp;&nbsp; # testa toda a aplicação/plataforma web
       - Nessus <host> or Greenbone OpenVAS \<host\> &nbsp;&nbsp; # testa todo o alojamento/aplicação
-      - Chrome Browser > lighthouse \<url\> &nbsp;&nbsp; # testa página web e performance
+      - Chrome Browser > Lighthouse \<url\> &nbsp;&nbsp; # testa página web e performance
 
