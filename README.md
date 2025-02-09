@@ -3,7 +3,7 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
 
 1. "Hardening" do Alojamento / Website / Plataforma Web 
    - alojamento dedicado ou SAS - software as a service
-   - versões de software (os, db, cms, frameworks, library, themes, etc.) mais recentes sem vulnerabilidades de segurança, e "adquiridas" a entidades credíveis
+   - versões de software (os, db, cms, frameworks, library, themes, etc.) mais recentes sem vulnerabilidades de segurança, e "adquiridas" a entidades credíveis (ver LibraryReleases.md)
    - atualizações de segurança automáticas
    - antivirus
    - firewall
