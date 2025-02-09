@@ -230,7 +230,7 @@ main() {
 
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
-    echo -e "\e[32mecho $ipv4" | nrich - \e[0m"
+    echo -e "\e[32mecho $ipv4 | nrich - \e[0m"
     echo $ipv4 | nrich -
     echo -e "\n\n"
 
