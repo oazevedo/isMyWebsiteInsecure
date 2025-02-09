@@ -169,7 +169,7 @@ main() {
     echo -e "\e[32m${host_header_injection_command}\e[0m"
     host_header_injection_status=$(eval $host_header_injection_command)
     echo -e "Host header injection test: HTTP code: $host_header_injection_status"
-    if [ "$host_header_injection_status" -ne 200 ]; then
+    if [ "$host_header_injection_status" -ne 403 ]; then
        echo -e "\e[31mVulnerable\e[0m"
     fi
     echo -e "\n\n"
@@ -205,7 +205,7 @@ main() {
     echo -e "\e[32m${xxe_command}\e[0m"
     xxe_status=$(eval $xxe_command)
     echo -e "XML External Entity (XXE) test: HTTP code: $xxe_status"
-    if [ "$xxe_status" -ne 200 ]; then
+    if [ "$xxe_status" -ne 403 ]; then
        echo -e "\e[31mVulnerable\e[0m"
     fi
     echo -e "\n\n"
