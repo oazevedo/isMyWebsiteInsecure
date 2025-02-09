@@ -30,9 +30,9 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
    - não são exaustivos. Não são aceites testes com outras ferramentas a não ser se expressamente autorizado.
    - pretende-se que a solução/plataforma não apresente erros ou vulnerabilidades de grau superior a "informativo"
    - sequência aconselhada de testes (devem ser todos executados):
-      - isMyWebsiteInsecure-1.sh \<url\>   # testa 1º página e alojamento
-      - isMyWebsiteInsecure-2.sh <url>   # testa 1º página e alojamento
-      - ZAP <url> ou Burp Suite <url>   # testa toda a aplicação/plataforma web
-      - Nessus <host> or Greenbone OpenVAS <host>   # testa o alojamento/aplicação
-      - chrome browser > lighthouse <url>   # testa página web e performance
+      - isMyWebsiteInsecure-1.sh \<url\>   \# testa 1º página e alojamento
+      - isMyWebsiteInsecure-2.sh \<url\>   \# testa 1º página e alojamento
+      - ZAP <url> ou Burp Suite \<url\>   \# testa toda a aplicação/plataforma web
+      - Nessus <host> or Greenbone OpenVAS \<host\>   \# testa o alojamento/aplicação
+      - chrome browser > lighthouse \<url\>   \# testa página web e performance
    - nota: devem ser enviados os relatórios de cibersegurança sempre que solicitados.
