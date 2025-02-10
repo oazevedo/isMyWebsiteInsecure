@@ -93,10 +93,10 @@ main() {
     echo -e "\n\n"
 
     # Nmap Operating System detection
-    # echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"
-    # echo -e "\e[32m nmap -O $host \e[0m"
-    # nmap -O $host  
-    # echo -e "\n\n"
+    echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"  
+    echo -e "\e[32m nmap -p 80,443 -O $host \e[0m"  
+    nmap -p 80,443 -O $host  
+    echo -e "\n\n"
 
     # Nmap Management detection
     echo -e "\e[38;5;208m[+] Running Nmap Management detection...\e[0m"
@@ -243,10 +243,10 @@ main() {
 
 
 
-    # Comprehensive Nmap scan with vulnerability scripts
-    echo -e "\e[38;5;208m[+] Running comprehensive Nmap scan with vulnerability scripts...\e[0m"
-    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -A $host \e[0m"  
-    sudo nmap -sV -sC --script=vuln* -A $host  
+    # Nmap vulnerabilities scan
+    echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
+    echo -e "\e[32msudo nmap -sV -sC --script vuln $host \e[0m"  
+    sudo nmap -sV -sC --script vuln $host  
     echo -e "\n\n"  
 
 
