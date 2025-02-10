@@ -81,26 +81,26 @@ main() {
 
     # Apache enumeration
     echo -e "\e[38;5;208m[+] Running Apache enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-apache-server-status \"$host\"\e[0m"
-    nmap --script http-apache-server-status "$host"
+    echo -e "\e[32mnmap --script http-apache-server-status $host \e[0m"
+    nmap --script http-apache-server-status $host
     echo -e "\n\n"
 
     # Nginx enumeration
     echo -e "\e[38;5;208m[+] Running Nginx enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-nginx-server-status \"$host\"\e[0m"
-    nmap --script http-nginx-server-status "$host"
+    echo -e "\e[32mnmap --script http-nginx-server-status $host \e[0m"
+    nmap --script http-nginx-server-status $host
     echo -e "\n\n"
 
     # IIS enumeration
     echo -e "\e[38;5;208m[+] Running IIS enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-iis-webdav-vuln \"$host\"\e[0m"
-    nmap --script http-iis-webdav-vuln "$host"
+    echo -e "\e[32mnmap --script http-iis-webdav-vuln $host \e[0m"
+    nmap --script http-iis-webdav-vuln $host
     echo -e "\n\n"
 
     # Check MSSQL, MySQL or MariaDB database version
     echo -e "\e[38;5;208m[+] Checking MSSQL, MySQL or MariaDB database version...\e[0m"
-    echo -e "\e[32mnmap -p 1433,3306 --script ms-sql-info,mysql-info \"$host\"\e[0m"
-    nmap -p 1433,3306 --script ms-sql-info,mysql-info "$host"
+    echo -e "\e[32mnmap -p 1433,3306 --script ms-sql-info,mysql-info $host \e[0m"
+    nmap -p 1433,3306 --script ms-sql-info,mysql-info $host
     echo -e "\n\n"
 
     # Wordpress vulnerability scan
@@ -111,20 +111,20 @@ main() {
 
     # Moodle vulnerability scan
     echo -e "\e[38;5;208m[+] Running Moodle vulnerability scan...\e[0m"
-    echo -e "\e[32mnmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin \"$host\"\e[0m"
-    nmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin "$host"
+    echo -e "\e[32mnmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin $host \e[0m"
+    nmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin $host
     echo -e "\n\n"
 
     # PHP detection
     echo -e "\e[38;5;208m[+] Detecting PHP...\e[0m"
-    echo -e "\e[32mnmap --script http-php-version \"$host\"\e[0m"
-    nmap --script http-php-version "$host"
+    echo -e "\e[32mnmap --script http-php-version $host \e[0m"
+    nmap --script http-php-version $host
     echo -e "\n\n"
 
     # phpMyAdmin detection
     echo -e "\e[38;5;208m[+] Detecting phpMyAdmin...\e[0m"
-    echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal \"$host\"\e[0m"
-    nmap --script http-phpmyadmin-dir-traversal "$host"
+    echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal $host \e[0m"
+    nmap --script http-phpmyadmin-dir-traversal $host
     echo -e "\n\n"
 
     # SQL Injection test
@@ -242,8 +242,8 @@ main() {
 
     # Basic Nmap scan
     echo -e "\e[38;5;208m[+] Running basic Nmap scan...\e[0m"
-    echo -e "\e[32msudo nmap \"$host\"\e[0m"
-    sudo nmap "$host"
+    echo -e "\e[32msudo nmap $host \e[0m"
+    sudo nmap $host
     echo -e "\n\n"
 
     # Comprehensive Nmap scan with vulnerability scripts
