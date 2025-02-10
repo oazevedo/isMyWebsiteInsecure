@@ -1,4 +1,4 @@
-| Product            | URL                                                                 |
+| Product            | Version / Release                                                   |
 |--------------------|---------------------------------------------------------------------|
 | Apache             | https://httpd.apache.org/download.cgi                               |
 | Bootstrap          | https://getbootstrap.com/docs/versions                              |
