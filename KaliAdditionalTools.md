@@ -6,7 +6,7 @@
   sudo dpkg -i nrich_latest_x86_64.deb
 
 **ZAP Zed Attack Proxy**  
-  https://www.zaproxy.org
+  https://www.zaproxy.org  
   sudo apt install -y zaproxy  
   
   
