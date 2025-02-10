@@ -1,4 +1,4 @@
-**Ferramentas a instalar, adicionalmente, no Kali:**
+**Ferramentas a instalar, adicionalmente, no Kali Linux:**
 
 **Shodan nrich**  
   https://gitlab.com/shodan-public/nrich  
