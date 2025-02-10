@@ -1,5 +1,5 @@
 # isMyWebsiteInsecure
-Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desenvolvimento e Manutenção em _todo o ciclo de vida do produto/solução._
+Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desenvolvimento e Manutenção em **todo o ciclo de vida do produto/solução.**  
 
 1. **"Hardening" do Alojamento / Website / Plataforma Web**
    - alojamento dedicado ou SAS - software as a service
