@@ -64,73 +64,75 @@ main() {
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
     echo -e "\e[32mwhois \"$domain\"\e[0m"
-    whois "$domain"
+    whois $domain  
     echo -e "\n\n"
 
     # DNS reconnaissance
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
     echo -e "\e[32mdnsrecon -d \"$domain\"\e[0m"
-    dnsrecon -d "$domain"
+    dnsrecon -d $domain  
     echo -e "\n\n"
 
+    # SSL/TLS scan
+    echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
+    echo -e "\e[32msslscan \"$host\"\e[0m"
+    sslscan $host  
+    echo -e "\n\n"    
+    
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
     echo -e "\e[32mwhatweb \"$url\"\e[0m"
-    whatweb "$url"
+    whatweb $url  
     echo -e "\n\n"
 
-    # Apache enumeration
-    echo -e "\e[38;5;208m[+] Running Apache enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-apache-server-status $host \e[0m"
-    nmap --script http-apache-server-status $host
+    
+    # Nmap Open Ports detection
+    echo -e "\e[38;5;208m[+] Running Nmap Open Ports detection...\e[0m"
+    echo -e "\e[32m nmap $host \e[0m"
+    nmap $host  
     echo -e "\n\n"
 
-    # Nginx enumeration
-    echo -e "\e[38;5;208m[+] Running Nginx enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-nginx-server-status $host \e[0m"
-    nmap --script http-nginx-server-status $host
+    # Nmap Operating System detection
+    echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"
+    echo -e "\e[32m nmap -O $host \e[0m"
+    nmap -O $host  
     echo -e "\n\n"
 
-    # IIS enumeration
-    echo -e "\e[38;5;208m[+] Running IIS enumeration...\e[0m"
-    echo -e "\e[32mnmap --script http-iis-webdav-vuln $host \e[0m"
-    nmap --script http-iis-webdav-vuln $host
+    # Nmap Management detection
+    echo -e "\e[38;5;208m[+] Running Nmap Management detection...\e[0m"
+    echo -e "\e[32m nmap -sV -p 22,3389 $host \e[0m"
+    nmap -sV -p 22,3389 $host  
+    echo -e "\n\n"
+    
+    # Nmap Webserver detection
+    echo -e "\e[38;5;208m[+] Running Nmap Webserver detection...\e[0m"
+    echo -e "\e[32m nmap -sV -p 80,443 $host \e[0m"
+    nmap -sV -p 80,443 $host  
     echo -e "\n\n"
 
-    # Check MSSQL, MySQL or MariaDB database version
-    echo -e "\e[38;5;208m[+] Checking MSSQL, MySQL or MariaDB database version...\e[0m"
-    echo -e "\e[32mnmap -p 1433,3306 --script ms-sql-info,mysql-info $host \e[0m"
-    nmap -p 1433,3306 --script ms-sql-info,mysql-info $host
-    echo -e "\n\n"
-
-    # Wordpress vulnerability scan
-    echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo -e "\e[32mwpscan --no-banner --stealthy --url \"$url\"\e[0m"
-    wpscan --no-banner --stealthy --url "$url"
-    echo -e "\n\n"
-
-    # Moodle vulnerability scan
-    echo -e "\e[38;5;208m[+] Running Moodle vulnerability scan...\e[0m"
-    echo -e "\e[32mnmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin $host \e[0m"
-    nmap --script http-moodle-brute --script-args moodle-username=admin,moodle-password=admin $host
+    # Nmap Database detection
+    echo -e "\e[38;5;208m[+] Running Nmap Database detection...\e[0m"
+    echo -e "\e[32m nmap -sV -p 1433,3306 $host \e[0m"
+    nmap -sV -p 1433,3306 $host  
     echo -e "\n\n"
 
     # PHP detection
     echo -e "\e[38;5;208m[+] Detecting PHP...\e[0m"
     echo -e "\e[32mnmap --script http-php-version $host \e[0m"
-    nmap --script http-php-version $host
+    nmap --script http-php-version $host  
     echo -e "\n\n"
 
     # phpMyAdmin detection
     echo -e "\e[38;5;208m[+] Detecting phpMyAdmin...\e[0m"
     echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal $host \e[0m"
-    nmap --script http-phpmyadmin-dir-traversal $host
+    nmap --script http-phpmyadmin-dir-traversal $host  
     echo -e "\n\n"
 
-    # SQL Injection test
-    echo -e "\e[38;5;208m[+] Running SQL Injection test...\e[0m"
-    echo -e "\e[32msqlmap -u \"$url\" --batch --dbs\e[0m"
-    sqlmap -u "$url" --batch --dbs
+
+    # Wordpress vulnerability scan
+    echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
+    echo -e "\e[32mwpscan --no-banner --stealthy --url \"$url\"\e[0m"
+    wpscan --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
 
@@ -234,28 +236,18 @@ main() {
     echo -e "\n\n"
 
 
-    # SSL/TLS scan
-    echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
-    echo -e "\e[32msslscan \"$host\"\e[0m"
-    sslscan "$host"
-    echo -e "\n\n"
 
-    # Basic Nmap scan
-    echo -e "\e[38;5;208m[+] Running basic Nmap scan...\e[0m"
-    echo -e "\e[32msudo nmap $host \e[0m"
-    sudo nmap $host
-    echo -e "\n\n"
 
     # Comprehensive Nmap scan with vulnerability scripts
     echo -e "\e[38;5;208m[+] Running comprehensive Nmap scan with vulnerability scripts...\e[0m"
     echo -e "\e[32msudo nmap -sV -sC --script=vuln* -A $host \e[0m"
-    sudo nmap -sV -sC --script=vuln* -A $host
+    sudo nmap -sV -sC --script=vuln* -A $host  
     echo -e "\n\n"
 
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
     echo -e "\e[32mecho $ipv4 | nrich - \e[0m"
-    echo $ipv4 | nrich -
+    echo $ipv4 | nrich -  
     echo -e "\n\n"
 
 }
