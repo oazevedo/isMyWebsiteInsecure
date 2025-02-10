@@ -29,7 +29,7 @@ Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desen
 
 3. **"Testes" Cibersegurança**
    - não são exaustivos. Não são aceites testes com outras ferramentas a não ser se expressamente autorizado.
-   - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo"**  
+   - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**  
    - sequência aconselhada de testes (devem ser todos executados):
       | Ferramenta                          | Descrição                                     |
       |-------------------------------------|-----------------------------------------------|
