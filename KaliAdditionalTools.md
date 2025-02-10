@@ -1,4 +1,4 @@
-**Ferramentas a instalar no Kali:**
+**Ferramentas a instalar, adicionalmente, no Kali:**
 
 **Shodan nrich**  
   https://gitlab.com/shodan-public/nrich  
@@ -8,6 +8,7 @@
 **ZAP Zed Attack Proxy**  
   https://www.zaproxy.org
   sudo apt install -y zaproxy  
+  
   
 
 
