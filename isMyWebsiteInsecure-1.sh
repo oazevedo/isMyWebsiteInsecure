@@ -241,15 +241,11 @@ main() {
     echo -e "\n\n"
 
 
-
-
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
-    echo -e "\e[32msudo nmap -sV -sC --script vuln $host \e[0m"  
-    sudo nmap -sV -sC --script vuln $host  
+    echo -e "\e[32m nmap -sV -sC --script vuln $host \e[0m"  
+    nmap -sV -sC --script vuln $host  
     echo -e "\n\n"  
-
-
 
 }
 
