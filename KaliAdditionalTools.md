@@ -8,6 +8,10 @@
 **ZAP - Zed Attack Proxy**  
   https://www.zaproxy.org  
   sudo apt install -y zaproxy  
+
+**Tenable Nessus Essentials**  
+  https://www.tenable.com/products/nessus/nessus-essentials  
+  
   
   
 
