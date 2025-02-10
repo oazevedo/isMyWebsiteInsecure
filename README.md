@@ -1,7 +1,7 @@
 # isMyWebsiteInsecure
 Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desenvolvimento e Manutenção em todo o ciclo de vida do produto/solução
 
-1. "Hardening" do Alojamento / Website / Plataforma Web 
+**1. "Hardening" do Alojamento / Website / Plataforma Web **
    - alojamento dedicado ou SAS - software as a service
    - versões de software (operating system, database, content management system, frameworks, libraries, plugins, themes, etc.) mais recentes sem vulnerabilidades de segurança, e "adquiridas" a entidades credíveis (ver LibraryReleases.md)
    - atualizações de segurança automáticas
