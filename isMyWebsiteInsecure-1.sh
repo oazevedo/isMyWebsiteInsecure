@@ -93,55 +93,60 @@ main() {
     echo -e "\n\n"
 
     # Nmap Operating System detection
-    echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"
-    echo -e "\e[32m nmap -O $host \e[0m"
-    nmap -O $host  
-    echo -e "\n\n"
+    # echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"
+    # echo -e "\e[32m nmap -O $host \e[0m"
+    # nmap -O $host  
+    # echo -e "\n\n"
 
     # Nmap Management detection
     echo -e "\e[38;5;208m[+] Running Nmap Management detection...\e[0m"
-    echo -e "\e[32m nmap -sV -p 22,3389 $host \e[0m"
+    echo -e "\e[32m nmap -sV -p 22,3389 $host \e[0m"  
     nmap -sV -p 22,3389 $host  
     echo -e "\n\n"
     
     # Nmap Webserver detection
     echo -e "\e[38;5;208m[+] Running Nmap Webserver detection...\e[0m"
-    echo -e "\e[32m nmap -sV -p 80,443 $host \e[0m"
+    echo -e "\e[32m nmap -sV -p 80,443 $host \e[0m"  
     nmap -sV -p 80,443 $host  
     echo -e "\n\n"
 
     # Nmap Database detection
     echo -e "\e[38;5;208m[+] Running Nmap Database detection...\e[0m"
-    echo -e "\e[32m nmap -sV -p 1433,3306 $host \e[0m"
+    echo -e "\e[32m nmap -sV -p 1433,3306 $host \e[0m"  
     nmap -sV -p 1433,3306 $host  
     echo -e "\n\n"
 
     # PHP detection
     echo -e "\e[38;5;208m[+] Detecting PHP...\e[0m"
-    echo -e "\e[32mnmap --script http-php-version $host \e[0m"
+    echo -e "\e[32mnmap --script http-php-version $host \e[0m"  
     nmap --script http-php-version $host  
     echo -e "\n\n"
 
     # phpMyAdmin detection
     echo -e "\e[38;5;208m[+] Detecting phpMyAdmin...\e[0m"
-    echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal $host \e[0m"
+    echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal $host \e[0m"  
     nmap --script http-phpmyadmin-dir-traversal $host  
     echo -e "\n\n"
 
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo -e "\e[32mwpscan --no-banner --stealthy --url \"$url\"\e[0m"
+    echo -e "\e[32mwpscan --no-banner --stealthy --url \"$url\"\e[0m"  
     wpscan --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
+    # Shodan scan
+    echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
+    echo -e "\e[32mecho $ipv4 | nrich - \e[0m"  
+    echo $ipv4 | nrich -  
+    echo -e "\n\n"
 
     # XSS test
-    echo -e "\e[38;5;208m[+] Running XSS test...\e[0m"
-    xss_command="curl -s -o /dev/null -w \"%{http_code}\" -d \"<script>alert(1)</script>\" \"$url\""
-    echo -e "\e[32m${xss_command}\e[0m"
-    xss_status=$(eval $xss_command)
-    echo -e "XSS test: HTTP code: $xss_status"
+    echo -e "\e[38;5;208m[+] Running XSS test...\e[0m"  
+    xss_command="curl -s -o /dev/null -w \"%{http_code}\" -d \"<script>alert(1)</script>\" \"$url\""  
+    echo -e "\e[32m${xss_command}\e[0m"  
+    xss_status=$(eval $xss_command)  
+    echo -e "XSS test: HTTP code: $xss_status"  
     if [ "$xss_status" -ne 403 ]; then
        echo -e "\e[31mVulnerable\e[0m"
     fi
@@ -240,15 +245,11 @@ main() {
 
     # Comprehensive Nmap scan with vulnerability scripts
     echo -e "\e[38;5;208m[+] Running comprehensive Nmap scan with vulnerability scripts...\e[0m"
-    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -A $host \e[0m"
+    echo -e "\e[32msudo nmap -sV -sC --script=vuln* -A $host \e[0m"  
     sudo nmap -sV -sC --script=vuln* -A $host  
-    echo -e "\n\n"
+    echo -e "\n\n"  
 
-    # Shodan scan
-    echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
-    echo -e "\e[32mecho $ipv4 | nrich - \e[0m"
-    echo $ipv4 | nrich -  
-    echo -e "\n\n"
+
 
 }
 
