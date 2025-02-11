@@ -2,6 +2,7 @@
 |--------------------|---------------------------------------------------------------------|
 | Apache             | https://httpd.apache.org/download.cgi                               |
 | Bootstrap          | https://getbootstrap.com/docs/versions                              |
+| CentOS             | https://www.centos.org/download/                                    |
 | jQuery             | https://releases.jquery.com                                         |
 | MariaDB            | https://mariadb.com/kb/en/mariadb-server-release-dates/             |
 | Moodle             | https://moodledev.io/general/releases                               |
