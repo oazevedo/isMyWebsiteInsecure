@@ -1,5 +1,5 @@
 # isMyWebsiteInsecure
-Breve resumo dos requisitos mínimos de Cibersegurança para o Alojamento, Desenvolvimento e Manutenção em **todo o ciclo de vida do produto/solução.** Nota: estes requisitos poderão ser alterados quando entrar em funcionamento a NDIS2.
+Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, Desenvolvimento e Manutenção em **todo o ciclo de vida do produto/solução.** Nota: estes requisitos poderão ser alterados quando entrar em funcionamento a NDIS2.
 
 1. **"Hardening" do Alojamento / Website / Plataforma Web**
    - alojamento dedicado ou SAS - software as a service
