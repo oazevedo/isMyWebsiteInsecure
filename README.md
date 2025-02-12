@@ -22,7 +22,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas:
       - isMyWebsiteInsecure-1.sh &nbsp;&nbsp;&nbsp; (*) SHA1 dd02a6033331cbbf7d177de6fd69ebb5a18335b7    
-      - isMyWebsiteInsecure-2.sh &nbsp;&nbsp;&nbsp; (*) SHA1 952aac6044a587c92dd77b4a8eb961f348df590f  
+      - isMyWebsiteInsecure-2.sh &nbsp;&nbsp;&nbsp; (*) SHA1 166f9d48545d1d309e0c6ee28edc2acefcb6544e  
       - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
       - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )  
       (*) encontram-se neste repositório  
