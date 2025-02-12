@@ -1,5 +1,6 @@
 | Product            | Version / Release                                                   |
 |--------------------|---------------------------------------------------------------------|
+| Angular            | https://angular.dev/reference/releases#actively-supported-versions  |  
 | Apache             | https://httpd.apache.org/download.cgi                               |
 | Bootstrap          | https://getbootstrap.com/docs/versions                              |
 | CentOS             | https://www.centos.org/download/                                    |
