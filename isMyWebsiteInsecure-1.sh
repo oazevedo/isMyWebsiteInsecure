@@ -63,25 +63,25 @@ main() {
 
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
-    echo -e "\e[32mwhois \"$domain\"\e[0m"
+    echo -e "\e[32m whois $domain \e[0m"
     whois $domain  
     echo -e "\n\n"
 
     # DNS reconnaissance
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
-    echo -e "\e[32mdnsrecon -d \"$domain\"\e[0m"
+    echo -e "\e[32m dnsrecon -d $domain \e[0m"
     dnsrecon -d $domain  
     echo -e "\n\n"
 
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
-    echo -e "\e[32msslscan \"$host\"\e[0m"
+    echo -e "\e[32m sslscan $host \e[0m"
     sslscan $host  
     echo -e "\n\n"    
     
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
-    echo -e "\e[32mwhatweb $url \e[0m"
+    echo -e "\e[32m whatweb $url \e[0m"
     whatweb $url  
     echo -e "\n\n"
 
@@ -118,20 +118,20 @@ main() {
 
     # PHP detection
     echo -e "\e[38;5;208m[+] Detecting PHP...\e[0m"
-    echo -e "\e[32mnmap --script http-php-version $host \e[0m"  
+    echo -e "\e[32m nmap --script http-php-version $host \e[0m"  
     nmap --script http-php-version $host  
     echo -e "\n\n"
 
     # phpMyAdmin detection
     echo -e "\e[38;5;208m[+] Detecting phpMyAdmin...\e[0m"
-    echo -e "\e[32mnmap --script http-phpmyadmin-dir-traversal $host \e[0m"  
+    echo -e "\e[32m nmap --script http-phpmyadmin-dir-traversal $host \e[0m"  
     nmap --script http-phpmyadmin-dir-traversal $host  
     echo -e "\n\n"
 
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo -e "\e[32mwpscan --no-banner --stealthy --url \"$url\"\e[0m"  
+    echo -e "\e[32m wpscan --no-banner --stealthy --url $url \e[0m"  
     wpscan --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
