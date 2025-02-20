@@ -25,7 +25,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       - isMyWebsiteInsecure-2.sh &nbsp;&nbsp;&nbsp; (*) SHA1 166f9d48545d1d309e0c6ee28edc2acefcb6544e  
       - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
       - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )  
-      (*) encontram-se neste repositório  
+      (*) encontra-se neste repositório  
 
 3. **"Testes" Cibersegurança**
    - não são exaustivos. **Não são aceites testes com outras ferramentas** a não ser se expressamente autorizado.
