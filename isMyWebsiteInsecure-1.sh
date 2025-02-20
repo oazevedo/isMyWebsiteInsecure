@@ -95,7 +95,7 @@ main() {
     # Nmap Operating System detection
     echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"  
     echo -e "\e[32m nmap -p 80,443 -O $host \e[0m"  
-    nmap -p 80,443 -O $host  
+    sudo nmap -p 80,443 -O $host  
     echo -e "\n\n"
 
     # Nmap Management detection
@@ -112,8 +112,8 @@ main() {
 
     # Nmap Database detection
     echo -e "\e[38;5;208m[+] Running Nmap Database detection...\e[0m"
-    echo -e "\e[32m nmap -sV -p 1433,3306 $host \e[0m"  
-    nmap -sV -p 1433,3306 $host  
+    echo -e "\e[32m nmap -sV -p 1433,3306,5432 $host \e[0m"  
+    nmap -sV -p 1433,3306,5432 $host  
     echo -e "\n\n"
 
     # PHP detection
