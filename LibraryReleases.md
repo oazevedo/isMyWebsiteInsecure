@@ -13,8 +13,10 @@
 | MS Windows Server  | https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-release-info |
 | MySQL              | https://dev.mysql.com/doc/refman/8.4/en/mysql-releases.html         |
 | Nginx              | https://nginx.org/en/download.html                                  |
+| OpenSSH            | https://www.openssh.com/releasenotes.html                           |
 | PHP                | https://www.php.net/supported-versions.php                          |
 | PHPMyAdmin         | https://www.phpmyadmin.net/downloads/                               |
+| PostgreSQL         | https://www.postgresql.org/support/versioning/                      |
 | Ubuntu             | https://wiki.ubuntu.com/Releases                                    |
 | Wordpress          | https://wordpress.org/download/releases/                            |
 
