@@ -63,8 +63,8 @@ main() {
 
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
-    echo -e "\e[32m whois $domain \e[0m"
-    whois $domain  
+    echo -e "\e[32m sudo whois $domain \e[0m"
+    sudo whois $domain  
     echo -e "\n\n"
 
     # DNS reconnaissance
@@ -81,8 +81,8 @@ main() {
     
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
-    echo -e "\e[32m whatweb $url \e[0m"
-    whatweb $url  
+    echo -e "\e[32m whatweb $host \e[0m"
+    whatweb $host  
     echo -e "\n\n"
 
     
