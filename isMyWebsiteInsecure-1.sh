@@ -131,8 +131,8 @@ main() {
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo -e "\e[32m wpscan --no-banner --stealthy --url $url \e[0m"  
-    wpscan --no-banner --stealthy --url $url  
+    echo -e "\e[32m wpscan --update --no-banner --stealthy --url $url \e[0m"  
+    wpscan --update --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
     # Shodan scan
