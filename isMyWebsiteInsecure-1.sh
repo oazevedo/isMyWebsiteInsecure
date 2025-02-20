@@ -81,7 +81,7 @@ main() {
     
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
-    echo -e "\e[32mwhatweb \"$url\"\e[0m"
+    echo -e "\e[32mwhatweb $url \e[0m"
     whatweb $url  
     echo -e "\n\n"
 
