@@ -94,7 +94,7 @@ main() {
 
     # Nmap Operating System detection
     echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"  
-    echo -e "\e[32m nmap -p 80,443 -O $host \e[0m"  
+    echo -e "\e[32m sudo nmap -p 80,443 -O $host \e[0m"  
     sudo nmap -p 80,443 -O $host  
     echo -e "\n\n"
 
@@ -131,8 +131,8 @@ main() {
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
-    echo -e "\e[32m wpscan --update --no-banner --stealthy --url $url \e[0m"  
-    wpscan --update --no-banner --stealthy --url $url  
+    echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url $url \e[0m"  
+    sudo wpscan --update --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
     # Shodan scan
