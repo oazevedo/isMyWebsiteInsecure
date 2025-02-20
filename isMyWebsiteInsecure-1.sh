@@ -137,7 +137,7 @@ main() {
 
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
-    echo -e "\e[32mecho $ipv4 | nrich - \e[0m"  
+    echo -e "\e[32m echo $ipv4 | nrich - \e[0m"  
     echo $ipv4 | nrich -  
     echo -e "\n\n"
 
@@ -148,7 +148,7 @@ main() {
     xss_status=$(eval $xss_command)  
     echo -e "XSS test: HTTP code: $xss_status"  
     if [ "$xss_status" -ne 403 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable \e[0m"
     fi
     echo -e "\n\n"
 
