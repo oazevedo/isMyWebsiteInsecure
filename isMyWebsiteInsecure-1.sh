@@ -77,15 +77,20 @@ main() {
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
     echo -e "\e[32m sslscan $host \e[0m"
     sslscan $host  
-    echo -e "\n\n"    
+    echo -e "\n\n" 
+
+    # HTTP Headers
+    echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
+    echo -e "\e[32m curl -I $url \e[0m"
+    curl -I $url  
+    echo -e "\n\n" 
     
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
     echo -e "\e[32m whatweb $host \e[0m"
     whatweb $host  
-    echo -e "\n\n"
-
-    
+    echo -e "\n\n" 
+        
     # Nmap Open Ports detection
     echo -e "\e[38;5;208m[+] Running Nmap Open Ports detection...\e[0m"
     echo -e "\e[32m nmap $host \e[0m"
