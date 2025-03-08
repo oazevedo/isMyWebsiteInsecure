@@ -17,7 +17,7 @@
 | PHP                | https://www.php.net/supported-versions.php                          |
 | PHPMyAdmin         | https://www.phpmyadmin.net/downloads/                               |
 | PostgreSQL         | https://www.postgresql.org/support/versioning/                      |
-| Ubuntu             | <a href="https://wiki.ubuntu.com/Releases" target="_blank"> https://wiki.ubuntu.com/Releases </a> |
+| Ubuntu             | https://wiki.ubuntu.com/Releases                                    |
 | Wordpress          | https://wordpress.org/download/releases/                            |
 
 Note: **use** only **LTS versions/releases**!
