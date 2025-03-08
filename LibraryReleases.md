@@ -20,4 +20,4 @@
 | Ubuntu             | https://wiki.ubuntu.com/Releases                                    |
 | Wordpress          | https://wordpress.org/download/releases/                            |
 
-Note: use only LTS versions/releases!
+Note: **use** only **LTS versions/releases**!
