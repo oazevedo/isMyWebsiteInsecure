@@ -11,7 +11,7 @@
 | MS IIS             | https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis |
 | MS SQL             | https://learn.microsoft.com/en-us/troubleshoot/sql/releases/download-and-install-latest-updates |
 | MS Windows Server  | https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-release-info |
-| MySQL              | https://dev.mysql.com/doc/refman/8.4/en/mysql-releases.html         |
+| MySQL              | https://dev.mysql.com/downloads/mysql/                              |
 | Nginx              | https://nginx.org/en/download.html                                  |
 | OpenSSH            | https://www.openssh.com/releasenotes.html                           |
 | PHP                | https://www.php.net/supported-versions.php                          |
