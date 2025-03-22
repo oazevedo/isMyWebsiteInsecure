@@ -71,7 +71,8 @@ main() {
                          --new-tab "https://www.cookiebot.com/en/compliance-test/?domain=$host" \
                          --new-tab "https://developers.google.com/speed/pagespeed/insights/?url=$url" \
                          --new-tab "https://validator.w3.org/nu/?showsource=no&doc=$url/" \
-                         --new-tab "https://jigsaw.w3.org/css-validator/validator?uri=$url&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"
+                         --new-tab "https://jigsaw.w3.org/css-validator/validator?uri=$url&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" \
+                         --new-tab "https://csp-evaluator.withgoogle.com/"
                          
 }
 
