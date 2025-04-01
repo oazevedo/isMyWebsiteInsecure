@@ -25,11 +25,11 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       - isMyWebsiteInsecure-2.sh &nbsp;&nbsp;&nbsp; (*) SHA1 166f9d48545d1d309e0c6ee28edc2acefcb6544e  
       - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
       - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )  
-      (*) encontra-se neste repositório  
+      (*) encontra-se neste repositório
+   - **não são aceites testes com outras ferramentas** a não ser se expressamente autorizado.
 
 3. **"Testes" Cibersegurança**
-   - não são exaustivos, todavia sugere-se a utilização do OWASP Web Security Testing Guide 
-   - **Não são aceites testes com outras ferramentas** a não ser se expressamente autorizado.
+   - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
    - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**  
    - sequência aconselhada de testes (devem ser todos executados):
       | Ferramenta                          | Descrição                                     |
