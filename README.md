@@ -7,7 +7,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - atualizações de segurança automáticas
    - antivirus
    - firewall
-   - waf web application firewall em todas as aplicações/plataformas web
+   - waf-web application firewall em todas as aplicações/plataformas web
    - ssl em todas as páginas web
    - portas, abrir só as estritamente necessárias e para quem necessita
      - ex. porta 22/ssh ou 3389/rdp aberta só para os ip's públicos de quem tem que fazer a gestão da solução
