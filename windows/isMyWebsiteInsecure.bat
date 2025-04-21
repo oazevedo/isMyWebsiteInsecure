@@ -14,7 +14,7 @@ setlocal enableextensions
 setlocal enabledelayedexpansion
 
 rem defaults
-(set browser=brave.exe)
+(set browser=chrome.exe)
 (set protocol=https)
 
 :menu
