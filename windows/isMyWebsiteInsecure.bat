@@ -7,7 +7,7 @@ rem ===========================================================
 rem developed by Oscar Azevedo
 rem oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
 rem run webtools to see if website is insecure
-rem modified on: 2025-01-22
+rem modified on: 2025-04-21
 rem ===========================================================
 
 setlocal enableextensions
