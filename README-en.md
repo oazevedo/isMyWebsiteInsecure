@@ -1,5 +1,5 @@
 # isMyWebsiteInsecure
-A brief overview of the **minimum Cybersecurity requirements** for Hosting, Development, Maintenance, and Support throughout the **entire product/solution lifecycle.
+A brief overview of the **minimum Cybersecurity requirements** for Hosting, Development, Maintenance, and Support throughout the **entire product/solution lifecycle**.
 
 1. **"Hardening" of Hosting / Website / Web Platform**
    - Dedicated hosting or SAS - software as a service
