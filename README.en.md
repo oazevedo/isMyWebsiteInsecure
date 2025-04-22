@@ -3,7 +3,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
 
 1. **"Hardening" of Hosting / Website / Web Platform**
    - Dedicated hosting or SAS - software as a service
-   - Latest software versions (operating system, database, content management system, frameworks, libraries, plugins, themes, etc.) without security vulnerabilities, and "acquired" from trusted sources, see LibraryReleases.md
+   - Latest software versions (operating system, database, content management system, frameworks, libraries, plugins, themes, etc.) without security vulnerabilities, and "acquired" from trusted sources, see [Library Releases](LibraryReleases.md)
    - Automatic security updates
    - Antivirus
    - Firewall
