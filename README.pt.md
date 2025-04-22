@@ -26,7 +26,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
       - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )  
       (*) encontra-se neste repositório
-   - **não são aceites testes com outras ferramentas** a não ser se expressamente autorizado.
+   - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
 
 3. **"Testes" Cibersegurança**
    - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
