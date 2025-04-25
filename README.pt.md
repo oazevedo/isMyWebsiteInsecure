@@ -42,7 +42,9 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
 4. **"Relatório" Cibersegurança**
-   - usar TemplateDigitalProductSecurity.xlsx para:
+   - usar TemplateDigitalProductSecurity.xlsx (*) para:
       - registar configuração do alojamento, ferramentas e bibliotecas usadas no website
       - relatórios de cibersegurança
+   - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
+   
 
