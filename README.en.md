@@ -40,4 +40,8 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | Chrome Browser > Lighthouse \<url\> | # tests web page and performance                |
       | ZAP \<url\> or Burp Suite \<url\>     | # tests the entire web application/platform     |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
-     
+
+4. **Cybersecurity "Reporting"**
+   - use TemplateDigitalProductSecurity.xlsx to:
+        - record hosting configurations, tools and libraries used on the website
+        - cybersecurity test reports
