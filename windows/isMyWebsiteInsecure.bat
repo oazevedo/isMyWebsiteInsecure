@@ -7,7 +7,7 @@ rem ===========================================================
 rem developed by Oscar Azevedo
 rem oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
 rem run webtools to see if website is insecure
-rem modified on: 2025-04-21
+rem modified on: 2025-04-24
 rem ===========================================================
 
 setlocal enableextensions
@@ -29,7 +29,6 @@ echo.   2. Test Website - all tools
 echo.                                                         
 echo.   3. Choose browser (optional)                          
 echo.                                                         
-echo.   F. Free Webtools used and Metrics                     
 echo.   L. Legal and Privacy Terms                            
 echo.   X. Exit                                               
 echo.                                                         
@@ -55,7 +54,7 @@ echo. Option   = 1. Test Website
 echo. ==========================
 echo.
 
-choice /t 10 /c 123FLX /d 1 /n /m " Choose an option (1,2,3,F,L,X) ? "
+choice /t 10 /c 123LX /d 1 /n /m " Choose an option (1,2,3,L,X) ? "
 
 (set option=%ERRORLEVEL%)
 goto Label-%option%
@@ -270,40 +269,7 @@ if ERRORLEVEL 4 (set browser=firefox.exe)
 goto :menu
 
 
-:Label-4      Free Webtools and Metrics
-@echo.
-@echo. We use the following free web tools. Our thanks and appreciation to those who develop and maintain.
-@echo.
-@echo. 1. category:security, target:hosting
-@echo.    "https://pentest-tools.com"                  metric: tcp/443
-@echo.    "https://www.wpsec.com/"                     metric: no vulnerabilities, no outdated plugins
-@echo.    "https://sitecheck.sucuri.net/"              metric: no malware, no outdated software
-@echo.    "https://haveibeenpwned.com/"                metric: no email in a data breach
-@echo.    "https://domain-checker.valimail.com/dmarc"  metric: dmarc configured
-@echo.    "https://www.ssllabs.com/ssltest"            metric: A
-@echo.    "https://securityheaders.com/"               metric: security headers configured
-@echo.    "https://observatory.allizom.org/"           metric: A
-@echo.    "https://webcheck.pt/"                       metric: Cumpre
-@echo.    "https://internet.nl/"                       metric: 90
-@echo.    "https://pentest-tools.com/website-vulnerability-scanning/website-scanner"  metric: no vulnerabilities
-@echo.    "https://www.owasp.org/"                     metric: no vulnerabilities
-@echo.    "https://owasp.org/www-project-top-ten/"     metric: n/a
-@echo.    "https://www.immuniweb.com/darkweb/"         metric: no Dark Web Exposure
-@echo.
-@echo. 2. category:GDPR cookies, target:developers
-@echo.    "https://www.ezigdpr.com/"         metric: no action required
-@echo.
-@echo. 3. category:quality, target:developers
-@echo.    "https://developers.google.com/"   metric: 90 
-@echo.    "https://gtmetrix.com/"            metric: 90
-@echo.    "https://validator.w3.org/"        metric: no errors
-@echo.    "https://jigsaw.w3.org/"           metric: no errors
-@echo.
-pause
-goto :menu
-
-
-:Label-5     Legal & Privacy
+:Label-4     Legal & Privacy
 @echo.
 @echo. Very Important:
 @echo.
@@ -319,7 +285,7 @@ pause
 goto :menu
 
 
-:Label-6
+:Label-5
 :end
 (set url=)
 (set scheme=)
