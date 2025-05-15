@@ -42,7 +42,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
 
 4. **Cybersecurity "Reporting"**
-   - use TemplateDigitalProductSecurity.xlsx (*) to:
+   - use DigitalProductCybersecurityReport.xlsx (*) to:
         - record hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
    - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
