@@ -28,6 +28,9 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       (*) available in this repository
    - **Tests with other tools are not accepted** unless expressly authorized.
 
+3. **Cybersecurity "minimum Requirements"**
+   - follow the document DigitalProductCybersecurityRequirements.md
+
 3. **Cybersecurity "Tests"**
    - It is suggested to use the OWASP Web Security Testing Guide (https://owasp.org/www-project-web-security-testing-guide/stable/)
    - The solution/platform **must not present errors or vulnerabilities higher than "informational" level.**  
