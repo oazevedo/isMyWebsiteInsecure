@@ -28,7 +28,10 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       (*) encontra-se neste repositório
    - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
 
-3. **"Testes" Cibersegurança**
+3. **"Requisitos mínimos" Cibersegurança**
+   - seguir o guia DigitalProductCybersecurityRequirements.md  
+
+4. **"Testes" Cibersegurança**
    - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
    - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**  
    - sequência aconselhada de testes (devem ser todos executados):
@@ -41,7 +44,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | ZAP \<url\> ou Burp Suite \<url\>   | # testa toda a aplicação/plataforma web       |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
-4. **"Relatório" Cibersegurança**
+5. **"Relatório" Cibersegurança**
    - usar DigitalProductCybersecurityReport.xlsx (*) para:
       - registar configuração do alojamento, ferramentas e bibliotecas usadas no website
       - relatórios de cibersegurança
