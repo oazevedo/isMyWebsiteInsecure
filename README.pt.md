@@ -29,7 +29,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
 
 3. **"Requisitos mínimos" Cibersegurança**
-   - seguir o guia DigitalProductCybersecurityRequirements.md  
+   - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
 4. **"Testes" Cibersegurança**
    - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
@@ -45,7 +45,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
 5. **"Relatório" Cibersegurança**
-   - usar DigitalProductCybersecurityReport.xlsx (*) para:
+   - usar [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) para:
       - registar configuração do alojamento, ferramentas e bibliotecas usadas no website
       - relatórios de cibersegurança
    - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
