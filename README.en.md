@@ -1,9 +1,9 @@
-# isMyWebsiteInsecure
+# Is My Website Insecure
 A brief overview of the **minimum Cybersecurity requirements** for Hosting, Development, Maintenance, and Support throughout the **entire product/solution lifecycle**.
 
 1. **"Hardening" of Hosting / Website / Web Platform**
-   - Dedicated hosting or SAS - software as a service
-   - Latest software versions (operating system, database, content management system, frameworks, libraries, plugins, themes, etc.) without security vulnerabilities and "acquired" from trusted sources, see [Library Releases](LibraryReleases.md)
+   - Dedicated hosting or SaaS (Software as a Service)
+   - Ensure all software (operating system, database, CMS, frameworks, libraries, plugins, themes, etc.) is up-to-date, free from security vulnerabilities and obtained from trusted sources. See [Library Releases](LibraryReleases.md)
    - Automatic security updates
    - Antivirus
    - Firewall
@@ -20,18 +20,18 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - Daily backups online and offline
 
 2. **Cybersecurity "Tools"**
-   - The simplest way is to use a VM with Kali Linux (https://www.kali.org) and install the following tools:
+   - The simplest approach is to use a virtual machine (VM) with Kali Linux (https://www.kali.org) and install the following tools:
       - [isMyWebsiteInsecure-1.sh](isMyWebsiteInsecure-1.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 372a243e39f8e62310437ab6505f96690c643bc7    
       - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 166f9d48545d1d309e0c6ee28edc2acefcb6544e  
       - ZAP (https://www.zaproxy.org/) or Burp Suite (https://portswigger.net/burp/pro)
       - Nessus (https://www.tenable.com/products/nessus) or Greenbone OpenVAS (https://openvas.org/)  
       (*) available in this repository
-   - **Tests with other tools are not accepted** unless expressly authorized.
+   - Do not use tools other than the ones listed unless explicitly authorized.
 
 3. **Cybersecurity "minimum Requirements"**
-   - follow the document DigitalProductCybersecurityRequirements.md
+   - Refer to the document "DigitalProductCybersecurityRequirements.md"
 
-3. **Cybersecurity "Tests"**
+4. **Cybersecurity "Tests"**
    - It is suggested to use the OWASP Web Security Testing Guide (https://owasp.org/www-project-web-security-testing-guide/stable/)
    - The solution/platform **must not present errors or vulnerabilities higher than "informational" level.**  
    - Recommended test sequence (all must be performed):
@@ -44,9 +44,9 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | ZAP \<url\> or Burp Suite \<url\>     | # tests the entire web application/platform     |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
 
-4. **Cybersecurity "Reporting"**
-   - use DigitalProductCybersecurityReport.xlsx (*) to:
-        - record hosting configurations, tools and libraries used on the website
+5. **Cybersecurity "Reporting"**
+   - Use "DigitalProductCybersecurityReport.xlsx" (*) to:
+        - document hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
    - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
 
