@@ -29,7 +29,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - Do not use tools other than the ones listed unless explicitly authorized.
 
 3. **Cybersecurity "minimum Requirements"**
-   - Refer to the document "DigitalProductCybersecurityRequirements.md"
+   - Refer to the document [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
 4. **Cybersecurity "Tests"**
    - It is suggested to use the OWASP Web Security Testing Guide (https://owasp.org/www-project-web-security-testing-guide/stable/)
@@ -45,7 +45,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
 
 5. **Cybersecurity "Reporting"**
-   - Use "DigitalProductCybersecurityReport.xlsx" (*) to:
+   - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) to:   
         - document hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
    - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
