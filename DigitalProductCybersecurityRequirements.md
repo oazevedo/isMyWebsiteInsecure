@@ -17,6 +17,7 @@
 	- Utilização de reCaptcha (sign-up form)
 	- Autenticação multifator (um dos fatores pode ser biometria), ou
 	- Autenticação via utilização de plataformas de autenticação Microsoft (Office 365) ou Google
+ - No alojamento no G.AEP só é permitida a plataforma Linux/Ubuntu LTS
  
 **Manutenção do produto digital durante todo o período (obrigatório) online do produto digital:** 
 - No alojamento:
