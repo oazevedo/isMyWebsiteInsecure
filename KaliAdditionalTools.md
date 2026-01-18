@@ -2,9 +2,9 @@
 
 **Dalfox - XSS analyser**  
   https://github.com/hahwul/dalfox  
-  sudo apt install snapd
+  sudo apt install snapd  
   sudo systemctl start snapd  
-  sudo systemctl enable snapd  
+  sudo systemctl enable snapd   
   sudo snap install dalfox  
 
 **Shodan nrich**  
