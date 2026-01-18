@@ -1,5 +1,5 @@
 # Is My Website Insecure?
-Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, Desenvolvimento, Manutenção e Suporte em **todo o ciclo de vida do produto/solução** que devem cumprir com a **NDIS2** e **CRA - Cyber Resilience Act**.  
+Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, Desenvolvimento, Manutenção e Suporte em **todo o ciclo de vida do produto/solução**, que devem cumprir com a **NDIS2** e **CRA - Cyber Resilience Act**.  
 
 1. **"Hardening" do Alojamento / Website / Plataforma Web**
    - alojamento dedicado ou SAS - software as a service
