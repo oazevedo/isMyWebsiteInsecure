@@ -41,6 +41,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | isMyWebsiteInsecure-1.sh \<url\>    | # testa 1ª página e alojamento                |
       | Chrome Browser > Console \<url\>    | # valida se existem erros nas páginas         |
       | Chrome Browser > Lighthouse \<url\> | # testa página web e performance              |
+      | Gemini AI                           | # Gemini AI Cybersecurity analysis (optional) |
       | ZAP \<url\> ou Burp Suite \<url\>   | # testa toda a aplicação/plataforma web       |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
