@@ -1,5 +1,5 @@
 # Is My Website Insecure?
-A brief overview of the **minimum Cybersecurity requirements** for Hosting, Development, Maintenance, and Support throughout the **entire product/solution lifecycle**.
+A brief overview of the **minimum Cybersecurity requirements** for Hosting, Development, Maintenance, and Support throughout the **entire product/solution lifecycle**, wich must comply with the **NDIS2** and **CRA - Cyber Resilience Act**.  
 
 1. **"Hardening" of Hosting / Website / Web Platform**
    - Dedicated hosting or SaaS (Software as a Service)
