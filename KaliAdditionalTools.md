@@ -1,6 +1,6 @@
 **Tools to install additionally on Kali Linux:**  
 
-**Dalfox - XSS analyser**  
+**Dalfox - XSS Scanning**  
   https://github.com/hahwul/dalfox  
   sudo apt install snapd  
   sudo systemctl start snapd  
