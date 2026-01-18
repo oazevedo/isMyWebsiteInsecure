@@ -1,12 +1,11 @@
-**## install (need a Google Account)**  
+**## install Gemini AI** (need a Google Account)  
  sudo apt install gemini-cli  
 
 create a working directory, ex. /home/kali/tmp  
-not run as root  
 
-**## run Gemini AI**  
+**## run Gemini AI** (not run as root)  
 $ gemini-cli  
-> /directory add /home/kali/tmp  
+\> /directory add /home/kali/tmp  
 
 
 ## ex. run following **prompt** to test https://new.novorumoanorte.pt  
