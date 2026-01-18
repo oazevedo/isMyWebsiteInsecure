@@ -1,4 +1,11 @@
-**Tools to install additionally on Kali Linux:**
+**Tools to install additionally on Kali Linux:**  
+
+**Dalfox - XSS analyser**  
+  https://github.com/hahwul/dalfox  
+  sudo apt install snapd
+  sudo systemctl start snapd  
+  sudo systemctl enable snapd  
+  sudo snap install dalfox  
 
 **Shodan nrich**  
   https://gitlab.com/shodan-public/nrich  
