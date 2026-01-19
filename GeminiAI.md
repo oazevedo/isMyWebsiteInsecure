@@ -14,7 +14,7 @@ You are performing ethical reconnaissance.
 Use https://new.novorumoanorte.pt as a legal testing target.  
 **STRICT INSTRUCTIONS:**  
 	- Output each command on a separate line.  
-	- Use only valid, real syntax for each tool. 
+	- Use only valid, real syntax for each tool.  
 	- Do not invent flags, options, or file paths.  
 	- For WPScan, always use --stealthy, don't use api-token option.   
 	- For Dalfox, use --timeout 20 --worker 200 --max-cpu 2  
