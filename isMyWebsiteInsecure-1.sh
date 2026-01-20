@@ -153,7 +153,7 @@ main() {
     xss_status=$(eval $xss_command)  
     echo -e "XSS test: HTTP code: $xss_status"  
     if [ "$xss_status" -eq 200 ]; then
-       echo -e "\e[31m Vulnerable \e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -164,7 +164,7 @@ main() {
     csrf_status=$(eval $csrf_command)
     echo -e "CSRF test: HTTP code: $csrf_status"
     if [ "$csrf_status" -eq 200 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -175,7 +175,7 @@ main() {
     dir_traversal_status=$(eval $dir_traversal_command)
     echo -e "Directory traversal test: HTTP code: $dir_traversal_status"
     if [ "$dir_traversal_status" -eq 200 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -186,7 +186,7 @@ main() {
     cmd_injection_status=$(eval $cmd_injection_command)
     echo -e "Command injection test: HTTP code: $cmd_injection_status"
     if [ "$cmd_injection_status" -eq 200 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -197,7 +197,7 @@ main() {
     host_header_injection_status=$(eval $host_header_injection_command)
     echo -e "Host header injection test: HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -208,7 +208,7 @@ main() {
     path_traversal_status=$(eval $path_traversal_command)
     echo -e "Path traversal test: HTTP code: $path_traversal_status"
     if [ "$path_traversal_status" -eq 200 ]; then
-       echo -e "\e[31mVulnerable\e[0m"
+       echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -219,7 +219,7 @@ main() {
     lfi_status=$(eval $lfi_command)
     echo -e "Local File Inclusion (LFI) test: HTTP code: $lfi_status"
     if [ "$lfi_status" -eq 200 ]; then
-        echo -e "\e[31mVulnerable\e[0m"
+        echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -230,7 +230,7 @@ main() {
     rfi_status=$(eval $rfi_command)
     echo -e "Remote File Inclusion (RFI) test: HTTP code: $rfi_status"
     if [ "$rfi_status" -eq 200 ]; then
-        echo -e "\e[31mVulnerable\e[0m"
+        echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
@@ -241,7 +241,7 @@ main() {
     xxe_status=$(eval $xxe_command)
     echo -e "XML External Entity (XXE) test: HTTP code: $xxe_status"
     if [ "$xxe_status" -eq 200 ]; then
-        echo -e "\e[31mVulnerable\e[0m"
+        echo -e "\e[31m Vulnerable, check again with dalfox \e[0m"
     fi
     echo -e "\n\n"
 
