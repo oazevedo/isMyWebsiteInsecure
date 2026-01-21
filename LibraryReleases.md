@@ -6,8 +6,8 @@
 | CentOS             | https://www.centos.org/download/                                    |
 | jQuery             | https://releases.jquery.com                                         |
 | Laravel            | https://laravel.com/docs/12.x/releases#support-policy               |
-| Modernizr          | https://github.com/Modernizr/Modernizr/releases                     |
 | MariaDB            | https://mariadb.com/kb/en/mariadb-server-release-dates/             |
+| Modernizr          | https://github.com/Modernizr/Modernizr/releases                     |
 | Moodle             | https://moodledev.io/general/releases                               |
 | MS .Net            | https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core/ |
 | MS IIS             | https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis |
