@@ -5,7 +5,8 @@
 | Bootstrap          | https://getbootstrap.com/docs/versions                              |
 | CentOS             | https://www.centos.org/download/                                    |
 | jQuery             | https://releases.jquery.com                                         |
-| Laravel            |	https://laravel.com/docs/12.x/releases#support-policy              |
+| Laravel            | https://laravel.com/docs/12.x/releases#support-policy               |
+| Modernizr          | https://github.com/Modernizr/Modernizr/releases                     |
 | MariaDB            | https://mariadb.com/kb/en/mariadb-server-release-dates/             |
 | Moodle             | https://moodledev.io/general/releases                               |
 | MS .Net            | https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core/ |
