@@ -52,6 +52,6 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - usar [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) para:
       - registar configuração do alojamento, ferramentas e bibliotecas usadas no website
       - relatórios de cibersegurança
-   - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
+   - (*) SHA1 7f1eb3e2322fe761fba852d46d743743e3e3ed11
    
 
