@@ -34,7 +34,7 @@ main() {
     url="$1"
     validate_url "$url"
 
-    # Extract host and domain
+    # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
     domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
     # Get the first IPv4 address from DNS
