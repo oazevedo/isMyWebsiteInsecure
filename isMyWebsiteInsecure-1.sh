@@ -37,8 +37,6 @@ main() {
     # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
     domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
-    # Get the first IPv4 address from DNS
-    # ipv4=$(dig +short "$host" | tail -n1)
     ipv4=$(nslookup "$host" | grep 'Address:' | tail -n1 | awk '{print $2}')
 
     echo
