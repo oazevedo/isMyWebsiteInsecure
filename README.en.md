@@ -52,5 +52,5 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) to:   
         - document hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
-   - (*) SHA1 33FC595DC9E7E6DC053DC0B50372047E15547A1D
+   - (*) SHA1 7f1eb3e2322fe761fba852d46d743743e3e3ed11
 
