@@ -38,7 +38,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - sequência aconselhada de testes (devem ser todos executados):
       | Ferramenta                          | Descrição                                     |
       |-------------------------------------|-----------------------------------------------|
-      | isMyWebsiteInsecure-1.sh \<url\>    | # testa 1ª página e alojamento                |
+      | isMyWebsiteInsecure-1.sh \<url\> (*)  | # testa 1ª página e alojamento              |
       | Chrome Browser > Console \<url\>    | # valida se existem erros nas páginas         |
       | Chrome Browser > Lighthouse \<url\> | # testa página web e performance              |
       | isMyWebsiteInsecure-2.sh \<url\>    | # testa 1ª página e alojamento                |
