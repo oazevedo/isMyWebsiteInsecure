@@ -1,7 +1,7 @@
 #!/bin/bash
 # isMyWebsiteInsecure-1.sh
 # developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
-# v1.0
+# v1.1
 # check the security of a given website with public web tools
 
 # Function to validate URL format
@@ -38,7 +38,8 @@ main() {
     host=$(echo "$url" | awk -F[/:] '{print $4}')
     domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
     # Get the first IPv4 address from DNS
-    ipv4=$(dig +short "$host" | tail -n1)
+    # ipv4=$(dig +short "$host" | tail -n1)
+    ipv4=$(nslookup "$host" | grep 'Address:' | tail -n1 | awk '{print $2}')
 
     echo
     echo "Host=$host"
