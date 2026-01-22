@@ -38,10 +38,10 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - Recommended test sequence (all must be performed):
       | Tool                               | Description                                      |
       |------------------------------------|--------------------------------------------------|
-      | isMyWebsiteInsecure-2.sh \<url\>    | # tests the first page and hosting              |
+      | isMyWebsiteInsecure-1.sh \<url\>    | # tests the first page and hosting              |
       | Chrome Browser > Console \<url\>    | # validates if there are errors on the pages    |
       | Chrome Browser > Lighthouse \<url\> | # tests web page and performance                |
-      | isMyWebsiteInsecure-1.sh \<url\>    | # tests the first page and hosting              |
+      | isMyWebsiteInsecure-2.sh \<url\>    | # tests the first page and hosting              |
       | Gemini AI                           | # Gemini AI cybersecurity analysis (optional)   |
       | ZAP \<url\> or Burp Suite \<url\>   | # tests the entire web application/platform     |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
