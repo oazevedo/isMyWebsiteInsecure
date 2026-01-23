@@ -22,7 +22,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
 2. **Cybersecurity "Tools"**
    - The simplest approach is to use a virtual machine (VM) with Kali Linux (https://www.kali.org) and install the following tools:
       - [isMyWebsiteInsecure-1.sh](isMyWebsiteInsecure-1.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 c07dd9a5e21ac96a425cda6a7ea5967dc427d743    
-      - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 86fc4209482f9a0b8442428a4f0da21eb64663cc
+      - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 abc23ab603818491d53cd56ee0eef8494e8abed4
       - [Gemini AI](GeminiAI.md)   
       - ZAP (https://www.zaproxy.org/) or Burp Suite (https://portswigger.net/burp/pro)
       - Nessus (https://www.tenable.com/products/nessus) or Greenbone OpenVAS (https://openvas.org/)  
