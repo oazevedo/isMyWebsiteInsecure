@@ -66,8 +66,15 @@ main() {
     
     # Check if the Tor service is active
     if systemctl is-active --quiet tor; then
-        sudo systemctl restart tor
         echo "Tor service is running."
+
+        sudo systemctl restart tor
+        # Countdown loop
+        for ((i=20; i>0; i--)); do
+            echo "Waiting $i seconds for Tor service restart..."
+            sleep 1  # Sleep for 1 second
+        done
+        echo "Time's up! Continuing with the script..."
         
         # Check if Proxychains4 is installed
         if command -v proxychains4 &> /dev/null; then
@@ -105,13 +112,13 @@ main() {
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
     echo -e "\e[32m sslscan $host \e[0m"
-    sslscan $host  
+    $proxychains sslscan $host  
     echo -e "\n\n" 
 
     # HTTP Headers
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
     echo -e "\e[32m curl -I $url \e[0m"
-    curl -I $url  
+    $proxychains curl -I $url  
     echo -e "\n\n" 
     
     # Identify technologies used on the website
