@@ -1,7 +1,7 @@
 #!/bin/bash
 # isMyWebsiteInsecure-2.sh
 # developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
-# v1.1
+# v1.2
 # check the security of a given website with public command line tools
 
 # Function to validate URL format
