@@ -112,7 +112,7 @@ main() {
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
     echo -e "\e[32m sslscan $host \e[0m"
-    $proxychains sslscan $host  
+    sslscan $host  
     echo -e "\n\n" 
 
     # HTTP Headers
