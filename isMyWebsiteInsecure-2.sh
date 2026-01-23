@@ -60,7 +60,7 @@ main() {
     echo "Url=$url"
     echo
 
-    ###  use proxychains if TOR is running and Proxychains4 is running
+    ###  use proxychains if TOR and Proxychains4 are running
     # Initialize proxychains variable
     proxychains=""
     
