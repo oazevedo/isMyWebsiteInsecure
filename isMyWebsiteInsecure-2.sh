@@ -60,89 +60,117 @@ main() {
     echo "Url=$url"
     echo
 
+    ###  use proxychains if TOR is running and Proxychains4 is running
+    # Initialize proxychains variable
+    proxychains=""
+    
+    # Check if the Tor service is active
+    if systemctl is-active --quiet tor; then
+        echo "Tor service is running."
+        
+        # Check if Proxychains4 is installed
+        if command -v proxychains4 &> /dev/null; then
+            echo "Proxychains4 is installed."
+            
+            # Test Proxychains with a simple command
+            if proxychains4 curl -Is https://check.torproject.org/ | grep "200 OK" > /dev/null; then
+                proxychains="proxychains"
+                echo "\$proxychains variable set to: $proxychains"
+            else
+                echo "Proxychains4 is installed but not working through Tor."
+            fi
+        else
+            echo "Proxychains4 is not installed."
+        fi
+    else
+        echo "Tor service is not running."
+    fi
+    ###
+
+
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
     echo -e "\e[32m sudo whois $domain \e[0m"
-    sudo whois $domain  
+    sudo $proxychains whois $domain  
     echo -e "\n\n"
 
     # DNS reconnaissance
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
     echo -e "\e[32m dnsrecon -d $domain \e[0m"
-    dnsrecon -d $domain  
+    $proxychains dnsrecon -d $domain  
     echo -e "\n\n"
 
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
     echo -e "\e[32m sslscan $host \e[0m"
-    sslscan $host  
+    $proxychains sslscan $host  
     echo -e "\n\n" 
 
     # HTTP Headers
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
     echo -e "\e[32m curl -I $url \e[0m"
-    curl -I $url  
+    $proxychains curl -I $url  
     echo -e "\n\n" 
     
     # Identify technologies used on the website
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
     echo -e "\e[32m whatweb $url \e[0m"
-    whatweb $url  
+    $proxychains whatweb $url  
     echo -e "\n\n" 
         
     # Nmap Open Ports detection
     echo -e "\e[38;5;208m[+] Running Nmap Open Ports detection...\e[0m"
     echo -e "\e[32m nmap $host \e[0m"
-    nmap $host  
+    $proxychains nmap $host  
     echo -e "\n\n"
 
     # Nmap Operating System detection
     echo -e "\e[38;5;208m[+] Running Nmap Operating System detection...\e[0m"  
     echo -e "\e[32m sudo nmap -p 80,443 -O $host \e[0m"  
-    sudo nmap -p 80,443 -O $host  
+    sudo $proxychains nmap -p 80,443 -O $host  
     echo -e "\n\n"
 
     # Nmap Management detection
     echo -e "\e[38;5;208m[+] Running Nmap Management detection...\e[0m"
     echo -e "\e[32m nmap -sV -p 22,3389 $host \e[0m"  
-    nmap -sV -p 22,3389 $host  
+    $proxychains nmap -sV -p 22,3389 $host  
     echo -e "\n\n"
     
     # Nmap Webserver detection
     echo -e "\e[38;5;208m[+] Running Nmap Webserver detection...\e[0m"
     echo -e "\e[32m nmap -sV -p 80,443 $host \e[0m"  
-    nmap -sV -p 80,443 $host  
+    $proxychains nmap -sV -p 80,443 $host  
     echo -e "\n\n"
 
     # Nmap Database detection
     echo -e "\e[38;5;208m[+] Running Nmap Database detection...\e[0m"
     echo -e "\e[32m nmap -sV -p 1433,3306,5432 $host \e[0m"  
-    nmap -sV -p 1433,3306,5432 $host  
+    $proxychains nmap -sV -p 1433,3306,5432 $host  
     echo -e "\n\n"
 
     # PHP detection
     echo -e "\e[38;5;208m[+] Detecting PHP...\e[0m"
     echo -e "\e[32m nmap --script http-php-version $host \e[0m"  
-    nmap --script http-php-version $host  
+    $proxychains nmap --script http-php-version $host  
     echo -e "\n\n"
 
     # phpMyAdmin detection
     echo -e "\e[38;5;208m[+] Detecting phpMyAdmin...\e[0m"
     echo -e "\e[32m nmap --script http-phpmyadmin-dir-traversal $host \e[0m"  
-    nmap --script http-phpmyadmin-dir-traversal $host  
+    $proxychains nmap --script http-phpmyadmin-dir-traversal $host  
     echo -e "\n\n"
 
 
     # Wordpress vulnerability scan
     echo -e "\e[38;5;208m[+] Running Wordpress vulnerability scan...\e[0m"
     echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url $url \e[0m"  
-    sudo wpscan --update --no-banner --stealthy --url $url  
+    sudo $proxychains wpscan --update --no-banner --stealthy --url $url  
     echo -e "\n\n"
 
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
     echo -e "\e[32m echo $ipv4 | nrich - \e[0m"  
-    echo $ipv4 | nrich -  
+    echo $ipv4 | $proxychains nrich -  
     echo -e "\n\n"
 
     # XSS test
@@ -248,7 +276,7 @@ main() {
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m nmap -sV -sC --script vuln $host \e[0m"  
-    nmap -sV -sC --script vuln $host  
+    $proxychains nmap -sV -sC --script vuln $host  
     echo -e "\n\n"  
 
 }
