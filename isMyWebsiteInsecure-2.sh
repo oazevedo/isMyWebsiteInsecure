@@ -66,6 +66,7 @@ main() {
     
     # Check if the Tor service is active
     if systemctl is-active --quiet tor; then
+        sudo systemctl restart tor
         echo "Tor service is running."
         
         # Check if Proxychains4 is installed
@@ -85,31 +86,32 @@ main() {
     else
         echo "Tor service is not running."
     fi
+    echo -e "\n\n"
     ###
 
 
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
     echo -e "\e[32m sudo whois $domain \e[0m"
-    sudo $proxychains whois $domain  
+    sudo whois $domain  
     echo -e "\n\n"
 
     # DNS reconnaissance
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
     echo -e "\e[32m dnsrecon -d $domain \e[0m"
-    $proxychains dnsrecon -d $domain  
+    dnsrecon -d $domain  
     echo -e "\n\n"
 
     # SSL/TLS scan
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
     echo -e "\e[32m sslscan $host \e[0m"
-    $proxychains sslscan $host  
+    sslscan $host  
     echo -e "\n\n" 
 
     # HTTP Headers
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
     echo -e "\e[32m curl -I $url \e[0m"
-    $proxychains curl -I $url  
+    curl -I $url  
     echo -e "\n\n" 
     
     # Identify technologies used on the website
@@ -170,7 +172,7 @@ main() {
     # Shodan scan
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
     echo -e "\e[32m echo $ipv4 | nrich - \e[0m"  
-    echo $ipv4 | $proxychains nrich -  
+    echo $ipv4 | nrich -  
     echo -e "\n\n"
 
     # XSS test
