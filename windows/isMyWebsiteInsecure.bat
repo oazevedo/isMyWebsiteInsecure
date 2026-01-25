@@ -150,6 +150,9 @@ start %browser% -new-tab -%private% "https://checkcybersecurity.service.ncsc.gov
 timeout /t 2 >nul
 )
 
+start %browser% -new-tab -%private% "https://hackertarget.com/whois-lookup/"
+timeout /t 2 >nul
+
 start %browser% -new-tab -%private% "https://www.ssllabs.com/ssltest/analyze.html?d=%url%&hideResults=on&latest"
 timeout /t 2 >nul
 
