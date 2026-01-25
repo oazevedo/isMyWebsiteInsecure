@@ -54,6 +54,7 @@ main() {
                          --new-tab "https://sitecheck.sucuri.net/results/$host" \
                          --new-tab "https://powerdmarc.com/dkim-record-lookup/" \
                          --new-tab "https://domain-checker.valimail.com/dmarc/$domain" \
+                         --new-tab "https://hackertarget.com/whois-lookup/" \
                          --new-tab "https://www.ssllabs.com/ssltest/analyze.html?d=$url&hideResults=on&latest" \
                          --new-tab "https://securityheaders.com/?followRedirects=on&hide=on&q=$url" \
                          --new-tab "https://report-uri.com/" \
