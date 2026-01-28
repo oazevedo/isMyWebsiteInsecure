@@ -8,8 +8,8 @@
   sudo snap install dalfox  
 
 **Nuclei - Vulnerability Scanner**
-  https://github.com/projectdiscovery/nuclei
-  sudo apt install -y nuclei
+  https://github.com/projectdiscovery/nuclei  
+  sudo apt install -y nuclei  
 
 **Shodan nrich**  
   https://gitlab.com/shodan-public/nrich  
