@@ -281,11 +281,17 @@ main() {
     fi
     echo -e "\n\n"
 
+    # Dalfox XSS Scanner
+    echo -e "\e[38;5;208m[+] Dalfox xss scan...\e[0m"
+    echo -e "\e[32m dalfox --waf-evasion url $url \e[0m"  
+    dalfox --waf-evasion url $url 
+    echo -e "\n\n"  
+
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m nmap -sV -sC --script vuln $host \e[0m"  
     $proxychains nmap -sV -sC --script vuln $host  
-    echo -e "\n\n"  
+    echo -e "\n\n"     
 
     # Nuclei vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
