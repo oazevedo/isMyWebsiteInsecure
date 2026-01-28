@@ -7,7 +7,7 @@
   sudo systemctl enable snapd   
   sudo snap install dalfox  
 
-**Nuclei - Vulnerability Scanner**
+**Nuclei - Vulnerability Scanner**  
   https://github.com/projectdiscovery/nuclei  
   sudo apt install -y nuclei  
 
