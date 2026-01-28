@@ -281,12 +281,17 @@ main() {
     fi
     echo -e "\n\n"
 
-
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m nmap -sV -sC --script vuln $host \e[0m"  
     $proxychains nmap -sV -sC --script vuln $host  
     echo -e "\n\n"  
+
+    # Nuclei vulnerabilities scan
+    echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
+    echo -e "\e[32m nuclei -u $host \e[0m"  
+    nuclei -u $host  
+    echo -e "\n\n"      
 
 }
 
