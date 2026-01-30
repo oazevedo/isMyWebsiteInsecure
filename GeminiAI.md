@@ -14,8 +14,8 @@ You are performing ethical reconnaissance.
 Authorized Target: www.aeportugal.com   
 **STRICT INSTRUCTIONS:**  
 	- Output each command on a separate line.  
-	- Use only valid, real syntax for each tool.
-	- Do not invent flags, options, or file paths. 
+	- Use only valid, real syntax for each tool.  
+	- Do not invent flags, options, or file paths.  
 	- Do not search another subdomains.   
 	- For WPScan, always use --stealthy, don't use api-token option.   
 	- For Dalfox, always use --waf-evasion    
