@@ -17,7 +17,7 @@ Use https://new.novorumoanorte.pt as a legal testing target.
 	- Use only valid, real syntax for each tool.  
 	- Do not invent flags, options, or file paths.  
 	- For WPScan, always use --stealthy, don't use api-token option.   
-	- For Dalfox, use --timeout 20 --worker 200 --max-cpu 2  
+	- For Dalfox, always use --waf-evasion    
   	- Use /home/kali/tmp as a working directory, /home/kali/tmp already exist.  
 **TASKS:**  
 	1) Run nmap to find open ports and identify running services.  
