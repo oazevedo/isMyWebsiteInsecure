@@ -299,6 +299,11 @@ main() {
     nuclei -u $host  
     echo -e "\n\n"      
 
+    # Nikto vulnerabilities scan
+    echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
+    echo -e "\e[32m nikto -h $url \e[0m"  
+    nikto -h $url    
+    echo -e "\n\n"  
 }
 
 # Execute main function
