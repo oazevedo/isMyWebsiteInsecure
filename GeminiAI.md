@@ -24,8 +24,8 @@ Authorized Target: www.aeportugal.com
 	1) Run nmap to find open ports and identify running services.  
 	2) Use nikto to scan the web server for known vulnerabilities, misconfigurations and outdated software.  
 	3) Use nuclei to identify security issues and weaknesses.  
-	3) Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.  
-	4) Use sqlmap to check for SQL injection.  
-	5) Use dalfox to check for XSS.  
+	4) Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.  
+	5) Use sqlmap to check for SQL injection.  
+	6) Use dalfox to check for XSS.  
 Summarize the findings, provide security recommendations and hardening sugestions.  
  
