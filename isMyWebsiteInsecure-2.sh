@@ -304,6 +304,12 @@ main() {
     echo -e "\e[32m nikto -h $url \e[0m"  
     nikto -h $url    
     echo -e "\n\n"  
+
+    # SQLmap check for SQL injection  
+    echo -e "\e[38;5;208m[+] SQLmap check for SQL injection  \e[0m"  
+    echo -e "\e[32m sqlmap --batch -u $url \e[0m"  
+    sqlmap --batch -u $url  
+    echo -e "\n\n"  
 }
 
 # Execute main function
