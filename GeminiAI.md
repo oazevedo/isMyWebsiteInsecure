@@ -18,7 +18,8 @@ Authorized Target: www.aeportugal.com
 	- Do not invent flags, options, or file paths.  
 	- Do not search another subdomains.   
 	- For WPScan, always use --stealthy, don't use api-token option.   
-	- For Dalfox, always use --waf-evasion    
+	- For Dalfox, always use --waf-evasion  
+	- For Nikto, use by default -ssl  
   	- Use /home/kali/tmp as a working directory, /home/kali/tmp already exist.  
 **TASKS:**  
 	1) Run nmap to find open ports and identify running services.  
