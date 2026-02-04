@@ -8,7 +8,7 @@ $ gemini-cli
 \> /directory add /home/kali/tmp  
 
 
-## ex. run following **prompt** to test https://new.novorumoanorte.pt  
+## ex. run following **prompt** to test https://www.aeportugal.com    
 
 You are performing ethical reconnaissance.  
 Authorized Target: www.aeportugal.com   
