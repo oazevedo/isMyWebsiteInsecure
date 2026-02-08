@@ -28,5 +28,8 @@ Authorized Target: www.aeportugal.com
 	4) Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.  
 	5) Use sqlmap to check for SQL injection.  
 	6) Use dalfox to check for XSS.  
+	7) Validate security headers.  
+	8) Check for outdated software, apps, frameworks, libraries.  
+	9) Check for correctly web server hardening.  
 Summarize the findings, provide security recommendations and hardening sugestions.  
  
