@@ -296,7 +296,7 @@ main() {
     # Nuclei vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
     echo -e "\e[32m nuclei -u $host \e[0m"  
-    nuclei -u $host  
+    $proxychains nuclei -u $host  
     echo -e "\n\n"      
 
     # Nikto vulnerabilities scan
@@ -308,7 +308,7 @@ main() {
     # SQLmap check for SQL injection  
     echo -e "\e[38;5;208m[+] SQLmap check for SQL injection  \e[0m"  
     echo -e "\e[32m sqlmap --batch -u $url \e[0m"  
-    sqlmap --batch -u $url  
+    $proxychains sqlmap --batch -u $url  
     echo -e "\n\n"  
 }
 
