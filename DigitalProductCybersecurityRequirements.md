@@ -27,10 +27,12 @@
 	- deverão existir backup's online e offline c/ periodicidade diária;
 	- Frameworks e plugins terão de se manter atualizados para as últimas versões disponíveis dos produtos ou as imediatamente anteriores estáveis; as atualizações de segurança devem ser aplicadas de imediato;
 	- sempre que os produtos digitais forem alojados fora dos servidores AEP:
-		- terá de ser assegurado o acesso em contínuo e autónomo à AEP, para realização de auditorias de conformidade;
+		- terá de ser assegurado o acesso em contínuo e autónomo à AEP para realização de auditorias de conformidade;
+		- o alojamento deverá estar em Portugal (Dominios.pt ou PTisp), qualquer outra solução deverá ser na Europa e expressamente aprovada.   
 	- não é permitido instalar backdoors ou qualquer outro tipo de software que pemita aceder à solução, ou obter métricas, sem conhecimento e autorização expressa.
+	- pelo menos de 6 em 6 meses deverão ser efetuados novos testes que validem os "requisitos mínimos de cibersegurança".
  
- Todo o produto digital terá de estar em **conformidade com o RGPD** e alinhado com as **orientações da NIS2 e [CRA](https://www.cyberresilienceact.eu/cra-guide-for-software-developers/)**, se aplicável deverão ser emitidas declarações de conformidade.
+ Todo o produto e alojamento digital terá de cumprir com o **RGPD**, **NIS2**, **CRA Act** e **AI Act**, se aplicável deverão ser emitidas declarações de conformidade.
  
 **Notas:**  
 	- deverá estar claramente definido qual é o período de vida útil do Produto Digital  
