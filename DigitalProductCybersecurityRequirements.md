@@ -26,8 +26,9 @@
 	- deverão estar ativos, atualizados e corretamente configurados o antivirus, firewall e WAF (Web Application Firewall);
 	- deverão existir backup's online e offline c/ periodicidade diária;
 	- Frameworks e plugins terão de se manter atualizados para as últimas versões disponíveis dos produtos ou as imediatamente anteriores estáveis; as atualizações de segurança devem ser aplicadas de imediato;
-	- Sempre que os produtos digitais forem alojados fora dos servidores AEP, terá de ser assegurado o acesso em contínuo e autónomo à AEP, para realização de auditorias de conformidade;
-	- Não é permitido instalar backdoors ou qualquer outro tipo de software que pemita aceder à solução, ou obter métricas, sem conhecimento e autorização expressa.
+	- sempre que os produtos digitais forem alojados fora dos servidores AEP:
+		- terá de ser assegurado o acesso em contínuo e autónomo à AEP, para realização de auditorias de conformidade;
+	- não é permitido instalar backdoors ou qualquer outro tipo de software que pemita aceder à solução, ou obter métricas, sem conhecimento e autorização expressa.
  
  Todo o produto digital terá de estar em **conformidade com o RGPD** e alinhado com as **orientações da NIS2 e [CRA](https://www.cyberresilienceact.eu/cra-guide-for-software-developers/)**, se aplicável deverão ser emitidas declarações de conformidade.
  
