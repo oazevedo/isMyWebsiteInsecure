@@ -47,7 +47,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | ZAP \<url\> ou Burp Suite \<url\>   | # testa toda a aplicação/plataforma web       |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
-       (*) ou (isMyWebsiteInsecure.bat)
+       (*) ou [isMyWebsiteInsecure.bat](isMyWebsiteInsecure.bat)
 
 5. **"Relatório" Cibersegurança**
    - usar [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) para:
