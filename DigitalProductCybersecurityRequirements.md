@@ -26,8 +26,8 @@
 	- deverão estar ativos, atualizados e corretamente configurados o antivirus, firewall e WAF (Web Application Firewall);
 	- deverão existir backup's online e offline c/ periodicidade diária;
 	- Frameworks e plugins terão de se manter atualizados para as últimas versões disponíveis dos produtos ou as imediatamente anteriores estáveis; as atualizações de segurança devem ser aplicadas de imediato;
-	- sempre que os produtos digitais forem alojados fora dos servidores AEP:
-		- terá de ser assegurado o acesso em contínuo e autónomo à AEP para realização de auditorias de conformidade;
+	- sempre que os produtos digitais forem alojados fora dos servidores do G.AEP:
+		- terá de ser assegurado o acesso em contínuo e autónomo ao G.AEP para realização de auditorias de conformidade;
 		- o alojamento deverá estar em Portugal (Dominios.pt ou PTisp), qualquer outra solução deverá ser na Europa e expressamente aprovada.   
 	- não é permitido instalar backdoors ou qualquer outro tipo de software que pemita aceder à solução, ou obter métricas, sem conhecimento e autorização expressa.
 	- pelo menos de 6 em 6 meses deverão ser efetuados novos testes que validem os "requisitos mínimos de cibersegurança".
@@ -37,5 +37,5 @@
 **Notas:**  
 	- deverá estar claramente definido qual é o período de vida útil do Produto Digital  
 	- o pagamento dos restantes 20% está dependente da entrega e validação dos relatórios de vulnerabilidades  
-	- upgrade de release ou versão implica a revalidação dos requisitos de cibersegurança
+	- upgrade de release ou versão implica a revalidação dos requisitos mínimos de cibersegurança
 
