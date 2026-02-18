@@ -47,7 +47,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | ZAP \<url\> or Burp Suite \<url\>   | # tests the entire web application/platform     |
       | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
 
-       (*) or isMyWebsiteInsecure.bat
+       (*) or [isMyWebsiteInsecure.bat](windows/isMyWebsiteInsecure.bat)  
 
 5. **Cybersecurity "Reporting"**
    - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) to:   
