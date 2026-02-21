@@ -165,7 +165,7 @@ main() {
         case "$rotation_mode" in
             protonvpn)
                 echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
-                sudo protonvpn connect --random
+                protonvpn connect --random
                 sleep 5
                 ;;
             tor)
