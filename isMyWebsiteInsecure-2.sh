@@ -165,13 +165,8 @@ main() {
         case "$rotation_mode" in
             protonvpn)
                 echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
-                # sudo protonvpn disconnect 2>/dev/null || true
-                # sleep 2
                 sudo protonvpn connect --random
                 sleep 5
-                local current_ip
-                current_ip=$(curl -s --max-time 10 https://api.ipify.org 2>/dev/null || echo "unknown")
-                echo -e "\e[36m[*] New exit IP: $current_ip\e[0m"
                 ;;
             tor)
                 echo -e "\e[36m[*] Tor — requesting new circuit (NEWNYM)...\e[0m"
