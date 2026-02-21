@@ -180,6 +180,8 @@ main() {
     ###
 
 
+    ### ── Let's get to Work ───────────────────────── ###  
+   
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
     rotate_ip
