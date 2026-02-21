@@ -155,7 +155,7 @@ main() {
     }
 
     # ── rotate_ip: call this before every scan command ─────────────────────────
-    # For ProtonVPN: randomizes MAC, then reconnects to a new random VPN server
+    # For ProtonVPN: not randomizes MAC, then reconnects to a new random VPN server
     # For Tor:       randomizes MAC, then requests a fresh Tor exit circuit
     # For none:      randomizes MAC only (if macchanger available)
     rotate_ip() {
