@@ -26,6 +26,10 @@ check_tools() {
             exit 1
         fi
     done
+    # macchanger is optional — only needed when ProtonVPN is NOT active
+    if ! command -v protonvpn &> /dev/null && ! command -v macchanger &> /dev/null; then
+        echo "Note: macchanger is not installed. MAC rotation will be disabled. Install with: sudo apt install macchanger"
+    fi
 }
 
 # Main script
@@ -117,7 +121,10 @@ main() {
         NET_IFACE=$(ip link | awk '/state UP/{gsub(":",""); print $2}' | head -1)
     fi
 
-    if command -v macchanger &> /dev/null && [[ -n "$NET_IFACE" ]]; then
+    if [[ "$rotation_mode" == "protonvpn" ]]; then
+        echo "ProtonVPN active — skipping MAC rotation (ProtonVPN does not change MAC address; MAC is local-only and irrelevant to the scanned target)."
+        MAC_ROTATE=false
+    elif command -v macchanger &> /dev/null && [[ -n "$NET_IFACE" ]]; then
         echo "macchanger found — MAC address will be randomized on interface $NET_IFACE before each command."
         MAC_ROTATE=true
     else
@@ -180,8 +187,10 @@ main() {
     ###
 
 
-    ### ── Let's get to Work ───────────────────────── ###  
-   
+    ### ── Let's go to work ─────────────────────────
+	echo -e "\n"
+	
+
     # WHOIS lookup for domain information
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
     rotate_ip
