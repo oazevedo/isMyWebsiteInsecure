@@ -79,6 +79,9 @@ main() {
     fi
 
 
+	# Start Date
+	echo "Start date: $(date) \n\n"
+
     # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
     domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
@@ -95,10 +98,9 @@ main() {
     VPN="false"
     if command -v protonvpn &> /dev/null; then
         VPN="true"
-		protonvpn disconnect
-		sleep 10
         echo "ProtonVPN is installed."
 		echo -e "\n\n"
+		protonvpn disconnect
     fi
 
 
@@ -240,6 +242,10 @@ main() {
     echo -e "\e[32m sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u \"$url\" \e[0m"
     sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u "$url"
     echo -e "\n\n"
+
+
+	# End Date
+	echo "End date: $(date) \n\n"
 }
 
 # Execute main function
