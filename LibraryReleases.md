@@ -19,6 +19,7 @@
 | PHP                | https://www.php.net/supported-versions.php                          |
 | PHPMyAdmin         | https://www.phpmyadmin.net/downloads/                               |
 | PostgreSQL         | https://www.postgresql.org/support/versioning/                      |
+| Python             | https://www.python.org/downloads/                                   |  
 | Ubuntu             | https://wiki.ubuntu.com/Releases                                    |
 | Wordpress          | https://wordpress.org/download/releases/                            |
 
