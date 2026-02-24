@@ -59,6 +59,14 @@ main() {
         exit 1
     fi
 
+    # Validate the URL format
+    url="$1"
+    validate_url "$url"
+
+
+    # Check if required tools are installed
+    check_tools
+
 
     # Display ethical use warning
     echo -e "\n\e[31mWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
@@ -69,15 +77,6 @@ main() {
         echo "Exiting script."
         exit 0
     fi
-
-
-    # Validate the URL format
-    url="$1"
-    validate_url "$url"
-
-
-    # Check if required tools are installed
-    check_tools
 
 
     # Extract host, domain and IPv4
