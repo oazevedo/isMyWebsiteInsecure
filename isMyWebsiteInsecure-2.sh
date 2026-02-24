@@ -80,19 +80,18 @@ main() {
 
 
 	# Start Date
-	echo -e "\n\n Start date: $(date) \n\n"
+	echo -e "\n\nStart date: $(date) \n\n"
 	
 
     # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
     domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
     ipv4=$(dig +short "$host" A | head -n1)
-    echo
     echo "Host=$host"
     echo "Domain=$domain"
     echo "IPv4=$ipv4"
     echo "Url=$url"
-    echo
+    echo -e "\n\n"
 
 
     # ──── ProtonVPN ───────────────────────────────────────────────────────────
@@ -100,8 +99,8 @@ main() {
     if command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
-		echo -e "\n\n"
 		protonvpn disconnect
+		echo -e "\n\n"		
     fi
 
 
