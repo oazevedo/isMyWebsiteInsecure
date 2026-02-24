@@ -79,7 +79,7 @@ main() {
     fi
 
 
-	# Start Date
+    # Start Date
 	echo -e "\n\nStart date: $(date) \n\n"
 	
 
@@ -244,7 +244,7 @@ main() {
     echo -e "\n\n"
 
 
-	# End Date
+    # End Date
 	echo -e "End date: $(date) \n\n"
 }
 
