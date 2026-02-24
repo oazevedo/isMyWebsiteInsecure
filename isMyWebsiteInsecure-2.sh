@@ -80,7 +80,7 @@ main() {
 
 
     # Start Date
-	echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
+    echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
 		
 
     # Extract host, domain and IPv4
@@ -245,7 +245,7 @@ main() {
 
 
     # End Date
-	echo -e "End date: $(date +"%Y-%m-%d %H:%M") \n\n"
+    echo -e "End date: $(date +"%Y-%m-%d %H:%M") \n\n"
 }
 
 # Execute main function
