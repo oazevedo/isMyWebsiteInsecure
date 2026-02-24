@@ -80,7 +80,7 @@ main() {
 
 
 	# Start Date
-	echo "Start date: $(date) \n\n"
+	echo "\n\n Start date: $(date) \n\n"
 	
 
     # Extract host, domain and IPv4
