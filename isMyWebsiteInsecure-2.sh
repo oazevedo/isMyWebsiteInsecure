@@ -142,15 +142,15 @@ main() {
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
 	# https://nmap.org/book/man-performance.html
     echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
-    echo -e "\e[32m sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T2 --randomize-hosts \"$host\" \e[0m"
-    sudo nmap -sS -sV -f --mtu 16 --data-length 25 --randomize-hosts "$host"
+    echo -e "\e[32m sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
+    sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
     echo -e "\n\n"
 
 
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
-    echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T2 --randomize-hosts \"$host\" \e[0m"
-    sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 --randomize-hosts "$host"
+    echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
+    sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
     echo -e "\n\n"
 
 
