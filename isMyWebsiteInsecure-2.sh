@@ -80,8 +80,8 @@ main() {
 
 
     # Start Date
-	echo -e "\n\nStart date: $(date) \n\n"
-	
+	echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
+		
 
     # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
@@ -245,7 +245,7 @@ main() {
 
 
     # End Date
-	echo -e "End date: $(date) \n\n"
+	echo -e "End date: $(date +"%Y-%m-%d %H:%M") \n\n"
 }
 
 # Execute main function
