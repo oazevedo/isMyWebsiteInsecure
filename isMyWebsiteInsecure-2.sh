@@ -5,7 +5,7 @@
 #
 # nmap: don't use with vpn because returns wrong results
 #
-# v1.4, modified on 2026-02-22
+# v1.4, modified on 2026-02-24
 #  - added rotate_ip using Proton VPN
 #  - added evasion capability
 #
