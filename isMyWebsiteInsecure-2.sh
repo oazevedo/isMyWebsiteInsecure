@@ -81,6 +81,7 @@ main() {
 
 	# Start Date
 	echo "Start date: $(date) \n\n"
+	
 
     # Extract host, domain and IPv4
     host=$(echo "$url" | awk -F[/:] '{print $4}')
