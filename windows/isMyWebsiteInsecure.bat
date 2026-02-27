@@ -162,24 +162,24 @@ if %errorlevel%==0 set "browser_found=1"
 rem Check common install locations individually
 rem (pipe/loop tricks break on paths with spaces like "Program Files")
 if "!browser_found!"=="0" if /i "!browser_exe!"=="msedge.exe" (
-    if exist "%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe" set "browser=%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe" & set "browser_found=1"
+    if exist "%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe"  set "browser=%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe"  & set "browser_found=1"
     if exist "%ProgramFiles%\Microsoft\Edge\Application\msedge.exe"       set "browser=%ProgramFiles%\Microsoft\Edge\Application\msedge.exe"       & set "browser_found=1"
     if exist "%LocalAppData%\Microsoft\Edge\Application\msedge.exe"       set "browser=%LocalAppData%\Microsoft\Edge\Application\msedge.exe"       & set "browser_found=1"
 )
 if "!browser_found!"=="0" if /i "!browser_exe!"=="chrome.exe" (
-    if exist "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"   set "browser=%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"   & set "browser_found=1"
-    if exist "%ProgramFiles%\Google\Chrome\Application\chrome.exe"         set "browser=%ProgramFiles%\Google\Chrome\Application\chrome.exe"         & set "browser_found=1"
-    if exist "%LocalAppData%\Google\Chrome\Application\chrome.exe"         set "browser=%LocalAppData%\Google\Chrome\Application\chrome.exe"         & set "browser_found=1"
+    if exist "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  set "browser=%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  & set "browser_found=1"
+    if exist "%ProgramFiles%\Google\Chrome\Application\chrome.exe"       set "browser=%ProgramFiles%\Google\Chrome\Application\chrome.exe"       & set "browser_found=1"
+    if exist "%LocalAppData%\Google\Chrome\Application\chrome.exe"       set "browser=%LocalAppData%\Google\Chrome\Application\chrome.exe"       & set "browser_found=1"
 )
 if "!browser_found!"=="0" if /i "!browser_exe!"=="brave.exe" (
     if exist "%ProgramFiles%\BraveSoftware\Brave-Browser\Application\brave.exe"       set "browser=%ProgramFiles%\BraveSoftware\Brave-Browser\Application\brave.exe"       & set "browser_found=1"
-    if exist "%ProgramFiles(x86)%\BraveSoftware\Brave-Browser\Application\brave.exe" set "browser=%ProgramFiles(x86)%\BraveSoftware\Brave-Browser\Application\brave.exe" & set "browser_found=1"
+    if exist "%ProgramFiles(x86)%\BraveSoftware\Brave-Browser\Application\brave.exe"  set "browser=%ProgramFiles(x86)%\BraveSoftware\Brave-Browser\Application\brave.exe"  & set "browser_found=1"
     if exist "%LocalAppData%\BraveSoftware\Brave-Browser\Application\brave.exe"       set "browser=%LocalAppData%\BraveSoftware\Brave-Browser\Application\brave.exe"       & set "browser_found=1"
 )
 if "!browser_found!"=="0" if /i "!browser_exe!"=="firefox.exe" (
-    if exist "%ProgramFiles%\Mozilla Firefox\firefox.exe"                  set "browser=%ProgramFiles%\Mozilla Firefox\firefox.exe"                  & set "browser_found=1"
-    if exist "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe"            set "browser=%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe"            & set "browser_found=1"
-    if exist "%LocalAppData%\Mozilla Firefox\firefox.exe"                  set "browser=%LocalAppData%\Mozilla Firefox\firefox.exe"                  & set "browser_found=1"
+    if exist "%ProgramFiles%\Mozilla Firefox\firefox.exe"         set "browser=%ProgramFiles%\Mozilla Firefox\firefox.exe"       & set "browser_found=1"
+    if exist "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe"    set "browser=%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe"  & set "browser_found=1"
+    if exist "%LocalAppData%\Mozilla Firefox\firefox.exe"         set "browser=%LocalAppData%\Mozilla Firefox\firefox.exe"       & set "browser_found=1"
 )
 
 if "!browser_found!"=="0" (
