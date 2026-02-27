@@ -14,7 +14,7 @@ setlocal enableextensions
 setlocal enabledelayedexpansion
 
 rem defaults
-(set browser=chrome.exe)
+(set browser=msedge.exe)
 (set protocol=https)
 
 :menu
