@@ -219,8 +219,8 @@ main() {
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
 	# echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10 -H \"User-Agent: <ua>\" -H \"X-Forwarded-For: 127.0.0.1\" -H \"Referer: https://google.com\" \e[0m"
 	# nuclei -u "$url" -rate-limit 10 -H "User-Agent: $USER_AGENT" -H "X-Forwarded-For: 127.0.0.1" -H "Referer: https://google.com"
-	echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10  \e[0m"
-	nuclei -u "$url" -rate-limit 20 -concurrency 10	
+	echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10 -concurrency 10  \e[0m"
+	nuclei -u "$url" -rate-limit 10 -concurrency 10
     echo -e "\n\n"
 
 
