@@ -241,9 +241,10 @@ main() {
     #   1=random URI encoding, 2=directory self-reference, 3=premature URL ending,
     #   4=prepend long random string, 6=TAB as request spacer,
     #   7=random case sensitivity, 8=Windows path separator
+	# -maxtime 900 Maximum testing time per host, ex. 900 seconds
     echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
-    echo -e "\e[32m nikto -h \"$url\" -useragent \"<user-agent>\" -evasion 1234678 \e[0m"
-    nikto -h "$url" -useragent "$USER_AGENT" -evasion 1234678
+    echo -e "\e[32m nikto -h \"$url\" -maxtime 900 \e[0m"
+    nikto -h "$url" -maxtime 900 
     echo -e "\n\n"
 
 
