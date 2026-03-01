@@ -106,6 +106,7 @@ main() {
 
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
+    vpn_rotate_ip
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
@@ -114,6 +115,7 @@ main() {
     echo -e "\n\n"
 
 
+	vpn_rotate_ip
     # DNS reconnaissance
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
@@ -121,7 +123,8 @@ main() {
     dnsrecon -d "$domain" -n 8.8.8.8,1.1.1.1
     echo -e "\n\n"
 
-
+    
+	vpn_rotate_ip
     # SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
@@ -129,7 +132,8 @@ main() {
     sslscan "$host"
     echo -e "\n\n"
 
-
+    
+	vpn_rotate_ip
     # HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
@@ -175,16 +179,11 @@ main() {
 
 
     vpn_rotate_ip
-    # Wordpress vulnerability scan — only if WordPress is detected
+    # Wordpress vulnerability scan
     # --stealthy enables passive mode (no aggressive probing)
     echo -e "\e[38;5;208m[+] Checking for WordPress...\e[0m"
-    if echo "$whatweb_output" | grep -qi "wordpress"; then
-        echo -e "\e[33m[!] WordPress detected — running WPScan...\e[0m"
-        echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
-        sudo wpscan --update --no-banner --stealthy --url "$url"
-    else
-        echo -e "\e[32m[*] WordPress not detected — skipping WPScan.\e[0m"
-    fi
+    echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
+    sudo wpscan --update --no-banner --stealthy --url "$url"
     echo -e "\n\n"
 
 
@@ -214,11 +213,10 @@ main() {
 
     vpn_rotate_ip
     # Nuclei vulnerabilities scan
-    # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules
+    # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
+	# -concurrency 10 slows requests templates to be executed in parallel (default 25)
     # -random-agent rotates User-Agent per request
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
-	# echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10 -H \"User-Agent: <ua>\" -H \"X-Forwarded-For: 127.0.0.1\" -H \"Referer: https://google.com\" \e[0m"
-	# nuclei -u "$url" -rate-limit 10 -H "User-Agent: $USER_AGENT" -H "X-Forwarded-For: 127.0.0.1" -H "Referer: https://google.com"
 	echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10 -concurrency 10  \e[0m"
 	nuclei -u "$url" -rate-limit 10 -concurrency 10
     echo -e "\n\n"
