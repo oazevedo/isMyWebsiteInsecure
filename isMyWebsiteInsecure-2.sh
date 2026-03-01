@@ -5,7 +5,7 @@
 #
 # nmap: don't use with vpn because returns wrong results
 #
-# v1.4, modified on 2026-02-24
+# v1.5, modified on 2026-03-01
 #  - added rotate_ip using Proton VPN
 #  - added evasion capability
 #
@@ -44,6 +44,14 @@ vpn_rotate_ip() {
     fi
 
     sleep 10
+	
+    if [[ "$1" == "no" ]]; then
+        echo -e "\e[36m[*] ProtonVPN — disconnecting...\e[0m"
+        protonvpn disconnect
+        sleep 15		
+        return 0
+    fi
+
     echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
     protonvpn connect --random
     sleep 15
@@ -141,9 +149,12 @@ main() {
     curl -I -A "$USER_AGENT" "$url"
     echo -e "\n\n"
 
-
+	
+	vpn_rotate_ip no
+	# Note: Nmap gives incorrect results with VPN enabled
     # Nmap Open Ports and Service detection
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
+	# -T<0-5>: Set timing template (higher is faster), T3 is default
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
 	# https://nmap.org/book/man-performance.html
     echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
@@ -151,7 +162,9 @@ main() {
     sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
     echo -e "\n\n"
 
-
+	
+	vpn_rotate_ip no
+	# Note: Nmap gives incorrect results with VPN enabled
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
