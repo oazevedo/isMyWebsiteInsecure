@@ -253,10 +253,11 @@ main() {
     # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
 	# -concurrency 10 slows requests templates to be executed in parallel (default 25)
 	# -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
+	# timeout 2700, kill nuclei after 2700 seconds
     # -random-agent rotates User-Agent per request
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
-	echo -e "\e[32m nuclei -u \"$url\" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe \e[0m"
-	nuclei -u "$url" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe
+	echo -e "\e[32m timeout 2700 nuclei -u \"$url\" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe \e[0m"
+	timeout 2700 nuclei -u "$url" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe
     echo -e "\n\n"
 
 
