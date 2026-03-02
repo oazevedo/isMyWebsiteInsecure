@@ -223,6 +223,16 @@ main() {
 
     vpn_rotate_ip
 	random_timeout
+    # Joomla vulnerability scan
+    # 
+    echo -e "\e[38;5;208m[+] Checking for Joomla...\e[0m"
+    echo -e "\e[32m sudo joomscan --random-agent --timeout 600 -u \"$url\" \e[0m"
+    sudo joomscan --random-agent --timeout 600 -u "$url"
+    echo -e "\n\n"
+	
+
+    vpn_rotate_ip
+	random_timeout
     # Host header injection test
     # Random User-Agent added to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
