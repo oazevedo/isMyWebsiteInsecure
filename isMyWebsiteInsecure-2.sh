@@ -43,18 +43,30 @@ vpn_rotate_ip() {
         return 0
     fi
 
-    sleep 10
+    # sleep 10
 	
     if [[ "$1" == "no" ]]; then
         echo -e "\e[36m[*] ProtonVPN — disconnecting...\e[0m"
         protonvpn disconnect
-        sleep 15		
+        # sleep 15		
         return 0
     fi
 
     echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
     protonvpn connect --random
-    sleep 15
+    # sleep 15
+}
+
+
+# function to random timout between 10 and 120 seconds
+random_timeout() {
+    local seconds=$(( RANDOM % 111 + 10 ))
+    echo "waiting $seconds seconds"
+    for (( i=seconds; i>0; i-- )); do
+        printf "\r⏳ remaining: %3d seconds" "$i"
+        sleep 1
+    done
+    printf "\r✅ Done!                    \n"
 }
 
 
@@ -107,7 +119,7 @@ main() {
     if command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
-		protonvpn disconnect
+		# protonvpn disconnect
 		echo -e "\n\n"		
     fi
 
@@ -115,6 +127,7 @@ main() {
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
     vpn_rotate_ip
+	random_timeout
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
     echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
@@ -124,6 +137,7 @@ main() {
 
 
 	vpn_rotate_ip
+	random_timeout
     # DNS reconnaissance
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
@@ -133,6 +147,7 @@ main() {
 
     
 	vpn_rotate_ip
+	random_timeout
     # SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
@@ -142,6 +157,7 @@ main() {
 
     
 	vpn_rotate_ip
+	random_timeout
     # HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
@@ -151,6 +167,7 @@ main() {
 
 	
 	vpn_rotate_ip no
+	random_timeout
 	# Note: Nmap gives incorrect results with VPN enabled
     # Nmap Open Ports and Service detection
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
@@ -164,6 +181,7 @@ main() {
 
 	
 	vpn_rotate_ip no
+	random_timeout
 	# Note: Nmap gives incorrect results with VPN enabled
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
@@ -173,6 +191,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Shodan scan (nrich)
     # Passive lookup — no direct contact with target, no evasion needed
     echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
@@ -182,6 +201,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Identify technologies used on the website
     # --aggression 1 = stealthy mode (single request, passive fingerprinting)
     echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
@@ -192,6 +212,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Wordpress vulnerability scan
     # --stealthy enables passive mode (no aggressive probing)
     echo -e "\e[38;5;208m[+] Checking for WordPress...\e[0m"
@@ -201,6 +222,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Host header injection test
     # Random User-Agent added to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
@@ -216,6 +238,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Dalfox XSS Scanner
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
     echo -e "\e[38;5;208m[+] Dalfox xss scan...\e[0m"
@@ -225,6 +248,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Nuclei vulnerabilities scan
     # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
 	# -concurrency 10 slows requests templates to be executed in parallel (default 25)
@@ -236,6 +260,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # Nikto vulnerabilities scan
     # -evasion 1234678 applies multiple evasion techniques:
     #   1=random URI encoding, 2=directory self-reference, 3=premature URL ending,
@@ -249,6 +274,7 @@ main() {
 
 
     vpn_rotate_ip
+	random_timeout
     # SQLmap check for SQL injection
     # --random-agent rotates User-Agent, --delay=2 adds delay between requests,
     # --tamper applies payload obfuscation to bypass WAF signature matching
