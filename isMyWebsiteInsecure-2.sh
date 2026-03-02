@@ -25,7 +25,7 @@ validate_url() {
 
 # Function to check if required tools are installed
 check_tools() {
-    required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto)
+    required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto joomscan)
     missing=()
     for tool in "${required_tools[@]}"; do
         command -v "$tool" &> /dev/null || missing+=("$tool")
