@@ -200,7 +200,14 @@ main() {
     echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
     echo -e "\e[32m sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2 \"$host\" \e[0m"
     # sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-    sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2  "$host"	
+    sudo nmap "$host"
+	          -sS \
+			  --data-length 25 \
+			  --max-retries 2 \
+			  -g 53 \			  
+			  -T3 \			  
+			  -f \
+			  --mtu 16
     echo -e "\n\n"
 
 	
@@ -211,15 +218,14 @@ main() {
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
     # sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-	sudo nmap 
-	        -sS \
-			--script vuln \
-			--data-length 25 \
-			-T3 \
-			-D RND:5 \
-			-g 53 \
-			--max-retries 2 \
-			"$host"
+	sudo nmap "$host"
+	          -sS \
+			  --data-length 25 \
+			  --max-retries 2 \			  
+			  -g 53 \
+			  -T3 \
+			  -D RND:5 \
+			  --script vuln			  
     echo -e "\n\n"
 
 
