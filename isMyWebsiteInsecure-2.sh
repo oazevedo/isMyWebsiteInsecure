@@ -182,9 +182,9 @@ main() {
     # HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
-    echo -e "\e[32m curl -I --user-agent \"<user-agent>\" \"$url\" \e[0m"
+    echo -e "\e[32m curl --head --user-agent \"<user-agent>\" \"$url\" \e[0m"
     curl "$url" \
-	     -I \
+	     --head \
 	     --user-agent "$USER_AGENT" 
     echo -e "\n\n"
 
