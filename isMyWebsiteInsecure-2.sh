@@ -14,11 +14,32 @@
 #  - joomscan only runs if Joomla is detected by whatweb
 #
 
+
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
 USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
 
-# Function to validate URL format
+# ──── WAF Bypass Headers (used by curl, nikto, nuclei, dalfox) ───────────────
+# Spoofing X-Forwarded-For / X-Real-IP tricks many WAFs into treating the
+# request as coming from localhost (a trusted internal IP).
+# Accept-Language / Accept-Encoding / Referer mimic legitimate browser traffic
+# to avoid anomaly-score triggers on WAFs that check header completeness.
+WAF_BYPASS_HEADERS=(
+    -H "X-Forwarded-For: 127.0.0.1"
+    -H "X-Real-IP: 127.0.0.1"
+    -H "X-Originating-IP: 127.0.0.1"
+    -H "X-Remote-IP: 127.0.0.1"
+    -H "X-Remote-Addr: 127.0.0.1"
+    -H "Accept-Language: en-US,en;q=0.9"
+    -H "Accept-Encoding: gzip, deflate, br"
+    -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    -H "Referer: https://www.google.com/"
+    -H "Cache-Control: no-cache"
+    -H "Pragma: no-cache"
+)
+
+
+# ──── Function to validate URL format ───────────────────────────────────────
 validate_url() {
     if [[ ! $1 =~ ^(http|https):// ]]; then
         echo "Error: The provided parameter is not a valid URL. It should start with http:// or https://."
@@ -27,7 +48,7 @@ validate_url() {
 }
 
 
-# Function to check if required tools are installed
+# ──── Function to check if required tools are installed ──────────────────────
 check_tools() {
     required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto joomscan)
     missing=()
@@ -41,7 +62,7 @@ check_tools() {
 }
 
 
-# Function to rotate VPN public IP Address
+# ──── Function to rotate VPN public IP Address ────────────────────────────────
 vpn_rotate_ip() {
     if [[ "$VPN" != "true" ]]; then
         return 0
@@ -62,7 +83,7 @@ vpn_rotate_ip() {
 }
 
 
-# function to random timout between 15 and 120 seconds
+# ──── function to random timout between 15 and 120 seconds ───────────────────────
 random_timeout() {
     local seconds=$(( RANDOM % 105 + 15 ))
     echo "waiting $seconds seconds"
