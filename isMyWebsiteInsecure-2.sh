@@ -258,7 +258,10 @@ main() {
         random_timeout
         echo -e "\e[33m[!] WordPress detected — running wpscan...\e[0m"
         echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
-        sudo wpscan --update --no-banner --stealthy --url "$url"
+        sudo wpscan --url "$url"
+		            --update \
+					--no-banner \
+					--stealthy 
     else
         echo -e "\e[90m[-] WordPress not detected — skipping wpscan.\e[0m"
     fi
