@@ -257,7 +257,7 @@ main() {
         vpn_rotate_ip
         random_timeout
         echo -e "\e[33m[!] WordPress detected — running wpscan...\e[0m"
-        echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
+        echo -e "\e[32m sudo wpscan --url \"$url\" --update --no-banner --stealthy \e[0m"
         sudo wpscan --url "$url"
 		            --update \
 					--no-banner \
