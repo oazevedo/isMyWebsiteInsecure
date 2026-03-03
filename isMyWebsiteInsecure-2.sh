@@ -226,7 +226,6 @@ main() {
 			  --max-retries 2 \			  
 			  --source-port 53 \
 			  -D RND:5 \
-		  
     echo -e "\n\n"
 
 
