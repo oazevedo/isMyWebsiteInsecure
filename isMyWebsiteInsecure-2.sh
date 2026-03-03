@@ -9,6 +9,10 @@
 #  - added rotate_ip using Proton VPN
 #  - added evasion capability
 #
+# v1.6, modified on 2026-03-03
+#  - wpscan only runs if WordPress is detected by whatweb
+#  - joomscan only runs if Joomla is detected by whatweb
+#
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
 USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -211,23 +215,32 @@ main() {
     echo -e "\n\n"
 
 
-    vpn_rotate_ip
-	random_timeout
-    # Wordpress vulnerability scan
+    # Wordpress vulnerability scan (only if WordPress detected by whatweb)
     # --stealthy enables passive mode (no aggressive probing)
     echo -e "\e[38;5;208m[+] Checking for WordPress...\e[0m"
-    echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
-    sudo wpscan --update --no-banner --stealthy --url "$url"
+    if echo "$whatweb_output" | grep -qi "wordpress"; then
+        vpn_rotate_ip
+        random_timeout
+        echo -e "\e[33m[!] WordPress detected — running wpscan...\e[0m"
+        echo -e "\e[32m sudo wpscan --update --no-banner --stealthy --url \"$url\" \e[0m"
+        sudo wpscan --update --no-banner --stealthy --url "$url"
+    else
+        echo -e "\e[90m[-] WordPress not detected — skipping wpscan.\e[0m"
+    fi
     echo -e "\n\n"
 
 
-    vpn_rotate_ip
-	random_timeout
-    # Joomla vulnerability scan
-    # 
+    # Joomla vulnerability scan (only if Joomla detected by whatweb)
     echo -e "\e[38;5;208m[+] Checking for Joomla...\e[0m"
-    echo -e "\e[32m sudo joomscan --random-agent --timeout 600 -u \"$url\" \e[0m"
-    sudo joomscan --random-agent --timeout 600 -u "$url"
+    if echo "$whatweb_output" | grep -qi "joomla"; then
+        vpn_rotate_ip
+        random_timeout
+        echo -e "\e[33m[!] Joomla detected — running joomscan...\e[0m"
+        echo -e "\e[32m sudo joomscan --random-agent --timeout 600 -u \"$url\" \e[0m"
+        sudo joomscan --random-agent --timeout 600 -u "$url"
+    else
+        echo -e "\e[90m[-] Joomla not detected — skipping joomscan.\e[0m"
+    fi
     echo -e "\n\n"
 	
 
