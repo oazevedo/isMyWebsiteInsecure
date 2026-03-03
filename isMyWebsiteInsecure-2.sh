@@ -13,6 +13,9 @@
 #  - wpscan only runs if WordPress is detected by whatweb
 #  - joomscan only runs if Joomla is detected by whatweb
 #
+# v1.7, modified on 2026-03-03
+#  - replaced manual echo+command pairs with run_cmd helper
+#  - removed ANSI color codes from all echo commands
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
@@ -37,6 +40,15 @@ WAF_BYPASS_HEADERS=(
     -H "Cache-Control: no-cache"
     -H "Pragma: no-cache"
 )
+
+
+# ──── Helper: print then execute a command ────────────────────────────────────
+# Usage: run_cmd cmd arg1 arg2 ...
+# Prints the command in green, then runs it.
+run_cmd() {
+    echo -e " $* "
+    "$@"
+}
 
 
 # ──── Function to validate URL format ───────────────────────────────────────
@@ -69,12 +81,12 @@ vpn_rotate_ip() {
     fi
 
     if [[ "$1" == "no" ]]; then
-        echo -e "\e[36m[*] ProtonVPN — disconnecting...\e[0m"
+        echo -e "[*] ProtonVPN — disconnecting..."
         protonvpn disconnect
         return 0
     fi
 
-    echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
+    echo -e "[*] ProtonVPN — switching to a new random server..."
     protonvpn connect --random
 }
 
@@ -96,7 +108,7 @@ main() {
 
     # Check if a URL parameter is provided
     if [ "$#" -ne 1 ]; then
-        echo -e "\e[32mUsage: $0 <url>\e[0m"
+        echo -e "Usage: $0 <url>"
         exit 1
     fi
 
@@ -110,7 +122,7 @@ main() {
 
 
     # Display ethical use warning
-    echo -e "\n\e[31mWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
+    echo -e "\nWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\n"
 
     # Ask user if they want to continue
     read -p "Do you want to continue running the script? (yes/no): " choice
@@ -140,222 +152,190 @@ main() {
     if command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
-		echo -e "\n\n"		
+        echo -e "\n\n"
     fi
 
 
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
-    echo -e "\e[38;5;208m[+] Running WHOIS lookup...\e[0m"
-    echo -e "\e[32m sudo whois \"$domain\" \e[0m"
-    sudo whois "$domain"
+    echo -e "[+] Running WHOIS lookup..."
+    run_cmd sudo whois "$domain"
     echo -e "\n\n"
 
 
-	vpn_rotate_ip
-	random_timeout
+    vpn_rotate_ip
+    random_timeout
     # DNS reconnaissance
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
-    echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
-    echo -e "\e[32m dnsrecon --domain \"$domain\" --name_server 8.8.8.8,1.1.1.1 \e[0m"
-    dnsrecon --domain "$domain" \
-	         --name_server 8.8.8.8,1.1.1.1
+    echo -e "[+] Running DNS reconnaissance..."
+    run_cmd dnsrecon --domain "$domain" \
+                     --name_server 8.8.8.8,1.1.1.1
     echo -e "\n\n"
 
     
-	vpn_rotate_ip
-	random_timeout
+    vpn_rotate_ip
+    random_timeout
     # SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
-    echo -e "\e[38;5;208m[+] Running SSL/TLS scan...\e[0m"
-    echo -e "\e[32m sslscan \"$host\" \e[0m"
-    sslscan "$host"
+    echo -e "[+] Running SSL/TLS scan..."
+    run_cmd sslscan "$host"
     echo -e "\n\n"
 
     
-	vpn_rotate_ip
-	random_timeout
+    vpn_rotate_ip
+    random_timeout
     # HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
-    echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
-    echo -e "\e[32m curl --head --user-agent \"<user-agent>\" \"$url\" \e[0m"
-    curl "$url" \
-	     --head \
-	     --user-agent "$USER_AGENT" 
+    echo -e "[+] Getting HTTP Headers..."
+    run_cmd curl "$url" \
+                 --head \
+                 --user-agent "$USER_AGENT"
     echo -e "\n\n"
 
 	
-	vpn_rotate_ip no
-	random_timeout
-	# Note: Nmap gives incorrect results with VPN enabled
+    vpn_rotate_ip no
+    random_timeout
+    # Note: Nmap gives incorrect results with VPN enabled
     # Nmap Open Ports and Service detection
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
-	# -T<0-5>: Set timing template (higher is faster), T3 is default
+    # -T<0-5>: Set timing template (higher is faster), T3 is default
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
-	# https://nmap.org/book/man-performance.html
-    echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
-    echo -e "\e[32m sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2 \"$host\" \e[0m"
-    # sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-    sudo nmap "$host" \
-	          -sS \
-			  -T3 \	
-			  --data-length 25 \
-			  --max-retries 2 \
-			  --source-port 53 \			  
-			  -f \
-			  --mtu 16
+    # https://nmap.org/book/man-performance.html
+    echo -e "[+] Nmap Open Ports and Service detection..."
+    run_cmd sudo nmap "$host" \
+                      -sS \
+                      -T3 \
+                      --data-length 25 \
+                      --max-retries 2 \
+                      --source-port 53 \
+                      -f \
+                      --mtu 16
     echo -e "\n\n"
 
 	
-	vpn_rotate_ip no
-	random_timeout
-	# Note: Nmap gives incorrect results with VPN enabled
+    vpn_rotate_ip no
+    random_timeout
+    # Note: Nmap gives incorrect results with VPN enabled
     # Nmap vulnerabilities scan
-    echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
-    echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
-    # sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-	sudo nmap "$host" \
-	          --script vuln	\
-	          -sS \
-			  -T3 \
-			  --data-length 25 \
-			  --max-retries 2 \			  
-			  --source-port 53 \
-			  -D RND:5 
+    echo -e "[+] Nmap vulnerabilities scan..."
+    run_cmd sudo nmap "$host" \
+                      --script vuln \
+                      -sS \
+                      -T3 \
+                      --data-length 25 \
+                      --max-retries 2 \
+                      --source-port 53 \
+                      -D RND:5
     echo -e "\n\n"
 
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # Shodan scan (nrich)
     # Passive lookup — no direct contact with target, no evasion needed
-    echo -e "\e[38;5;208m[+] Running Shodan scan...\e[0m"
-    echo -e "\e[32m echo \"$ipv4\" | nrich - \e[0m"
-    echo "$ipv4" | nrich -
+    echo -e "[+] Running Shodan scan..."
+    run_cmd bash -c "echo \"$ipv4\" | nrich -"
     echo -e "\n\n"
 
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # Identify technologies used on the website
     # --aggression 1 = stealthy mode (single request, passive fingerprinting)
-    echo -e "\e[38;5;208m[+] Identifying technologies used on the website...\e[0m"
-    echo -e "\e[32m whatweb --aggression 1 -U \"<user-agent>\" \"$url\" \e[0m"
+    echo -e "[+] Identifying technologies used on the website..."
     whatweb_output=$(whatweb --aggression 1 -U "$USER_AGENT" "$url")
-    echo "$whatweb_output"
+    run_cmd whatweb --aggression 1 -U "$USER_AGENT" "$url"
     echo -e "\n\n"
 
 
     # Wordpress vulnerability scan (only if WordPress detected by whatweb)
     # --stealthy enables passive mode (no aggressive probing)
-    echo -e "\e[38;5;208m[+] Checking for WordPress...\e[0m"
+    echo -e "[+] Checking for WordPress..."
     if echo "$whatweb_output" | grep -qi "wordpress"; then
         vpn_rotate_ip
         random_timeout
-        echo -e "\e[33m[!] WordPress detected — running wpscan...\e[0m"
-        echo -e "\e[32m sudo wpscan --url \"$url\" --update --no-banner --stealthy \e[0m"
-        sudo wpscan --url "$url" \
-		            --update \
-					--no-banner \
-					--stealthy 
+        echo -e "[!] WordPress detected — running wpscan..."
+        run_cmd sudo wpscan --url "$url" \
+                            --update \
+                            --no-banner \
+                            --stealthy
     else
-        echo -e "\e[90m[-] WordPress not detected — skipping wpscan.\e[0m"
+        echo -e "[-] WordPress not detected — skipping wpscan."
     fi
     echo -e "\n\n"
 
 
     # Joomla vulnerability scan (only if Joomla detected by whatweb)
-    echo -e "\e[38;5;208m[+] Checking for Joomla...\e[0m"
+    echo -e "[+] Checking for Joomla..."
     if echo "$whatweb_output" | grep -qi "joomla"; then
         vpn_rotate_ip
         random_timeout
-        echo -e "\e[33m[!] Joomla detected — running joomscan...\e[0m"
-        echo -e "\e[32m sudo joomscan --random-agent --timeout 600 -u \"$url\" \e[0m"
-        sudo joomscan -u "$url" \
-		              --random-agent \
-					  --timeout 600 
+        echo -e "[!] Joomla detected — running joomscan..."
+        run_cmd sudo joomscan -u "$url" \
+                              --random-agent \
+                              --timeout 600
     else
-        echo -e "\e[90m[-] Joomla not detected — skipping joomscan.\e[0m"
+        echo -e "[-] Joomla not detected — skipping joomscan."
     fi
     echo -e "\n\n"
 	
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # Host header injection test
     # Random User-Agent added to blend in with normal browser traffic
-    echo -e "\e[38;5;208m[+] Running Host header injection test...\e[0m"
-    echo -e "\e[32m curl -s -A \"<user-agent>\" -H \"Host: malicious.example.com\" \"$url\" \e[0m"
+    echo -e "[+] Running Host header injection test..."
+    run_cmd curl -s -o /dev/null -w "%{http_code}" \
+                 -A "$USER_AGENT" \
+                 -H "Host: malicious.example.com" "$url"
     host_header_injection_status=$(curl -s -o /dev/null -w "%{http_code}" \
         -A "$USER_AGENT" \
         -H "Host: malicious.example.com" "$url")
     echo -e "Host header injection test, HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
-        echo -e "\e[31m Vulnerable \e[0m"
+        echo -e " Vulnerable "
     fi
     echo -e "\n\n"
 
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # Dalfox XSS Scanner
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
-    echo -e "\e[38;5;208m[+] Dalfox xss scan...\e[0m"
-    echo -e "\e[32m dalfox --waf-evasion url \"$url\" \e[0m"
-    dalfox url "$url"\
-	       --waf-evasion \
-		   "$WAF_BYPASS_HEADERS"
-		   # -H "X-Forwarded-For: 127.0.0.1" \
-           # -H "X-Real-IP: 127.0.0.1" \
-           # -H "Accept-Language: en-US,en;q=0.9" \
-           #-H "Referer: https://www.google.com/" 
+    echo -e "[+] Dalfox xss scan..."
+    run_cmd dalfox url "$url" \
+                   --waf-evasion \
+                   "${WAF_BYPASS_HEADERS[@]}"
     echo -e "\n\n"
 
 
     vpn_rotate_ip
-	random_timeout
+    random_timeout
     # Nuclei vulnerabilities scan
     # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
-	# -concurrency 10 slows requests templates to be executed in parallel (default 25)
-	# -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
-	# timeout 2700, kill nuclei after 2700 seconds
+    # -concurrency 10 slows requests templates to be executed in parallel (default 25)
+    # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
+    # timeout 2700, kill nuclei after 2700 seconds
     # -random-agent rotates User-Agent per request
-    echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
-	echo -e "\e[32m timeout 2700 nuclei -u \"$url\" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe \e[0m"
-	timeout 2700 \
-	  nuclei -u "$url" \
-	         -rate-limit 10 \
-			 -concurrency 10 \
-			 -timeout 15 \
-			 -retries 3 \
-			 -no-mhe \
+    echo -e "[+] Nuclei vulnerabilities scan..."
+    run_cmd timeout 2700 \
+      nuclei -u "$url" \
+             -rate-limit 10 \
+             -concurrency 10 \
+             -timeout 15 \
+             -retries 3 \
+             -no-mhe \
              -H "User-Agent: $USER_AGENT" \
-			 "$WAF_BYPASS_HEADERS"
-             # -H "X-Forwarded-For: 127.0.0.1" \
-             # -H "X-Real-IP: 127.0.0.1" \
-             # -H "X-Originating-IP: 127.0.0.1" \
-             # -H "Accept-Language: en-US,en;q=0.9" \
-             # -H "Referer: https://www.google.com/"
+             "${WAF_BYPASS_HEADERS[@]}"
     echo -e "\n\n"
 
 
     vpn_rotate_ip
-	random_timeout
-    # Nikto vulnerabilities scan
-    # -evasion 1234678 applies multiple evasion techniques:
-    #   1=random URI encoding, 2=directory self-reference, 3=premature URL ending,
-    #   4=prepend long random string, 6=TAB as request spacer,
-    #   7=random case sensitivity, 8=Windows path separator
-	# -maxtime 1800 Maximum testing time per host, ex. 1800 seconds
-    # echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
-    # echo -e "\e[32m nikto -h \"$url\" -maxtime 1800 \e[0m"
-    # nikto -h "$url" -maxtime 1800 
-    # echo -e "\n\n"
-
+    random_timeout
     # Nikto vulnerabilities scan
     # -evasion 1234678 applies all available evasion techniques:
     #   1=random URI encoding, 2=directory self-reference (/./),
@@ -368,25 +348,17 @@ main() {
     #   by appending them to -useragent separated by \r\n — nikto places the
     #   UA string verbatim into the request, so \r\n starts a new header line.
     NIKTO_UA="${USER_AGENT}\r\nX-Forwarded-For: 127.0.0.1\r\nX-Real-IP: 127.0.0.1\r\nX-Originating-IP: 127.0.0.1\r\nAccept-Language: en-US,en;q=0.9\r\nReferer: https://www.google.com/"
-    echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
-    echo -e "\e[32m nikto -h \"$url\" -evasion 1234678 -useragent \"<ua+waf-bypass-headers>\" -maxtime 1800 \e[0m"
-    nikto -h "$url" \
-          -maxtime 1800 \
-		  -evasion 1234678 \
-          -useragent "$NIKTO_UA"
+    echo -e "[+] Nikto vulnerabilities scan..."
+    run_cmd nikto -h "$url" \
+                  -maxtime 1800 \
+                  -evasion 1234678 \
+                  -useragent "$NIKTO_UA"
     echo -e "\n\n"
 
     
-	vpn_rotate_ip
-	random_timeout
+    vpn_rotate_ip
+    random_timeout
     # SQLmap check for SQL injection
-    # --random-agent rotates User-Agent, --delay=2 adds delay between requests,
-    # --tamper applies payload obfuscation to bypass WAF signature matching
-    # echo -e "\e[38;5;208m[+] SQLmap check for SQL injection\e[0m"
-    # echo -e "\e[32m sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u \"$url\" \e[0m"
-    # sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u "$url"
-    
-	# SQLmap check for SQL injection
     # --random-agent: rotates User-Agent to avoid UA-based blocking
     # --delay=3: 3s between requests to evade rate-based WAF rules
     # --level=3 --risk=2: broader coverage without overly destructive payloads
@@ -402,17 +374,16 @@ main() {
     #   multiplespaces  → inserts multiple spaces between keywords
     #   percentage      → adds % between characters to break simple regex rules
     #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
-    echo -e "\e[38;5;208m[+] SQLmap check for SQL injection\e[0m"
-    echo -e "\e[32m sqlmap --batch --random-agent --delay=3 --level=3 --risk=2 --hpp --hex --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes -u \"$url\" \e[0m"
-    sqlmap -u "$url" \
-	       --batch \
-		   --random-agent \
-		   --delay=3 \
-		   --level=3 \
-		   --risk=2 \
-		   --hpp \
-		   --hex \
-           --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
+    echo -e "[+] SQLmap check for SQL injection"
+    run_cmd sqlmap -u "$url" \
+                   --batch \
+                   --random-agent \
+                   --delay=3 \
+                   --level=3 \
+                   --risk=2 \
+                   --hpp \
+                   --hex \
+                   --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
     echo -e "\n\n"
 
 
