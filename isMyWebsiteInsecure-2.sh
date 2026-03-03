@@ -58,9 +58,9 @@ vpn_rotate_ip() {
 }
 
 
-# function to random timout between 10 and 120 seconds
+# function to random timout between 15 and 120 seconds
 random_timeout() {
-    local seconds=$(( RANDOM % 111 + 10 ))
+    local seconds=$(( RANDOM % 105 + 15 ))
     echo "waiting $seconds seconds"
     for (( i=seconds; i>0; i-- )); do
         printf "\r⏳ remaining: %3d seconds" "$i"
