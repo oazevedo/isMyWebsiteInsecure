@@ -327,19 +327,20 @@ main() {
     # -random-agent rotates User-Agent per request
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
 	echo -e "\e[32m timeout 2700 nuclei -u \"$url\" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe \e[0m"
-	timeout 2700 nuclei -u "$url" \
-	                    -rate-limit 10 \
-						-concurrency 10 \
-						-timeout 15 \
-						-retries 3 \
-						-no-mhe \
-                        -H "User-Agent: $USER_AGENT" \
-						"$WAF_BYPASS_HEADERS"
-                        # -H "X-Forwarded-For: 127.0.0.1" \
-                        # -H "X-Real-IP: 127.0.0.1" \
-                        # -H "X-Originating-IP: 127.0.0.1" \
-                        # -H "Accept-Language: en-US,en;q=0.9" \
-                        # -H "Referer: https://www.google.com/"
+	timeout 2700 \
+	  nuclei -u "$url" \
+	         -rate-limit 10 \
+			 -concurrency 10 \
+			 -timeout 15 \
+			 -retries 3 \
+			 -no-mhe \
+             -H "User-Agent: $USER_AGENT" \
+			 "$WAF_BYPASS_HEADERS"
+             # -H "X-Forwarded-For: 127.0.0.1" \
+             # -H "X-Real-IP: 127.0.0.1" \
+             # -H "X-Originating-IP: 127.0.0.1" \
+             # -H "Accept-Language: en-US,en;q=0.9" \
+             # -H "Referer: https://www.google.com/"
     echo -e "\n\n"
 
 
