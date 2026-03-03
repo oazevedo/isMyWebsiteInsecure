@@ -200,12 +200,12 @@ main() {
     echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
     echo -e "\e[32m sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2 \"$host\" \e[0m"
     # sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-    sudo nmap "$host"
+    sudo nmap "$host" \
 	          -sS \
+			  -T3 \	
 			  --data-length 25 \
 			  --max-retries 2 \
-			  -g 53 \			  
-			  -T3 \			  
+			  --source-port 53 \			  
 			  -f \
 			  --mtu 16
     echo -e "\n\n"
@@ -218,14 +218,15 @@ main() {
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
     # sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
-	sudo nmap "$host"
+	sudo nmap "$host" \
+	          --script vuln	
 	          -sS \
+			  -T3 \
 			  --data-length 25 \
 			  --max-retries 2 \			  
-			  -g 53 \
-			  -T3 \
+			  --source-port 53 \
 			  -D RND:5 \
-			  --script vuln			  
+		  
     echo -e "\n\n"
 
 
@@ -258,7 +259,7 @@ main() {
         random_timeout
         echo -e "\e[33m[!] WordPress detected — running wpscan...\e[0m"
         echo -e "\e[32m sudo wpscan --url \"$url\" --update --no-banner --stealthy \e[0m"
-        sudo wpscan --url "$url"
+        sudo wpscan --url "$url" \
 		            --update \
 					--no-banner \
 					--stealthy 
@@ -275,7 +276,9 @@ main() {
         random_timeout
         echo -e "\e[33m[!] Joomla detected — running joomscan...\e[0m"
         echo -e "\e[32m sudo joomscan --random-agent --timeout 600 -u \"$url\" \e[0m"
-        sudo joomscan --random-agent --timeout 600 -u "$url"
+        sudo joomscan -u "$url" \
+		              --random-agent \
+					  --timeout 600 
     else
         echo -e "\e[90m[-] Joomla not detected — skipping joomscan.\e[0m"
     fi
@@ -304,7 +307,13 @@ main() {
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
     echo -e "\e[38;5;208m[+] Dalfox xss scan...\e[0m"
     echo -e "\e[32m dalfox --waf-evasion url \"$url\" \e[0m"
-    dalfox --waf-evasion url "$url"
+    dalfox url "$url"\
+	       --waf-evasion \
+		   "$WAF_BYPASS_HEADERS"
+		   # -H "X-Forwarded-For: 127.0.0.1" \
+           # -H "X-Real-IP: 127.0.0.1" \
+           # -H "Accept-Language: en-US,en;q=0.9" \
+           #-H "Referer: https://www.google.com/" 
     echo -e "\n\n"
 
 
@@ -318,7 +327,18 @@ main() {
     # -random-agent rotates User-Agent per request
     echo -e "\e[38;5;208m[+] Nuclei vulnerabilities scan...\e[0m"
 	echo -e "\e[32m timeout 2700 nuclei -u \"$url\" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe \e[0m"
-	timeout 2700 nuclei -u "$url" -rate-limit 10 -concurrency 10 -timeout 15 -retries 3 -no-mhe
+	timeout 2700 nuclei -u "$url" \
+	                    -rate-limit 10 \
+						-concurrency 10 \
+						-timeout 15 \
+						-retries 3 \
+						-no-mhe \
+                        -H "User-Agent: $USER_AGENT" \
+                        -H "X-Forwarded-For: 127.0.0.1" \
+                        -H "X-Real-IP: 127.0.0.1" \
+                        -H "X-Originating-IP: 127.0.0.1" \
+                        -H "Accept-Language: en-US,en;q=0.9" \
+                        -H "Referer: https://www.google.com/"
     echo -e "\n\n"
 
 
@@ -353,9 +373,10 @@ main() {
         -evasion 1234678 \
         -useragent "$NIKTO_UA" \
         -maxtime 1800	
+    echo -e "\n\n"
 
-
-    vpn_rotate_ip
+    
+	vpn_rotate_ip
 	random_timeout
     # SQLmap check for SQL injection
     # --random-agent rotates User-Agent, --delay=2 adds delay between requests,
@@ -382,10 +403,15 @@ main() {
     #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "\e[38;5;208m[+] SQLmap check for SQL injection\e[0m"
     echo -e "\e[32m sqlmap --batch --random-agent --delay=3 --level=3 --risk=2 --hpp --hex --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes -u \"$url\" \e[0m"
-    sqlmap --batch --random-agent --delay=3 --level=3 --risk=2 --hpp --hex \
-        --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes \
-        -u "$url"
-	
+    sqlmap -u "$url" \
+	       --batch \
+		   --random-agent \
+		   --delay=3 \
+		   --level=3 \
+		   --risk=2 \
+		   --hpp \
+		   --hex \
+           --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
     echo -e "\n\n"
 
 
