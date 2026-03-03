@@ -94,7 +94,7 @@ vpn_rotate_ip() {
 # ──── function to random timout between 15 and 120 seconds ───────────────────────
 random_timeout() {
     local seconds=$(( RANDOM % 105 + 15 ))
-    echo -e "\e[34mwaiting $seconds seconds\e[0m"
+    echo -e "waiting $seconds seconds"
     for (( i=seconds; i>0; i-- )); do
         printf "\r⏳ remaining: %3d seconds" "$i"
         sleep 1
