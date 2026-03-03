@@ -46,7 +46,7 @@ WAF_BYPASS_HEADERS=(
 # Usage: run_cmd cmd arg1 arg2 ...
 # Prints the command in green, then runs it.
 run_cmd() {
-    echo -e " $* "
+    echo -e "\e[32m $* \e[0m"
     "$@"
 }
 
@@ -81,12 +81,12 @@ vpn_rotate_ip() {
     fi
 
     if [[ "$1" == "no" ]]; then
-        echo -e "[*] ProtonVPN — disconnecting..."
+        echo -e "\e[34m[*] ProtonVPN — disconnecting...\e[0m"
         protonvpn disconnect
         return 0
     fi
 
-    echo -e "[*] ProtonVPN — switching to a new random server..."
+    echo -e "\e[34m[*] ProtonVPN — switching to a new random server...\e[0m"
     protonvpn connect --random
 }
 
@@ -94,7 +94,7 @@ vpn_rotate_ip() {
 # ──── function to random timout between 15 and 120 seconds ───────────────────────
 random_timeout() {
     local seconds=$(( RANDOM % 105 + 15 ))
-    echo "waiting $seconds seconds"
+    echo -e "\e[34mwaiting $seconds seconds\e[0m"
     for (( i=seconds; i>0; i-- )); do
         printf "\r⏳ remaining: %3d seconds" "$i"
         sleep 1
