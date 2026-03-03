@@ -68,18 +68,14 @@ vpn_rotate_ip() {
         return 0
     fi
 
-    # sleep 10
-	
     if [[ "$1" == "no" ]]; then
         echo -e "\e[36m[*] ProtonVPN — disconnecting...\e[0m"
         protonvpn disconnect
-        # sleep 15		
         return 0
     fi
 
     echo -e "\e[36m[*] ProtonVPN — switching to a new random server...\e[0m"
     protonvpn connect --random
-    # sleep 15
 }
 
 
@@ -144,7 +140,6 @@ main() {
     if command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
-		# protonvpn disconnect
 		echo -e "\n\n"		
     fi
 
@@ -166,8 +161,9 @@ main() {
     # DNS reconnaissance
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
     echo -e "\e[38;5;208m[+] Running DNS reconnaissance...\e[0m"
-    echo -e "\e[32m dnsrecon -d \"$domain\" -n 8.8.8.8,1.1.1.1 \e[0m"
-    dnsrecon -d "$domain" -n 8.8.8.8,1.1.1.1
+    echo -e "\e[32m dnsrecon --domain \"$domain\" --name_server 8.8.8.8,1.1.1.1 \e[0m"
+    dnsrecon --domain "$domain" \
+	         --name_server 8.8.8.8,1.1.1.1
     echo -e "\n\n"
 
     
@@ -186,8 +182,10 @@ main() {
     # HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
     echo -e "\e[38;5;208m[+] Getting HTTP Headers...\e[0m"
-    echo -e "\e[32m curl -I -A \"<user-agent>\" \"$url\" \e[0m"
-    curl -I -A "$USER_AGENT" "$url"
+    echo -e "\e[32m curl -I --user-agent \"<user-agent>\" \"$url\" \e[0m"
+    curl "$url" \
+	     -I \
+	     --user-agent "$USER_AGENT" 
     echo -e "\n\n"
 
 	
@@ -200,8 +198,9 @@ main() {
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
 	# https://nmap.org/book/man-performance.html
     echo -e "\e[38;5;208m[+] Nmap Open Ports and Service detection...\e[0m"
-    echo -e "\e[32m sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
-    sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
+    echo -e "\e[32m sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2 \"$host\" \e[0m"
+    # sudo nmap -sS -sV -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
+    sudo nmap -sS -f --mtu 16 --data-length 25 -T3 -g 53 --max-retries 2  "$host"	
     echo -e "\n\n"
 
 	
@@ -211,7 +210,16 @@ main() {
     # Nmap vulnerabilities scan
     echo -e "\e[38;5;208m[+] Nmap vulnerabilities scan...\e[0m"
     echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
-    sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
+    # sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
+	sudo nmap 
+	        -sS \
+			--script vuln \
+			--data-length 25 \
+			-T3 \
+			-D RND:5 \
+			-g 53 \
+			--max-retries 2 \
+			"$host"
     echo -e "\n\n"
 
 
