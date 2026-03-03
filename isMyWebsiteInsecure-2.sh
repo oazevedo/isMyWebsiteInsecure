@@ -219,13 +219,13 @@ main() {
     echo -e "\e[32m sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts \"$host\" \e[0m"
     # sudo nmap -sS --script vuln -f --mtu 16 --data-length 25 -T3 --randomize-hosts "$host"
 	sudo nmap "$host" \
-	          --script vuln	
+	          --script vuln	\
 	          -sS \
 			  -T3 \
 			  --data-length 25 \
 			  --max-retries 2 \			  
 			  --source-port 53 \
-			  -D RND:5 \
+			  -D RND:5 
     echo -e "\n\n"
 
 
