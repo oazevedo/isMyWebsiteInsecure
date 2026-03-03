@@ -334,11 +334,12 @@ main() {
 						-retries 3 \
 						-no-mhe \
                         -H "User-Agent: $USER_AGENT" \
-                        -H "X-Forwarded-For: 127.0.0.1" \
-                        -H "X-Real-IP: 127.0.0.1" \
-                        -H "X-Originating-IP: 127.0.0.1" \
-                        -H "Accept-Language: en-US,en;q=0.9" \
-                        -H "Referer: https://www.google.com/"
+						"$WAF_BYPASS_HEADERS"
+                        # -H "X-Forwarded-For: 127.0.0.1" \
+                        # -H "X-Real-IP: 127.0.0.1" \
+                        # -H "X-Originating-IP: 127.0.0.1" \
+                        # -H "Accept-Language: en-US,en;q=0.9" \
+                        # -H "Referer: https://www.google.com/"
     echo -e "\n\n"
 
 
