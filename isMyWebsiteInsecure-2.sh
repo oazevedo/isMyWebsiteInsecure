@@ -371,9 +371,9 @@ main() {
     echo -e "\e[38;5;208m[+] Nikto vulnerabilities scan...\e[0m"
     echo -e "\e[32m nikto -h \"$url\" -evasion 1234678 -useragent \"<ua+waf-bypass-headers>\" -maxtime 1800 \e[0m"
     nikto -h "$url" \
-        -evasion 1234678 \
-        -useragent "$NIKTO_UA" \
-        -maxtime 1800	
+          -evasion 1234678 \
+          -useragent "$NIKTO_UA" \
+          -maxtime 1800	
     echo -e "\n\n"
 
     
