@@ -224,6 +224,10 @@ main() {
 
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
+    echo "Some tools require running with sudo."
+	sudo -v
+	
+
     vpn_rotate_ip
     random_timeout
     # WHOIS lookup for domain information
