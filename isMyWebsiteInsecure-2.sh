@@ -41,7 +41,6 @@ WAF_BYPASS_HEADERS=(
 
 # ──── Helper: print then execute a command ────────────────────────────────────
 # Usage: run_cmd cmd arg1 arg2 ...
-# Prints the command in green, then runs it.
 run_cmd() {
     echo -e "\e[32m $* \e[0m"
     "$@"
@@ -193,42 +192,6 @@ main() {
                  --user-agent "$USER_AGENT"
     echo -e "\n\n"
 
-	
-    vpn_rotate_ip no
-    random_timeout
-    # Note: Nmap gives incorrect results with VPN enabled
-    # Nmap Open Ports and Service detection
-    # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
-    # -T<0-5>: Set timing template (higher is faster), T3 is default
-    # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
-    # https://nmap.org/book/man-performance.html
-    echo -e "[+] Nmap Open Ports and Service detection..."
-    run_cmd sudo nmap "$host" \
-                      -sS \
-                      -T3 \
-                      --data-length 25 \
-                      --max-retries 2 \
-                      --source-port 53 \
-                      -f \
-                      --mtu 16
-    echo -e "\n\n"
-
-	
-    vpn_rotate_ip no
-    random_timeout
-    # Note: Nmap gives incorrect results with VPN enabled
-    # Nmap vulnerabilities scan
-    echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd sudo nmap "$host" \
-                      --script vuln \
-                      -sS \
-                      -T3 \
-                      --data-length 25 \
-                      --max-retries 2 \
-                      --source-port 53 \
-                      -D RND:5
-    echo -e "\n\n"
-
 
     vpn_rotate_ip
     random_timeout
@@ -320,18 +283,35 @@ main() {
     # -random-agent rotates User-Agent per request
     echo -e "[+] Nuclei vulnerabilities scan..."
     run_cmd timeout 2700 \
-      nuclei -u "$url" \
-             -rate-limit 10 \
-             -concurrency 10 \
-             -timeout 15 \
-             -retries 3 \
-             -no-mhe \
-             -H "User-Agent: $USER_AGENT" \
-             "${WAF_BYPASS_HEADERS[@]}"
+            nuclei -u "$url" \
+                   -rate-limit 10 \
+                   -concurrency 10 \
+                   -timeout 15 \
+                   -retries 3 \
+                   -no-mhe \
+                   -H "User-Agent: $USER_AGENT" \
+                   "${WAF_BYPASS_HEADERS[@]}"
     echo -e "\n\n"
 
 
-    vpn_rotate_ip
+    vpn_rotate_ip no
+    random_timeout
+    # Note: Nmap gives incorrect results with VPN enabled
+    # Nmap vulnerabilities scan
+    echo -e "[+] Nmap vulnerabilities scan..."
+    run_cmd sudo timeout 900 \
+	             nmap "$host" \
+                      --script vuln \
+                      -sS \
+                      -T3 \
+                      --data-length 25 \
+                      --max-retries 2 \
+                      --source-port 53 \
+                      -D RND:5
+    echo -e "\n\n"  
+	
+	
+	vpn_rotate_ip
     random_timeout
     # Nikto vulnerabilities scan
     # -evasion 1234678 applies all available evasion techniques:
@@ -381,6 +361,27 @@ main() {
                    --hpp \
                    --hex \
                    --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
+    echo -e "\n\n"
+
+
+    vpn_rotate_ip no
+    random_timeout
+    # Note: Nmap gives incorrect results with VPN enabled
+    # Nmap Open Ports and Service detection
+    # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
+    # -T<0-5>: Set timing template (higher is faster), T3 is default
+    # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
+    # https://nmap.org/book/man-performance.html
+    echo -e "[+] Nmap Open Ports and Service detection..."
+    run_cmd sudo timeout 900 \
+	             nmap "$host" \
+                      -sS \
+                      -T3 \
+                      --data-length 25 \
+                      --max-retries 2 \
+                      --source-port 53 \
+                      -f \
+                      --mtu 16
     echo -e "\n\n"
 
 
