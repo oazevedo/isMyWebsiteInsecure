@@ -132,13 +132,11 @@ main() {
     echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
 		
 
-    # Extract host, domain and IPv4
-    host=$(echo "$url" | awk -F[/:] '{print $4}')
-    domain=$(echo "$host" | awk -F. '{if (NF>2) {print $(NF-1)"."$NF} else {print $0}}')
-    ipv4=$(dig +short "$host" A | head -n1)
+    # host, domain, port and ipv4 were all set by validate_url above
     echo "Host=$host"
     echo "Domain=$domain"
-    echo "IPv4=$ipv4"
+    echo "Port=${port:-(default)}"
+    echo "IPv4=${ipv4:-(unresolved)}"
     echo "Url=$url"
     echo -e "\n\n"
 
@@ -321,15 +319,15 @@ main() {
     # Note: Nmap gives incorrect results with VPN enabled
     # Nmap vulnerabilities scan
     echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd sudo timeout 900 \
-	             nmap "$host" \
-                      --script vuln \
-                      -sS \
-                      -T3 \
-                      --data-length 25 \
-                      --max-retries 2 \
-                      --source-port 53 \
-                      -D RND:5
+    run_cmd timeout 900 sudo \
+            nmap "$host" \
+                  --script vuln \
+                  -sS \
+                  -T3 \
+                  --data-length 25 \
+                  --max-retries 2 \
+                  --source-port 53 \
+                  -D RND:5
     echo -e "\n\n"  
 
 	
@@ -373,15 +371,15 @@ main() {
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
     # https://nmap.org/book/man-performance.html
     echo -e "[+] Nmap Open Ports and Service detection..."
-    run_cmd sudo timeout 900 \
-	             nmap "$host" \
-                      -sS \
-                      -T3 \
-                      --data-length 25 \
-                      --max-retries 2 \
-                      --source-port 53 \
-                      -f \
-                      --mtu 16
+    run_cmd timeout 900 sudo \
+            nmap "$host" \
+                 -sS \
+                 -T3 \
+                 --data-length 25 \
+                 --max-retries 2 \
+                 --source-port 53 \
+                 -f \
+                 --mtu 16
     echo -e "\n\n"
 
 
