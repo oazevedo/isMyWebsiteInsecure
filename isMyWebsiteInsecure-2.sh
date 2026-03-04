@@ -235,7 +235,7 @@ main() {
 
     vpn_rotate_ip
     random_timeout
-    # DNS reconnaissance
+    # DNSRecon - DNS reconnaissance
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
     echo -e "[+] Running DNS reconnaissance..."
     run_cmd dnsrecon --domain "$domain" \
@@ -245,7 +245,7 @@ main() {
     
     vpn_rotate_ip
     random_timeout
-    # SSL/TLS scan
+    # SSLScan - SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "[+] Running SSL/TLS scan..."
     run_cmd sslscan "$host"
@@ -254,7 +254,7 @@ main() {
     
     vpn_rotate_ip
     random_timeout
-    # HTTP Headers
+    # CURL - get HTTP Headers
     # Random User-Agent to blend in with normal browser traffic
     echo -e "[+] Getting HTTP Headers..."
     run_cmd curl "$url" \
@@ -265,7 +265,7 @@ main() {
 
     vpn_rotate_ip
     random_timeout
-    # Shodan scan (nrich)
+    # Shodan Search Engine (nrich)
     # Passive lookup — no direct contact with target, no evasion needed
     echo -e "[+] Running Shodan scan..."
     run_cmd bash -c "echo \"$ipv4\" | nrich -"
@@ -282,7 +282,7 @@ main() {
     echo -e "\n\n"
 
 
-    # Wordpress vulnerability scan (only if WordPress detected by whatweb)
+    # WPScan - Wordpress vulnerability scan (only if WordPress detected by whatweb)
     # --stealthy enables passive mode (no aggressive probing)
     echo -e "[+] Checking for WordPress..."
     if echo "$whatweb_output" | grep -qi "wordpress"; then
@@ -346,11 +346,10 @@ main() {
     vpn_rotate_ip
     random_timeout
     # Nuclei vulnerabilities scan
+    # timeout 2700, kill nuclei after 2700 seconds	
     # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
     # -concurrency 10 slows requests templates to be executed in parallel (default 25)
     # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
-    # timeout 2700, kill nuclei after 2700 seconds
-    # -random-agent rotates User-Agent per request
     echo -e "[+] Nuclei vulnerabilities scan..."
     run_cmd timeout 2700 \
             nuclei -u "$url" \
@@ -367,6 +366,7 @@ main() {
 	vpn_rotate_ip
     random_timeout
     # Nikto vulnerabilities scan
+    # -maxtime 1800: 30 minutes	to run scan, after abort
     # -evasion 1234678 applies all available evasion techniques:
     #   1=random URI encoding, 2=directory self-reference (/./),
     #   3=premature URL ending (%00), 4=prepend long random string,
@@ -388,8 +388,8 @@ main() {
 
     vpn_rotate_ip no
     random_timeout
-    # Note: Nmap gives incorrect results with VPN enabled
     # Nmap vulnerabilities scan
+    #  note: Nmap gives incorrect results with VPN enabled	
     echo -e "[+] Nmap vulnerabilities scan..."
     run_cmd timeout 900 sudo \
             nmap "$host" \
@@ -436,12 +436,11 @@ main() {
 
     vpn_rotate_ip no
     random_timeout
-    # Note: Nmap gives incorrect results with VPN enabled
     # Nmap Open Ports and Service detection
+    #  note: Nmap gives incorrect results with VPN enabled	
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
     # -T<0-5>: Set timing template (higher is faster), T3 is default
     # -T2 slows timing to avoid rate-based detection, --randomize-hosts randomizes order
-    # https://nmap.org/book/man-performance.html
     echo -e "[+] Nmap Open Ports and Service detection..."
     run_cmd timeout 900 sudo \
             nmap "$host" \
