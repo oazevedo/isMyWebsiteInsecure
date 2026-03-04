@@ -200,6 +200,7 @@ main() {
 
 
     # Start Date
+    start_ts=$(date +%s)
     echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
 		
 
@@ -455,7 +456,13 @@ main() {
 
 
     # End Date
+    end_ts=$(date +%s)
+    elapsed=$(( end_ts - start_ts ))
+    hours=$(( elapsed / 3600 ))
+    minutes=$(( (elapsed % 3600) / 60 ))
+    seconds=$(( elapsed % 60 ))
     echo -e "End date: $(date +"%Y-%m-%d %H:%M") \n\n"
+    echo -e "Total time: ${hours}h ${minutes}m ${seconds}s\n\n"
 }
 
 # Execute main function
