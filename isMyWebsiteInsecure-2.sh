@@ -292,23 +292,6 @@ main() {
                    -H "User-Agent: $USER_AGENT" \
                    "${WAF_BYPASS_HEADERS[@]}"
     echo -e "\n\n"
-
-
-    vpn_rotate_ip no
-    random_timeout
-    # Note: Nmap gives incorrect results with VPN enabled
-    # Nmap vulnerabilities scan
-    echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd sudo timeout 900 \
-	             nmap "$host" \
-                      --script vuln \
-                      -sS \
-                      -T3 \
-                      --data-length 25 \
-                      --max-retries 2 \
-                      --source-port 53 \
-                      -D RND:5
-    echo -e "\n\n"  
 	
 	
 	vpn_rotate_ip
@@ -332,7 +315,24 @@ main() {
                   -useragent "$NIKTO_UA"
     echo -e "\n\n"
 
-    
+
+    vpn_rotate_ip no
+    random_timeout
+    # Note: Nmap gives incorrect results with VPN enabled
+    # Nmap vulnerabilities scan
+    echo -e "[+] Nmap vulnerabilities scan..."
+    run_cmd sudo timeout 900 \
+	             nmap "$host" \
+                      --script vuln \
+                      -sS \
+                      -T3 \
+                      --data-length 25 \
+                      --max-retries 2 \
+                      --source-port 53 \
+                      -D RND:5
+    echo -e "\n\n"  
+
+	
     vpn_rotate_ip
     random_timeout
     # SQLmap check for SQL injection
