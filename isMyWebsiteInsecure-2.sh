@@ -274,7 +274,7 @@ main() {
 
     vpn_rotate_ip
     random_timeout
-    # Identify technologies used on the website
+    # WhatWeb - Identify technologies used on the website
     # --aggression 1 = stealthy mode (single request, passive fingerprinting)
     echo -e "[+] Identifying technologies used on the website..."
     whatweb_output=$(whatweb --aggression 1 -U "$USER_AGENT" "$url")
