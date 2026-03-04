@@ -13,9 +13,6 @@
 #  - wpscan only runs if WordPress is detected by whatweb
 #  - joomscan only runs if Joomla is detected by whatweb
 #
-# v1.7, modified on 2026-03-03
-#  - replaced manual echo+command pairs with run_cmd helper
-#  - removed ANSI color codes from all echo commands
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
