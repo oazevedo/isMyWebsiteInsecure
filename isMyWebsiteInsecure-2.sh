@@ -47,10 +47,81 @@ run_cmd() {
 }
 
 
-# ──── Function to validate URL format ───────────────────────────────────────
+# ──── Validate URL and extract host, domain, port, ipv4 ─────────────────────
+# Validates:
+#   - scheme        : http:// or https://
+#   - host          : hostname, subdomain, or bare IPv4 (no IPv6 brackets)
+#   - optional port : :1–65535
+#   - optional path : any printable non-space characters
+# On success, sets globals: host  domain  port  ipv4
 validate_url() {
-    if [[ ! $1 =~ ^(http|https):// ]]; then
-        echo "Error: The provided parameter is not a valid URL. It should start with http:// or https://."
+    local url="$1"
+
+    # Must start with http:// or https://
+    if [[ ! "$url" =~ ^https?:// ]]; then
+        echo "Error: URL must start with http:// or https://"
+        exit 1
+    fi
+
+    # Strip scheme to isolate the rest
+    local rest="${url#http://}"
+    rest="${rest#https://}"
+
+    # Must have a non-empty host (no spaces, no bare slash at position 0)
+    if [[ -z "$rest" || "$rest" == /* ]]; then
+        echo "Error: URL is missing a hostname."
+        exit 1
+    fi
+
+    # Split host+port from path (everything before the first /)
+    local hostport="${rest%%/*}"
+    if [[ -z "$hostport" ]]; then
+        echo "Error: URL is missing a hostname."
+        exit 1
+    fi
+
+    # ── Extract and validate optional port ───────────────────────────────────
+    if [[ "$hostport" =~ :([0-9]+)$ ]]; then
+        port="${BASH_REMATCH[1]}"
+        if (( port < 1 || port > 65535 )); then
+            echo "Error: Port number '$port' is out of the valid range (1–65535)."
+            exit 1
+        fi
+        hostport="${hostport%:$port}"   # strip port to validate host alone
+    else
+        port=""
+    fi
+
+    # ── Validate and set host ─────────────────────────────────────────────────
+    local ipv4_re='^([0-9]{1,3}\.){3}[0-9]{1,3}$'
+    local host_re='^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$'
+
+    if [[ "$hostport" =~ $ipv4_re ]]; then
+        IFS='.' read -r o1 o2 o3 o4 <<< "$hostport"
+        for octet in "$o1" "$o2" "$o3" "$o4"; do
+            if (( octet > 255 )); then
+                echo "Error: '$hostport' is not a valid IPv4 address."
+                exit 1
+            fi
+        done
+    elif [[ ! "$hostport" =~ $host_re ]]; then
+        echo "Error: '$hostport' is not a valid hostname."
+        echo "       Expected format: https://example.com or https://sub.domain.org:8443/path"
+        exit 1
+    fi
+    host="$hostport"
+
+    # ── Extract registered domain (last two labels) ───────────────────────────
+    domain=$(awk -F. '{n=NF; if(n>=2) print $(n-1)"."$n; else print $0}' <<< "$host")
+    if [[ -z "$domain" ]]; then
+        echo "Error: Could not extract a registered domain from host '$host'."
+        exit 1
+    fi
+
+    # ── Resolve IPv4 — filter out CNAME lines, take first A record ───────────
+    ipv4=$(dig +short "$host" A | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
+    if [[ -z "$ipv4" ]]; then
+        echo "Error: Could not resolve an IPv4 address for '$host'. Check that the host exists and DNS is reachable."
         exit 1
     fi
 }
