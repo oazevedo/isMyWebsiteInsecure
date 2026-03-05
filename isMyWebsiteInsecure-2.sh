@@ -294,9 +294,9 @@ main() {
         random_timeout
         echo -e "[!] WordPress detected — running wpscan..."
         run_cmd wpscan --url "$url" \
-                            --update \
-                            --no-banner \
-                            --stealthy
+                       --update \
+                       --no-banner \
+                       --stealthy
     else
         echo -e "[-] WordPress not detected — skipping wpscan."
     fi
@@ -427,22 +427,17 @@ main() {
     # Nmap Open Ports and Service detection
     #  note: Nmap gives incorrect results with VPN enabled	
 	# -sS TCP SYN scan (stealthy scan).
-	# -T3
+	# -n  never do DNS resolution
 	# --data-length 25
 	# 
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
     # -T<0-5>: Set timing template (higher is faster), T3 is default
     #
     echo -e "[+] Nmap Open Ports and Service detection..."
-    run_cmd timeout 900 sudo \
+    run_cmd timeout 300 \
             nmap "$host" \
                  -sS \
-                 -T3 \
-                 --data-length 25 \
-                 --max-retries 2 \
-                 --source-port 53 \
-                 -f \
-                 --mtu 16
+				 -n
     echo -e "\n\n"
 
 
@@ -451,15 +446,11 @@ main() {
     # Nmap vulnerabilities scan
     #  note: Nmap gives incorrect results with VPN enabled	
     echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd timeout 900 sudo \
+    run_cmd timeout 300 \
             nmap "$host" \
-                  --script vuln \
-                  -sS \
-                  -T3 \
-                  --data-length 25 \
-                  --max-retries 2 \
-                  --source-port 53 \
-                  -D RND:5
+                 -sS \
+				 -n \
+                 --script vuln 
     echo -e "\n\n"  
 
 
