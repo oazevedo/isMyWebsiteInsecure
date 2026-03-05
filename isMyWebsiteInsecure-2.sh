@@ -282,7 +282,7 @@ main() {
     # --aggression 1 = stealthy mode (single request, passive fingerprinting)
     echo -e "[+] Identifying technologies used on the website..."
 	whatweb_output=$(run_cmd whatweb --aggression 1 \
-	                                 -U "$USER_AGENT" \
+	                                 --user-agent "$USER_AGENT" \
 									 "$url")
     echo -e "\n\n"
 
@@ -410,7 +410,7 @@ main() {
     #   percentage      → adds % between characters to break simple regex rules
     #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "[+] SQLmap check for SQL injection"
-    run_cmd timeout 900 \
+    run_cmd timeout 1800 \
 	        sqlmap -u "$url" \
                    --batch \
                    --random-agent \
