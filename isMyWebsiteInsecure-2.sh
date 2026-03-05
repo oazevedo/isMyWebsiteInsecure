@@ -284,7 +284,8 @@ main() {
 	whatweb_output=$(run_cmd whatweb --aggression 1 \
 	                                 --user-agent "$USER_AGENT" \
 									 "$url")
-    echo -e "\n\n"
+    echo -e "$whatweb_output"
+	echo -e "\n\n"
 
 
     # WPScan - Wordpress vulnerability scan (only if WordPress detected by whatweb)
