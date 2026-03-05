@@ -42,7 +42,7 @@ WAF_BYPASS_HEADERS=(
 # ──── Helper: print then execute a command ────────────────────────────────────
 # Usage: run_cmd cmd arg1 arg2 ...
 run_cmd() {
-    echo -e "\e[32m $* \e[0m"
+	echo -e "\e[1;32m $* \e[0m"
     "$@"
 }
 
