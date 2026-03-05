@@ -447,7 +447,7 @@ main() {
     # Nmap vulnerabilities scan
     #  note: Nmap gives incorrect results with VPN enabled	
     echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd timeout 300 \
+    run_cmd timeout 600 \
             nmap "$host" \
                  -sS \
 				 -Pn \
