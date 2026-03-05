@@ -429,16 +429,19 @@ main() {
 	# -sS  TCP SYN scan (stealthy scan)
 	# -Pn  Treat all hosts as online, skip host discovery	
 	# -n   Never do DNS resolution
-	# 
-    # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
-    # -T<0-5>: Set timing template (higher is faster), T3 is default
-    #
+	# --source-port 53  Use given port number, Spoof Source Port
+    # -D RND:10  Decoy IPs, 
+	#            Your scan currently exposes your real IP clearly in every packet. 
+	#            -D RND:10 generates 10 fake source IPs alongside yours, flooding the target's logs with 11 apparent scanners. 
+	#            Defenders cannot easily isolate your real IP without deep traffic correlation.
     echo -e "[+] Nmap Open Ports and Service detection..."
     run_cmd timeout 300 \
             nmap "$host" \
                  -sS \
 				 -Pn \
-				 -n
+				 -n \
+				 --source-port 53 \
+				 -D RND:10
     echo -e "\n\n"
 
 
@@ -452,6 +455,8 @@ main() {
                  -sS \
 				 -Pn \
 				 -n \
+				 --source-port 53 \
+				 -D RND:10 \
                  --script vuln 
     echo -e "\n\n"  
 
