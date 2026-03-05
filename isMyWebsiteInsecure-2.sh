@@ -324,15 +324,14 @@ main() {
     # Host header injection test
     # Random User-Agent added to blend in with normal browser traffic
     echo -e "[+] Running Host header injection test..."
-    run_cmd curl -s \
-	             -o /dev/null \
-				 -w "%{http_code}" \
-                 -A "$USER_AGENT" \
-                 -H "Host: malicious.example.com" "$url"
-    host_header_injection_status=$(curl -s -o /dev/null -w "%{http_code}" -A "$USER_AGENT" -H "Host: malicious.example.com" "$url")
+    host_header_injection_status=$(run_cmd curl -s \
+	                                            -o /dev/null \
+												-w "%{http_code}" \
+                                                -A "$USER_AGENT" \
+                                                -H "Host: malicious.example.com" "$url")
     echo -e "Host header injection test, HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
-        echo -e " Vulnerable "
+        echo -e " Vulnerable."
     fi
     echo -e "\n\n"
 
