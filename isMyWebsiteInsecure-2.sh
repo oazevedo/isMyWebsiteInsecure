@@ -435,7 +435,7 @@ main() {
 	#            Your scan currently exposes your real IP clearly in every packet. 
 	#            -D RND:10 generates 10 fake source IPs alongside yours, flooding the target's logs with 11 apparent scanners. 
 	#            Defenders cannot easily isolate your real IP without deep traffic correlation.
-    echo -e "[+] Nmap Open Ports and Service detection..."
+    echo -e "[+] Nmap Open Ports detection..."
     run_cmd timeout 300 \
             nmap "$host" \
                  -sS \
