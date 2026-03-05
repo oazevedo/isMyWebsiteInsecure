@@ -426,9 +426,9 @@ main() {
     random_timeout
     # Nmap Open Ports and Service detection
     #  note: Nmap gives incorrect results with VPN enabled	
-	# -sS TCP SYN scan (stealthy scan).
-	# -n  never do DNS resolution
-	# --data-length 25
+	# -sS  TCP SYN scan (stealthy scan)
+	# -Pn  Treat all hosts as online, skip host discovery	
+	# -n   Never do DNS resolution
 	# 
     # -f fragments packets, --mtu 16 evades DPI, --data-length adds random padding,
     # -T<0-5>: Set timing template (higher is faster), T3 is default
@@ -437,6 +437,7 @@ main() {
     run_cmd timeout 300 \
             nmap "$host" \
                  -sS \
+				 -Pn \
 				 -n
     echo -e "\n\n"
 
@@ -449,6 +450,7 @@ main() {
     run_cmd timeout 300 \
             nmap "$host" \
                  -sS \
+				 -Pn \
 				 -n \
                  --script vuln 
     echo -e "\n\n"  
