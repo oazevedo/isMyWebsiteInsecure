@@ -154,7 +154,7 @@ vpn_rotate_ip() {
     fi
 
     echo -e "\e[34m[*] ProtonVPN — switching to a new random server...\e[0m"
-    protonvpn connect --random
+    protonvpn disconnect && protonvpn connect --random
 }
 
 
@@ -213,7 +213,7 @@ main() {
     echo -e "\n\n"
 
 
-    # ──── ProtonVPN ───────────────────────────────────────────────────────────
+    # ProtonVPN is installed?
     VPN="false"
     if command -v protonvpn &> /dev/null; then
         VPN="true"
@@ -233,7 +233,7 @@ main() {
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
     echo -e "[+] Running WHOIS lookup..."
-    run_cmd sudo whois "$domain"
+    run_cmd whois "$domain"
     echo -e "\n\n"
 
 
@@ -293,7 +293,7 @@ main() {
         vpn_rotate_ip
         random_timeout
         echo -e "[!] WordPress detected — running wpscan..."
-        run_cmd sudo wpscan --url "$url" \
+        run_cmd wpscan --url "$url" \
                             --update \
                             --no-banner \
                             --stealthy
@@ -309,7 +309,7 @@ main() {
         vpn_rotate_ip
         random_timeout
         echo -e "[!] Joomla detected — running joomscan..."
-        run_cmd sudo joomscan -u "$url" \
+        run_cmd joomscan -u "$url" \
                               --random-agent \
                               --timeout 600
     else
