@@ -42,7 +42,7 @@ WAF_BYPASS_HEADERS=(
 # ──── Helper: print then execute a command ────────────────────────────────────
 # Usage: run_cmd cmd arg1 arg2 ...
 run_cmd() {
-	echo -e "\e[1;32m $* \e[0m"
+	echo -e "\e[1;32m $* \e[0m" >&2
     "$@"
 }
 
@@ -324,12 +324,12 @@ main() {
     # Host header injection test
     # Random User-Agent added to blend in with normal browser traffic
     echo -e "[+] Running Host header injection test..."
-    run_cmd curl -s -o /dev/null -w "%{http_code}" \
+    run_cmd curl -s \
+	             -o /dev/null \
+				 -w "%{http_code}" \
                  -A "$USER_AGENT" \
                  -H "Host: malicious.example.com" "$url"
-    host_header_injection_status=$(curl -s -o /dev/null -w "%{http_code}" \
-        -A "$USER_AGENT" \
-        -H "Host: malicious.example.com" "$url")
+    host_header_injection_status=$(curl -s -o /dev/null -w "%{http_code}" -A "$USER_AGENT" -H "Host: malicious.example.com" "$url")
     echo -e "Host header injection test, HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
         echo -e " Vulnerable "
