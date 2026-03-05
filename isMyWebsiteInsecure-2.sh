@@ -409,7 +409,7 @@ main() {
     #   percentage      → adds % between characters to break simple regex rules
     #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "[+] SQLmap check for SQL injection"
-    run_cmd timeout 600 \
+    run_cmd timeout 900 \
 	        sqlmap -u "$url" \
                    --batch \
                    --random-agent \
