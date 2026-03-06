@@ -3,8 +3,6 @@
 # developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
 # check the security of a given website with public command line tools
 #
-# nmap: don't use with vpn because returns wrong results
-#
 # v1.5, modified on 2026-03-01
 #  - added rotate_ip using Proton VPN
 #  - added evasion capability
