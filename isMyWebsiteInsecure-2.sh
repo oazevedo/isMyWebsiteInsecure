@@ -189,10 +189,10 @@ main() {
 
 
     # Display VPN recommendation
-    echo -e "\n\e[33m💡 VPN Tip: It is strongly recommended to use a VPN with IP rotation as a WAF evasion technique."
-    echo -e "   This script integrates with ProtonVPN (via the 'protonvpn' CLI), but any VPN that supports"
-    echo -e "   command-line control and random server switching can be adapted."
-    echo -e "   Rotating your public IP between scans helps avoid IP-based rate limiting and WAF blocking.\e[0m\n"
+    echo -e "\n\e[33m💡 VPN Tip: Using a VPN with IP rotation is recommended as a WAF evasion technique,"
+    echo -e "   but this script runs fully without one — VPN is optional."
+    echo -e "   When ProtonVPN is installed, the script detects it and rotates the IP automatically between scans."
+    echo -e "   Any other VPN with CLI support and random server switching can be used instead of ProtonVPN.\e[0m\n"
 	
 	
 	# Display ethical use warning
