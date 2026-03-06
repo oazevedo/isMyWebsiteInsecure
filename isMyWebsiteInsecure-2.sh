@@ -188,8 +188,15 @@ main() {
     check_tools
 
 
-    # Display ethical use warning
-    echo -e "\n\e[31mWarning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
+    # Display VPN recommendation
+    echo -e "\n\e[33m💡 VPN Tip: It is strongly recommended to use a VPN with IP rotation as a WAF evasion technique."
+    echo -e "   This script integrates with ProtonVPN (via the 'protonvpn' CLI), but any VPN that supports"
+    echo -e "   command-line control and random server switching can be adapted."
+    echo -e "   Rotating your public IP between scans helps avoid IP-based rate limiting and WAF blocking.\e[0m\n"
+	
+	
+	# Display ethical use warning
+    echo -e "\e[1;33m⚠️  Warning: Ensure you have explicit authorization before running these tests. Unauthorized testing is illegal and unethical.\e[0m\n"
 
     # Ask user if they want to continue
     read -p "Do you want to continue running the script? (yes/no): " choice
@@ -223,10 +230,6 @@ main() {
 
 
     # ──── Let's go to Work! ───────────────────────────────────────────────────
-
-    # echo "Some tools require running with sudo."
-	# sudo -v
-	
 
     vpn_rotate_ip
     random_timeout
