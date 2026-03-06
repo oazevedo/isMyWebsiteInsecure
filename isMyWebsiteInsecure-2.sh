@@ -197,7 +197,7 @@ main() {
 	
 	# Display ethical use warning
     echo -e "\e[1;33m⚠️  Warning: Ensure you have explicit authorization before running these tests."
-    echo -e "           Unauthorized testing is illegal and unethical.\e[0m\n"
+    echo -e "          Unauthorized testing is illegal and unethical.\e[0m\n"
 
     # Ask user if they want to continue
     read -p "Do you want to continue running the script? (yes/no): " choice
