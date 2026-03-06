@@ -218,7 +218,7 @@ main() {
     echo "Port=${port:-(default)}"
     echo "IPv4=${ipv4:-(unresolved)}"
     echo "Url=$url"
-    echo -e "\n\n"
+    echo -e "\n"
 
 
     # ProtonVPN is installed?
@@ -226,7 +226,7 @@ main() {
     if command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
-        echo -e "\n\n"
+        echo -e "\n"
     fi
 
 
