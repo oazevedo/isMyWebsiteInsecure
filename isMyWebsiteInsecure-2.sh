@@ -340,7 +340,50 @@ main() {
     echo -e "\n\n"
 
 
-    vpn_rotate_ip
+    if echo "$whatweb_output" | grep -qi "wordpress"; then
+      vpn_rotate_ip
+      random_timeout
+      # XML RPC detect
+      # Random User-Agent added to blend in with normal browser traffic
+      echo -e "[+] XML RPC file detection..."
+      xmlrpc_status=$(run_cmd curl -s \
+	                               -o /dev/null \
+								   -w "%{http_code}" \
+                                   -A "$USER_AGENT" \
+								   "${WAF_BYPASS_HEADERS[@]}" \
+                                   --max-time 20 \
+								   "$url/xmlrpc.php")
+      echo -e "$url/xmlrpc.php detection, HTTP code: $xmlrpc_status"
+      if [ "$xmlrpc_status" -eq 200 ]; then
+	    echo -e " Vulnerable."
+	  fi
+      echo -e "\n\n"
+	fi
+
+
+
+    if echo "$whatweb_output" | grep -qi "wordpress"; then
+      vpn_rotate_ip
+      random_timeout
+      # Readme.html detect
+      # Random User-Agent added to blend in with normal browser traffic
+      echo -e "[+] XML RPC file detection..."
+      readme_status=$(run_cmd curl -s \
+	                               -o /dev/null \
+								   -w "%{http_code}" \
+                                   -A "$USER_AGENT" \
+								   "${WAF_BYPASS_HEADERS[@]}" \
+                                   --max-time 20 \
+								   "$url/readme.html")
+      echo -e "$url/readme.html detection, HTTP code: $readme_status"
+      if [ "$readme_status" -eq 200 ]; then
+	    echo -e "Vulnerable."
+	  fi
+      echo -e "\n\n"
+	fi
+	
+	
+	vpn_rotate_ip
     random_timeout
     # Dalfox XSS Scanner
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
