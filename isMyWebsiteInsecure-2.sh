@@ -367,7 +367,7 @@ main() {
       random_timeout
       # Readme.html detect
       # Random User-Agent added to blend in with normal browser traffic
-      echo -e "[+] XML RPC file detection..."
+      echo -e "[+] Readme file detection..."
       readme_status=$(run_cmd curl -s \
 	                               -o /dev/null \
 								   -w "%{http_code}" \
