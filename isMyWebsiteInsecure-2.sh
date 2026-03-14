@@ -13,7 +13,10 @@
 #
 # v1.7, modified on 2026-03-14
 #  - joomscan, removed
-#
+#  - this script has been modified to run on Kali Linux and Ubuntu Desktop.
+#  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto
+#  
+
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
@@ -463,6 +466,7 @@ main() {
     #  note: Nmap gives incorrect results with VPN enabled	
     echo -e "[+] Nmap vulnerabilities scan..."
     run_cmd timeout 600 \
+	        sudo \
             nmap "$host" \
                  -sS \
 				 -Pn \
