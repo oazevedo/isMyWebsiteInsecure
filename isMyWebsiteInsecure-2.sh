@@ -390,6 +390,7 @@ main() {
     # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
     echo -e "[+] Nuclei vulnerabilities scan..."
     run_cmd timeout 2700 \
+	        sudo \
             nuclei -u "$url" \
                    -rate-limit 10 \
                    -concurrency 10 \
