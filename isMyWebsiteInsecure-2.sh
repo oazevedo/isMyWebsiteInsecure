@@ -235,7 +235,16 @@ main() {
 
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
-    vpn_rotate_ip
+    # sudo -v , update user's timestamp
+	# to run every two and half hours:
+	#  sudo visudo
+	#    Defaults timestamp_timeout=150
+    echo -e "[+] Running sudo update timestamp.. "
+    run_cmd sudo -v
+    echo -e "\n\n"
+    
+	
+	vpn_rotate_ip
     random_timeout
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
