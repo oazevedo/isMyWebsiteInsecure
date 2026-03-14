@@ -13,7 +13,7 @@
 #
 # v1.7, modified on 2026-03-14
 #  - joomscan, removed
-#  - this script has been modified to run on Kali Linux and Ubuntu Desktop.
+#  - added sudo before nmap, ex. sudo nmap ...
 #  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto
 #  
 
