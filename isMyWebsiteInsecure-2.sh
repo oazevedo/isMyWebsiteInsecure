@@ -14,7 +14,7 @@
 # v1.7, modified on 2026-03-14
 #  - joomscan, removed
 #  - added sudo before nmap, ex. sudo nmap ...
-#  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto
+#  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto/releases
 #  
 
 
@@ -413,17 +413,11 @@ main() {
     #   3=premature URL ending (%00), 4=prepend long random string,
     #   6=TAB as request spacer, 7=random case sensitivity,
     #   8=Windows path separator (\)
-    # -useragent: spoofs a real browser UA
-    # -maxtime 1800: cap scan at 30 minutes
-    # Nikto has no -H flag for custom headers. WAF-bypass headers are injected
-    #   by appending them to -useragent separated by \r\n — nikto places the
-    #   UA string verbatim into the request, so \r\n starts a new header line.
-    NIKTO_UA="${USER_AGENT}\r\nX-Forwarded-For: 127.0.0.1\r\nX-Real-IP: 127.0.0.1\r\nX-Originating-IP: 127.0.0.1\r\nAccept-Language: en-US,en;q=0.9\r\nReferer: https://www.google.com/"
+	#  Nikto v2.6.0 - default: Randomized User-Agent selection per request
     echo -e "[+] Nikto vulnerabilities scan..."
     run_cmd nikto -h "$url" \
                   -maxtime 1800 \
-                  -evasion 1234678 \
-                  -useragent "$NIKTO_UA"
+                  -evasion 1234678 
     echo -e "\n\n"
 
 	
