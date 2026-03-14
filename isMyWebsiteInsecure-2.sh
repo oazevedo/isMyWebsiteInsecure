@@ -11,6 +11,9 @@
 #  - wpscan only runs if WordPress is detected by whatweb
 #  - joomscan only runs if Joomla is detected by whatweb
 #
+# v1.7, modified on 2026-03-14
+#  - joomscan, removed
+#
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
@@ -127,7 +130,7 @@ validate_url() {
 
 # ──── Function to check if required tools are installed ──────────────────────
 check_tools() {
-    required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto joomscan)
+    required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto)
     missing=()
     for tool in "${required_tools[@]}"; do
         command -v "$tool" &> /dev/null || missing+=("$tool")
@@ -306,22 +309,6 @@ main() {
     fi
     echo -e "\n\n"
 
-
-    # Joomla vulnerability scan (only if Joomla detected by whatweb)
-    echo -e "[+] Checking for Joomla..."
-    if echo "$whatweb_output" | grep -qi "joomla"; then
-        vpn_rotate_ip
-        random_timeout
-        echo -e "[!] Joomla detected — running joomscan..."
-        run_cmd timeout 300 \
-		        joomscan -u "$url" \
-                         --random-agent \
-                         --timeout 600
-    else
-        echo -e "[-] Joomla not detected — skipping joomscan."
-    fi
-    echo -e "\n\n"
-	
 
     vpn_rotate_ip
     random_timeout
