@@ -5,7 +5,7 @@
 
 # Subject X
 
-1. Libraries installation ------------------------------------
+1. **Libraries installation**
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 sudo snap refresh
@@ -41,7 +41,7 @@ go version    # verify installation
 
 
 # Subject Y
-2. Tools installation ----------------------------------------------------------------------------
+2. **Tools installation**
 
 mkdir $HOME/tools     # tools folder
 
