@@ -5,8 +5,44 @@
 
 # Subject X
 
-Content for Subject X...
+1. Libraries installation ------------------------------------
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+sudo snap refresh
+
+sudo apt install -y ruby-full     # Gem is a Ruby package manager and comes bundled with Ruby.
+
+sudo gem update
+
+sudo apt install -y git
+
+sudo apt install -y libcurl4-openssl-dev
+
+sudo apt install -y python-is-python3
+
+sudo apt install -y perl libwww-perl libnet-ssleay-perl
+
+sudo apt install -y alien
+
+sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
+
+# Go installation
+# https://go.dev/doc/install
+# Release History - The Go Programming Language
+# allways check what is the latest version
+sudo rm -rf /usr/local/go
+cd $HOME/Downloads
+wget https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.26.1.linux-amd64.tar.gz 
+sudo nano /etc/profile        # add at end of file
+  export PATH=$PATH:/usr/local/go/bin
+  export GOPATH=$HOME/tools/go   
+go version    # verify installation
+
 
 # Subject Y
 
-Content for Subject Y...
+
+
+
+
