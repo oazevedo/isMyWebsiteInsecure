@@ -115,7 +115,7 @@ dalfox --version
 ### Nikto
 
 > Releases: [https://github.com/sullo/nikto/releases](https://github.com/sullo/nikto/releases)  
-> To update: `git pull`
+> To update: `git pull`  
 > To enable global access: `ln -s`
 
 ```bash
