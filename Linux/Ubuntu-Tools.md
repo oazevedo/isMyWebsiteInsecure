@@ -126,8 +126,8 @@ nikto -Version
 
 ### Nmap
 
-> Always check what is the latest version.
-> Reference: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)  
+> Always check what is the latest version.  
+> Releases: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)  
 > `alien` is used to convert rpm to deb.
 
 ```bash
@@ -162,7 +162,7 @@ nrich --version
 
 ### Whois
 
-> Always check what is the latest version.
+> Always check what is the latest version.  
 > Releases: [https://github.com/rfc1036/whois/tags](https://github.com/rfc1036/whois/tags)
 
 ```bash
