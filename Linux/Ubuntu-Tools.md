@@ -63,7 +63,7 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 
 ### Go Installation
 
-> Always check what is the latest version.
+> Always check what is the latest version.  
 > Reference: [https://go.dev/doc/install](https://go.dev/doc/install) — Release History - The Go Programming Language
 
 ```bash
