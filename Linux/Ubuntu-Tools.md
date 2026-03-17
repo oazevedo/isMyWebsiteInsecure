@@ -104,7 +104,7 @@ whatweb --version    # outdated version, see https://github.com/urbanadventurer/
 
 ### Dalfox
 
-> Releases: [https://github.com/hahwul/dalfox/releases](https://github.com/hahwul/dalfox/releases)
+> Releases: [https://github.com/hahwul/dalfox/releases](https://github.com/hahwul/dalfox/releases)  
 > To update: `sudo snap refresh dalfox`
 
 ```bash
@@ -114,7 +114,7 @@ dalfox --version
 
 ### Nikto
 
-> Releases: [https://github.com/sullo/nikto/releases](https://github.com/sullo/nikto/releases)
+> Releases: [https://github.com/sullo/nikto/releases](https://github.com/sullo/nikto/releases)  
 > To update: `git pull`
 > To enable global access: `ln -s`
 
@@ -127,7 +127,7 @@ nikto -Version
 ### Nmap
 
 > Always check what is the latest version.
-> Reference: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)
+> Reference: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)  
 > `alien` is used to convert rpm to deb.
 
 ```bash
@@ -140,7 +140,7 @@ nmap --version
 
 ### Nuclei
 
-> Releases: [https://github.com/projectdiscovery/nuclei/releases](https://github.com/projectdiscovery/nuclei/releases)
+> Releases: [https://github.com/projectdiscovery/nuclei/releases](https://github.com/projectdiscovery/nuclei/releases)  
 > To enable global access: `ln -s`
 
 ```bash
@@ -151,7 +151,7 @@ nuclei --version
 
 ### Shodan nrich
 
-> Releases: [https://gitlab.com/shodan-public/nrich/-/releases](https://gitlab.com/shodan-public/nrich/-/releases)
+> Releases: [https://gitlab.com/shodan-public/nrich/-/releases](https://gitlab.com/shodan-public/nrich/-/releases)  
 
 ```bash
 cd $HOME/Downloads
@@ -174,7 +174,7 @@ whois --version
 
 ### WPScan
 
-> Releases: [https://github.com/wpscanteam/wpscan/releases](https://github.com/wpscanteam/wpscan/releases)
+> Releases: [https://github.com/wpscanteam/wpscan/releases](https://github.com/wpscanteam/wpscan/releases)  
 > To update: `sudo gem update wpscan`
 
 ```bash
@@ -184,8 +184,8 @@ wpscan --version
 
 ### ZAProxy
 
-> Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)
-> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/) — Install with snap is officially supported.
+> Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
+> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/) — Install with snap is officially supported.  
 > To update: `sudo snap refresh zaproxy`
 
 ```bash
@@ -210,7 +210,7 @@ isMyWebsiteInsecure-2.sh --version
 
 ### ProtonVPN CLI *(Optional)*
 
-> Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)
+> Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
 > CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
 
 ```bash
