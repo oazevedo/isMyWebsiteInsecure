@@ -201,11 +201,9 @@ sudo snap install zaproxy --classic
 ```bash
 cd $HOME/tools
 rm -f isMyWebsiteInsecure-*.sh
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/isMyWebsiteInsecure-1.sh
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/isMyWebsiteInsecure-2.sh
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh
 chmod +x isMyWebsiteInsecure-*.sh
-isMyWebsiteInsecure-1.sh --version
-isMyWebsiteInsecure-2.sh --version
 ```
 
 ### ProtonVPN CLI *(Optional)*
