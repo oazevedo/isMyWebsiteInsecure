@@ -135,7 +135,6 @@ nikto -Version
 ### Nmap
 
 > Website: [https://nmap.org/](https://nmap.org/)  
-> Always check what is the latest version.  
 > Releases: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)  
 
 ```bash
