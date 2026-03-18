@@ -242,7 +242,7 @@ sslscan --version
 
 ```bash
 sudo apt install -y sslyze
-sslyze | grep -i "version"
+sslyze --help | grep -i "sslyze version"
 ```
 
 ### Whatweb
