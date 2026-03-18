@@ -324,12 +324,13 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/i
 chmod +x isMyWebsiteInsecure-*.sh
 ```
 
-### ProtonVPN CLI *(Optional)*
+### ProtonVPN CLI *(Optional - only for Ubuntu)*
 
 > Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
 > CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
 
 ```bash
+# Ubuntu installation
 cd $HOME/Downloads
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb
