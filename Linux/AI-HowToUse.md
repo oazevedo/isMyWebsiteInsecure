@@ -12,7 +12,7 @@ sudo npm install -g @google/gemini-cli@latest
 
 **run Gemini AI** (not run as root)  
 cd $HOME/Gemini  
-gemini  
-> 007, your target is www.aeportugal.com      # this is an example  
+gemini  (ex.)  
+> 007, your target is www.aeportugal.com  
 
  
