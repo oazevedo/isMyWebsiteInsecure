@@ -35,11 +35,13 @@ sudo snap refresh
 ```
 
 ```bash
+# NOT INSTALL
 # Gem is a Ruby package manager and comes bundled with Ruby.
 sudo apt install -y ruby-full
 ```
 
 ```bash
+# NOT RUN
 sudo gem update
 ```
 
@@ -60,10 +62,12 @@ sudo apt install -y perl libwww-perl libnet-ssleay-perl
 ```
 
 ```bash
+# NOT INSTALL
 sudo apt install -y alien
 ```
 
 ```bash
+# NOT INSTALL 
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
