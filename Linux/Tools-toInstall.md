@@ -42,8 +42,8 @@ sudo snap refresh
 ```
 
 ```bash
-# NOT INSTALL
-# Gem is a Ruby package manager and comes bundled with Ruby.
+# Note: only for Ubuntu
+# Gem is a Ruby package manager and comes bundled with Ruby, need for WPScan installation
 sudo apt install -y ruby-full
 ```
 
