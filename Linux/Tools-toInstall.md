@@ -183,14 +183,14 @@ nmap --version
 ```bash
 # Kali installation
 sudo apt install -y nuclei
-nuclei --version
+nuclei
 ```
 
 ```bash
 # Ubuntu installation
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo ln -s $HOME/tools/go/bin/nuclei /usr/local/bin/nuclei
-nuclei --version
+nuclei
 ```
 
 ### Shodan nrich
