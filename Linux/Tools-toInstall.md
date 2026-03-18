@@ -286,7 +286,6 @@ whois --version
 
 > Website: [https://wpscan.com/](https://wpscan.com/)  
 > Releases: [https://github.com/wpscanteam/wpscan/releases](https://github.com/wpscanteam/wpscan/releases)  
-> To update: `sudo gem update wpscan`
 
 ```bash
 # Kali installation
@@ -296,6 +295,7 @@ wpscan --version
 
 ```bash
 # Ubuntu installation
+# To update: `sudo gem update wpscan`
 sudo gem install wpscan
 wpscan --version
 ```
