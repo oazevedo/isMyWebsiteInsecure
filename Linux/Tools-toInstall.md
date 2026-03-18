@@ -254,7 +254,7 @@ sudo snap install zaproxy --classic
 
 ### isMyWebsiteInsecure
 
-> Repository: [https://github.com/oazevedo/isMyWebsiteInsecure](https://github.com/oazevedo/isMyWebsiteInsecure)
+> Repository: [https://github.com/oazevedo/isMyWebsiteInsecure](https://github.com/oazevedo/isMyWebsiteInsecure)  
 > `raw.githubusercontent.com` downloads the file directly as it is intended to be used (e.g., a shell script, text file, etc.)
 
 ```bash
