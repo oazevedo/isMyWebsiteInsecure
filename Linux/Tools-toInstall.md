@@ -245,7 +245,7 @@ wpscan --version
 ### ZAProxy
 
 > Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
-> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/) 
+> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/)   
 > To update: `sudo snap refresh zaproxy`
 
 ```bash
