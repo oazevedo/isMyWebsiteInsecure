@@ -283,6 +283,13 @@ whois --version
 > To update: `sudo gem update wpscan`
 
 ```bash
+# Kali installation
+sudo apt install -y wpscan
+wpscan --version
+```
+
+```bash
+# Ubuntu installation
 sudo gem install wpscan
 wpscan --version
 ```
