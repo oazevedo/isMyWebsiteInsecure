@@ -7,7 +7,7 @@ mkdir $HOME/Gemini
 Copy, from this repository, GEMINI.md to $HOME/Gemini  
 
 **Install Gemini AI** (need a Google Account)  
-https://github.com/google-gemini/ge/mini-cli  
+https://github.com/google-gemini/gemini-cli  
 sudo npm install -g @google/gemini-cli@latest  
 
 **run Gemini AI** (not run as root)  
