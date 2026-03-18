@@ -12,7 +12,7 @@ sudo npm install -g @google/gemini-cli@latest
 
 **run Gemini AI** (not run as root)  
 cd $HOME/Gemini  
-gemini  (ex.)  
-> 007, your target is www.aeportugal.com  
+gemini
+\> 007, your target is www.aeportugal.com     # example to check for vulnerabilities on www.aeportugal.com
 
  
