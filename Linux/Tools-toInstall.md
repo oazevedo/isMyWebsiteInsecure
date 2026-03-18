@@ -73,31 +73,9 @@ sudo apt install -y alien
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
-### Go Installation
-
-> Always check what is the latest version.  
-> Reference: [https://go.dev/doc/install](https://go.dev/doc/install) — Release History - The Go Programming Language  
-> Nota: ver a instalação via snap  
->   sudo snap install go --classic  
-
 ```bash
-# Kali and Ubuntu installation
 sudo snap install go --classic
-go version                    # verify installation
-```
-
-```bash
-# Ubuntu installation
-# sudo rm -rf /usr/local/go
-# cd $HOME/Downloads
-# wget https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
-# sudo tar -C /usr/local -xzf go1.26.1.linux-amd64.tar.gz
-
-sudo nano /etc/profile        # add at end of file
-  # export PATH=$PATH:/usr/local/go/bin
-  export GOPATH=$HOME/tools/go
-source /etc/profile
-echo $GOPATH
+go version        # verify installation
 ```
 
 ---
