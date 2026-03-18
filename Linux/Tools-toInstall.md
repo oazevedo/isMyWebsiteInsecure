@@ -42,7 +42,7 @@ sudo snap refresh
 ```
 
 ```bash
-# Need, only, for WPScan installation on Ubuntu
+# Need for WPScan installation on Ubuntu
 # Gem is a Ruby package manager and comes bundled with Ruby.
 sudo apt install -y ruby-full
 ```
