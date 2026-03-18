@@ -1,35 +1,18 @@
-**## install Gemini AI** (need a Google Account)  
- sudo apt install gemini-cli  
+Note: only tested on Kali linux
 
-create a working directory, ex. /home/kali/tmp  
+**Create working directory**
+mkdir $HOME/Gemini
 
-**## run Gemini AI** (not run as root)  
-$ gemini-cli  
-\> /directory add /home/kali/tmp  
+**Get GEMINI.md**
+Copy from this repository GEMINI.md to $HOME/Gemini
 
+**Install Gemini AI** (need a Google Account)  
+https://github.com/google-gemini/ge/mini-cli
+sudo npm install -g @google/gemini-cli@latest
 
-## ex. run following **prompt** to test https://www.aeportugal.com    
+**run Gemini AI** (not run as root)  
+cd $HOME/Gemini
+gemini
+> 007, your target is www.aeportugal.com      # this is an example
 
-You are performing ethical reconnaissance.  
-Authorized Target: www.aeportugal.com   
-**STRICT INSTRUCTIONS:**  
-	- Output each command on a separate line.  
-	- Use only valid, real syntax for each tool.  
-	- Do not invent flags, options, or file paths.  
-	- Do not search another subdomains.   
-	- For WPScan, always use --stealthy, don't use api-token option.   
-	- For Dalfox, always use --waf-evasion  
-	- For Nikto, use by default -ssl  
-  	- Use /home/kali/tmp as a working directory, /home/kali/tmp already exist.  
-**TASKS:**  
-	1) Run nmap to find open ports and identify running services.  
-	2) Use nikto to scan the web server for known vulnerabilities, misconfigurations and outdated software.  
-	3) Use nuclei to identify security issues and weaknesses.  
-	4) Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.  
-	5) Use sqlmap to check for SQL injection.  
-	6) Use dalfox to check for XSS.  
-	7) Validate security headers.  
-	8) Check for outdated software, apps, frameworks, libraries.  
-	9) Check for correctly web server hardening.  
-Summarize the findings, provide security recommendations and hardening sugestions.  
  
