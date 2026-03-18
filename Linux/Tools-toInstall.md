@@ -74,7 +74,7 @@ sudo apt install -y alien
 ```
 
 ```bash
-# NOT INSTALL 
+# Need for Nikto installation 
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
