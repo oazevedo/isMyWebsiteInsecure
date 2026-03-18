@@ -137,21 +137,9 @@ nikto -Version
 > Website: [https://nmap.org/](https://nmap.org/)  
 > Always check what is the latest version.  
 > Releases: [https://nmap.org/download.html#linux-rpm](https://nmap.org/download.html#linux-rpm)  
-> `alien` is used to convert rpm to deb.
 
 ```bash
-# Kali installation
 sudo apt install -y nmap
-nmap --version
-```
-
-```bash
-# Ubuntu installation
-sudo apt remove -y nmap
-cd $HOME/Downloads
-wget https://nmap.org/dist/nmap-7.98-1.x86_64.rpm
-sudo alien -k nmap-7.98-1.x86_64.rpm
-sudo dpkg -i nmap_7.98-1_amd64.deb
 nmap --version
 ```
 
