@@ -158,7 +158,7 @@ dnsrecon --version
 ```bash
 sudo apt remove -y nikto
 git clone --depth 1 https://github.com/sullo/nikto.git $HOME/tools/nikto
-sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/local/bin/nikto
+sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/bin/nikto
 nikto -Version
 ```
 
@@ -200,7 +200,7 @@ nuclei
 ```bash
 # Ubuntu installation
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-sudo ln -s $HOME/tools/go/bin/nuclei /usr/local/bin/nuclei
+sudo ln -s $HOME/tools/go/bin/nuclei /usr/bin/nuclei
 nuclei
 ```
 
