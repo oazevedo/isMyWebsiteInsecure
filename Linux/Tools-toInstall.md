@@ -181,6 +181,13 @@ nmap --version
 > To enable global access: `ln -s`
 
 ```bash
+# Kali installation
+sudo apt install -y nuclei
+nuclei --version
+```
+
+```bash
+# Ubuntu installation
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo ln -s $HOME/tools/go/bin/nuclei /usr/local/bin/nuclei
 nuclei --version
