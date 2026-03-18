@@ -263,6 +263,13 @@ whatweb --version
 > Releases: [https://github.com/rfc1036/whois/tags](https://github.com/rfc1036/whois/tags)
 
 ```bash
+# Kali installation
+sudo apt install -y whois
+whois --version
+```
+
+```bash
+# Ubuntu installation
 cd $HOME/Downloads
 wget https://ftp.debian.org/debian/pool/main/w/whois/whois_5.6.6_amd64.deb
 sudo dpkg -i whois_5.6.6_amd64.deb
