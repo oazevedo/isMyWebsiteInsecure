@@ -112,7 +112,6 @@ dalfox version
 
 > Website: [https://github.com/darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon)  
 > Releases: [https://github.com/darkoperator/dnsrecon/releases](https://github.com/darkoperator/dnsrecon/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
 sudo apt install -y dnsrecon
