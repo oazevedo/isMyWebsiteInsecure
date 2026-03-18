@@ -238,12 +238,11 @@ sslscan --version
 
 > Website: [https://github.com/nabla-c0d3/sslyze](https://github.com/nabla-c0d3/sslyze)  
 > Releases: [https://github.com/nabla-c0d3/sslyze/releases](https://github.com/nabla-c0d3/sslyze/releases)  
-> To update: `pip install --upgrade sslyze`
+> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
-pip install --upgrade pip setuptools wheel --break-system-packages
-pip install --upgrade sslyze --break-system-packages
-sslyze --version
+sudo apt install -y sslyze
+sslyze | grep -i "version"
 ```
 
 ### Whatweb
