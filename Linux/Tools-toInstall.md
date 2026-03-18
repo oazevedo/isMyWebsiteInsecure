@@ -87,7 +87,7 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 
 ```bash
 # Kali installation
-sudo snap install go
+sudo snap install go --classic
 go version                    # verify installation
 ```
 
