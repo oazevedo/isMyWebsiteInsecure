@@ -179,7 +179,6 @@ nrich --version
 
 > Website: [https://sqlmap.org/](https://sqlmap.org/)  
 > Releases: [https://github.com/sqlmapproject/sqlmap/releases](https://github.com/sqlmapproject/sqlmap/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
 sudo apt install -y sqlmap
@@ -190,7 +189,6 @@ sqlmap --version
 
 > Website: [https://github.com/rbsec/sslscan](https://github.com/rbsec/sslscan)  
 > Releases: [https://github.com/rbsec/sslscan/releases](https://github.com/rbsec/sslscan/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
 sudo apt install -y sslscan
@@ -201,9 +199,9 @@ sslscan --version
 
 > Website: [https://github.com/nabla-c0d3/sslyze](https://github.com/nabla-c0d3/sslyze)  
 > Releases: [https://github.com/nabla-c0d3/sslyze/releases](https://github.com/nabla-c0d3/sslyze/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
+# Kali installation
 sudo apt install -y sslyze
 sslyze --help | grep -i "sslyze version"
 ```
@@ -212,7 +210,6 @@ sslyze --help | grep -i "sslyze version"
 
 > Website: [https://morningstarsecurity.com/research/whatweb](https://morningstarsecurity.com/research/whatweb)  
 > Releases: [https://github.com/urbanadventurer/WhatWeb/releases](https://github.com/urbanadventurer/WhatWeb/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
 sudo apt install -y whatweb
@@ -222,20 +219,10 @@ whatweb --version
 ### Whois
 
 > Website: [https://github.com/rfc1036/whois](https://github.com/rfc1036/whois)  
-> Always check what is the latest version.  
 > Releases: [https://github.com/rfc1036/whois/tags](https://github.com/rfc1036/whois/tags)
 
 ```bash
-# Kali installation
 sudo apt install -y whois
-whois --version
-```
-
-```bash
-# Ubuntu installation
-cd $HOME/Downloads
-wget https://ftp.debian.org/debian/pool/main/w/whois/whois_5.6.6_amd64.deb
-sudo dpkg -i whois_5.6.6_amd64.deb
 whois --version
 ```
 
@@ -260,7 +247,7 @@ wpscan --version
 ### ZAProxy
 
 > Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
-> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/) — Install with snap is officially supported.  
+> Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/) 
 > To update: `sudo snap refresh zaproxy`
 
 ```bash
@@ -270,7 +257,6 @@ sudo snap install zaproxy --classic
 ### isMyWebsiteInsecure
 
 > Repository: [https://github.com/oazevedo/isMyWebsiteInsecure](https://github.com/oazevedo/isMyWebsiteInsecure)
-> Note: change `/oazevedo/` to `/si-aeportugal/`
 > `raw.githubusercontent.com` downloads the file directly as it is intended to be used (e.g., a shell script, text file, etc.)
 
 ```bash
