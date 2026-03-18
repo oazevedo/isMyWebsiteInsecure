@@ -92,9 +92,11 @@ sudo rm -rf /usr/local/go
 cd $HOME/Downloads
 wget https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.26.1.linux-amd64.tar.gz
+
 sudo nano /etc/profile        # add at end of file
-  export PATH=$PATH:/usr/local/go/bin
+  # export PATH=$PATH:/usr/local/go/bin
   export GOPATH=$HOME/tools/go
+source /etc/profile
 go version                    # verify installation
 ```
 
