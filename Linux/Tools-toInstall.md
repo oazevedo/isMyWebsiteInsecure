@@ -48,11 +48,6 @@ sudo apt install -y ruby-full
 ```
 
 ```bash
-# NOT RUN
-sudo gem update
-```
-
-```bash
 sudo apt install -y git
 ```
 
