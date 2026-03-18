@@ -90,7 +90,6 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 > Website: [https://curl.se/](https://curl.se/)  
 > Releases: [https://github.com/curl/curl/releases](https://github.com/curl/curl/releases)  
-> Note: apt version may be outdated — check GitHub for latest release.
 
 ```bash
 sudo apt install -y curl
