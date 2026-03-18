@@ -158,6 +158,14 @@ nikto -Version
 > `alien` is used to convert rpm to deb.
 
 ```bash
+# Kali installation
+sudo apt install -y nmap
+nmap --version
+```
+
+```bash
+# Ubuntu installation
+sudo apt remove -y nmap
 cd $HOME/Downloads
 wget https://nmap.org/dist/nmap-7.98-1.x86_64.rpm
 sudo alien -k nmap-7.98-1.x86_64.rpm
