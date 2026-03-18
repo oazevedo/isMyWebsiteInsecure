@@ -31,6 +31,10 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
 ```bash
+sudo apt install -y snapd
+sudo systemctl enable snapd
+sudo systemctl start snapd
+sudo systemctl status snapd
 sudo snap refresh
 ```
 
