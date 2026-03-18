@@ -113,7 +113,7 @@ curl --version
 
 ```bash
 sudo snap install dalfox
-dalfox --version
+dalfox version
 ```
 
 ### Dnsrecon
