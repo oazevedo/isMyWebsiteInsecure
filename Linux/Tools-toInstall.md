@@ -70,6 +70,8 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 
 > Always check what is the latest version.  
 > Reference: [https://go.dev/doc/install](https://go.dev/doc/install) — Release History - The Go Programming Language
+> Nota: ver a instalação via snap
+>   sudo snap install go --classic
 
 ```bash
 sudo rm -rf /usr/local/go
