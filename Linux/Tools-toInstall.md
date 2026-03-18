@@ -64,11 +64,6 @@ sudo apt install -y perl libwww-perl libnet-ssleay-perl
 ```
 
 ```bash
-# NOT INSTALL
-sudo apt install -y alien
-```
-
-```bash
 # Need for Nikto installation 
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
