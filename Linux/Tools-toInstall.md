@@ -196,6 +196,10 @@ nuclei
 
 ```bash
 # Ubuntu installation
+sudo nano /etc/profile        # add at end of file
+  export GOPATH=$HOME/tools/go
+source /etc/profile
+
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo ln -s $HOME/tools/go/bin/nuclei /usr/bin/nuclei
 nuclei
