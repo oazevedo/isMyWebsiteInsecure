@@ -19,7 +19,6 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      - implementam a sequência de autenticação: login + password complexa + reCaptcha + 2FA
    - backup's diários online e offline
    
-   
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
      - como instalar: [Tools-toInstall.md](Linux/Tools-toInstall.md)
