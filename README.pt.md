@@ -20,12 +20,23 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - backup's diários online e offline
 
 2. **"Ferramentas" Cibersegurança**
-   - a forma mais simples é utilizar uma VM com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas:
+   - a forma mais simples é utilizar uma VM com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas, conforme indicado em ***********
+  
+     | Ferramenta                                                  | Alternativa             |
+     |-------------------------------------------------------------|-------------------------|
+     | isMyWebsiteInsecure-1.sh                                    | isMyWebsiteInsecure.bat |
+     | isMyWebsiteInsecure-2.sh                                    | HowToUse-AI.md          |
+     | Browser Lighthouse                                          | Google Page speed       |
+     | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
+     | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
+
+
+
       - [isMyWebsiteInsecure-1.sh](isMyWebsiteInsecure-1.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 8c2ae9250d5f5f91837b770e0174f17a50737f14    
       - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 5e5ade0e8f5585649bf4081ec00f2b442167b4c7  
       - [Gemini AI](GeminiAI.md)   
-      - ZAP ( https://www.zaproxy.org/ ) ou Burp Suite ( https://portswigger.net/burp/pro )
-      - Nessus ( https://www.tenable.com/products/nessus ) ou Greenbone OpenVAS ( https://openvas.org/ )  
+    
+
       (*) encontra-se neste repositório
    - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
 
@@ -45,7 +56,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | HostedScan ( https://hostedscan.com ) | # vulnerability scanner (opcional)          |  
       | Gemini AI                           | # Gemini AI cybersecurity analysis (opcional) |
       | ZAP \<url\> ou Burp Suite \<url\>   | # testa toda a aplicação/plataforma web       |
-      | Nessus \<host\> or Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
+      | Nessus \<host\> ou Greenbone OpenVAS \<host\> | # testa todo o alojamento/aplicação |
 
        (*) ou [isMyWebsiteInsecure.bat](windows/isMyWebsiteInsecure.bat)
 
