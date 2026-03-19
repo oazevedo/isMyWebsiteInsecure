@@ -87,6 +87,17 @@ mkdir $HOME/tools             # tools folder
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
+### Chromium
+
+> Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
+> Releases: []()  
+> To update: `sudo snap refresh dalfox`
+
+```bash
+sudo snap install chromium
+chromium version
+```
+
 ### Curl
 
 > Website: [https://curl.se/](https://curl.se/)  
