@@ -28,7 +28,7 @@
 ## 1. Libraries Installation
 
 ```bash
-sudo apt update && sudo apt dist-upgrade
+sudo apt update && sudo apt dist-upgrade -y
 ```
 
 ```bash
