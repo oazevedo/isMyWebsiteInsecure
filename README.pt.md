@@ -30,10 +30,11 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
 
-   -**Notas:**
+   **Notas:**
       - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
-      - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação mas que não deve ser utilizada para testes formais.
+      - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação mas que não deve ser utilizada para testes formais.  
 
+  
 4. **"Requisitos mínimos" Cibersegurança**
    - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
@@ -47,8 +48,6 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
       | Chrome Browser > Console \<url\>      | # valida se existem erros nas páginas         |
       | Chrome Browser > Lighthouse \<url\>   | # testa página web e performance              |
       | isMyWebsiteInsecure-2.sh \<url\>      | # testa 1ª página e alojamento                |
-      | HostedScan ( https://hostedscan.com ) | # vulnerability scanner (opcional)            |  
-      | Gemini AI                             | # Gemini AI cybersecurity analysis (opcional) |
       | ZAP \<url\>                           | # testa toda a aplicação/plataforma web       |
       | Nessus \<host\>                       | # testa todo o alojamento/aplicação           |
 
