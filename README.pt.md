@@ -36,14 +36,14 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      **Notas:**  
      - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
      - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação que não deve ser utilizada para testes formais.
-     - a pasta [windows](https://github.com/oazevedo/isMyWebsiteInsecure/tree/main/Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"  
+     - a pasta [windows](Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"  
    
    
 4. **"Requisitos mínimos" Cibersegurança**
    - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
 5. **"Testes" Cibersegurança**
-   - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
+   - sugere-se a utilização do [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/)
    - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**
    - sequência aconselhada de testes (devem ser todos executados):
      
