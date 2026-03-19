@@ -4,6 +4,7 @@
 
 1. [Libraries Installation](#1-libraries-installation)
 2. [Tools Installation](#2-tools-installation)
+   - [Chromium](#chromium)
    - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
