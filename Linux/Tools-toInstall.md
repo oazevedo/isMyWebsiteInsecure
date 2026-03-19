@@ -129,7 +129,7 @@ cd $HOME/Downloads
 curl --request GET \ --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb' \ --output 'Nessus-10.11.3-ubuntu1604_amd64.deb'
 sudo dpkg -i Nessus-10.11.3-ubuntu1604_amd64.deb
 sudo /bin/systemctl start nessusd.service
-# go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner
+# go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
 ```
 
 ### Nikto
