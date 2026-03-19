@@ -1,2 +1,4 @@
 
-isMyWebsiteInsecure.bat
+| Tool                    |  SHA1 Hash                   |
+|-------------------------|------------------------------|
+| isMyWebsiteInsecure.bat | **************************** |
