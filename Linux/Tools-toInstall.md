@@ -89,11 +89,14 @@ mkdir $HOME/tools             # tools folder
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
+```bash
+sudo snap refresh
+```
+
 ### Chromium
 
 > Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
 > Releases: []()  
-> To update: `sudo snap refresh chromium`
 
 ```bash
 # Kali installation
