@@ -74,6 +74,7 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```bash
 sudo snap install go --classic
 go version        # verify installation
+# The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ---
