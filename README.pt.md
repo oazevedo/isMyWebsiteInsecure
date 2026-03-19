@@ -20,24 +20,16 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - backup's diários online e offline
 
 2. **"Ferramentas" Cibersegurança**
-   - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o Ubuntu Desktop e instalar as seguintes ferramentas, conforme indicado em [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
+   - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e instalar as seguintes ferramentas, conforme indicado em [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
   
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
-     | isMyWebsiteInsecure-1.sh                                    | isMyWebsiteInsecure.bat |
-     | isMyWebsiteInsecure-2.sh                                    | HowToUse-AI.md          |
+     | [isMyWebsiteInsecure-1.sh](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/isMyWebsiteInsecure-1.sh) | [isMyWebsiteInsecure.bat](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Windows/isMyWebsiteInsecure.bat) |
+     | [isMyWebsiteInsecure-2.sh](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/isMyWebsiteInsecure-2.sh) | [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md)          |
      | Browser Lighthouse                                          | Google Page speed       |
      | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
 
-
-
-      - [isMyWebsiteInsecure-1.sh](isMyWebsiteInsecure-1.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 8c2ae9250d5f5f91837b770e0174f17a50737f14    
-      - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 5e5ade0e8f5585649bf4081ec00f2b442167b4c7  
-      - [Gemini AI](GeminiAI.md)   
-    
-
-      (*) encontra-se neste repositório
    - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
 
 3. **"Requisitos mínimos" Cibersegurança**
