@@ -24,8 +24,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
       - como instalar: [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
       - como utilizar: [HowToUse.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse.md), [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md)
-      >
-     
+      >  
   
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
@@ -38,7 +37,8 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    **Notas:**
       - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
       - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação que não deve ser utilizada para testes formais.
-      - a pasta [windows](https://github.com/oazevedo/isMyWebsiteInsecure/tree/main/Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"      <br>
+      - a pasta [windows](https://github.com/oazevedo/isMyWebsiteInsecure/tree/main/Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"
+      >  
         
     
 4. **"Requisitos mínimos" Cibersegurança**
@@ -46,8 +46,9 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
 
 5. **"Testes" Cibersegurança**
    - sugere-se a utilização do OWASP Web Security Testing Guide ( https://owasp.org/www-project-web-security-testing-guide/stable/ )
-   - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**  
+   - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**
    - sequência aconselhada de testes (devem ser todos executados):
+     
       | Ferramenta                            | Descrição                                     |
       |---------------------------------------|-----------------------------------------------|
       | isMyWebsiteInsecure-1.sh \<url\>      | # testa 1ª página e alojamento                |
