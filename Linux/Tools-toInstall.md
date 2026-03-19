@@ -122,7 +122,7 @@ dnsrecon --version
 
 > Website: [https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)  
 > Releases: [https://www.tenable.com/downloads/nessus?loginAttempted=true](https://www.tenable.com/downloads/nessus?loginAttempted=true)  
-> To update: `git pull`  
+> To update:  
 
 ```bash
 cd $HOME/Downloads
