@@ -18,28 +18,34 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      - com 2FA duplo factor autenticação
      - implementam a sequência de autenticação: login + password complexa + reCaptcha + 2FA
    - backup's diários online e offline
+    <br/>
+
    
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
      - como instalar: [Tools-toInstall.md](Linux/Tools-toInstall.md)
-     - como utilizar: [HowToUse.md](Linux/HowToUse.md) e [HowToUse-AI.md](Linux/HowToUse-AI.md)<br/>
-   
+     - como utilizar: [HowToUse.md](Linux/HowToUse.md) e [HowToUse-AI.md](Linux/HowToUse-AI.md)
+     <br/>
+     
      | Ferramenta                                                  | Alternativa             |
-     |-------------------------------------------------------------|-------------------------|
+     |------------------------------------------------------------:|-------------------------|
      | [isMyWebsiteInsecure-1.sh](Linux/isMyWebsiteInsecure-1.sh)  | [isMyWebsiteInsecure.bat](Windows/isMyWebsiteInsecure.bat) |
      | [isMyWebsiteInsecure-2.sh](Linux/isMyWebsiteInsecure-2.sh)  | [HowToUse-AI.md](Linux/HowToUse-AI.md) |
      | Browser Lighthouse                                          | [Google Page speed](https://pagespeed.web.dev/) |
      | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
    
-     **Notas:**  
+     **Notas:**
      - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
      - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação que não deve ser utilizada para testes formais.
-     - a pasta [windows](Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"  
-   
+     - a pasta [Windows](Windows) tem instruções de como instalar e correr a batch `isMyWebsiteInsecure.bat`
+    <br/>
+
    
 4. **"Requisitos mínimos" Cibersegurança**
-   - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
+   - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)
+    <br/>
+
 
 5. **"Testes" Cibersegurança**
    - sugere-se a utilização do [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/)
