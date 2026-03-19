@@ -296,6 +296,12 @@ wpscan --version
 > To update: `sudo snap refresh zaproxy`
 
 ```bash
+# Kali installation
+sudo apt install -y zaproxy 
+```
+
+```bash
+# Ubuntu installation
 sudo snap install zaproxy --classic
 ```
 
