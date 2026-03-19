@@ -96,7 +96,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 ```bash
 sudo snap install chromium
-chromium version
+chromium --version
 ```
 
 ### Curl
