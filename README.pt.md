@@ -22,14 +22,13 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
-     - como instalar: [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
-     - como utilizar: [HowToUse.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse.md), [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md)
-   
+     - como instalar: [Tools-toInstall.md](Linux/Tools-toInstall.md)
+     - como utilizar: [HowToUse.md](Linux/HowToUse.md) e [HowToUse-AI.md](Linux/HowToUse-AI.md)<br/>
    
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
-     | [isMyWebsiteInsecure-1.sh](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/isMyWebsiteInsecure-1.sh) | [isMyWebsiteInsecure.bat](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Windows/isMyWebsiteInsecure.bat) |
-     | [isMyWebsiteInsecure-2.sh](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/isMyWebsiteInsecure-2.sh) | [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md) |
+     | [isMyWebsiteInsecure-1.sh](Linux/isMyWebsiteInsecure-1.sh)  | [isMyWebsiteInsecure.bat](Windows/isMyWebsiteInsecure.bat) |
+     | [isMyWebsiteInsecure-2.sh](Linux/isMyWebsiteInsecure-2.sh)  | [HowToUse-AI.md](Linux/HowToUse-AI.md) |
      | Browser Lighthouse                                          | [Google Page speed](https://pagespeed.web.dev/) |
      | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
