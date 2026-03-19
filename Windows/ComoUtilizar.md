@@ -1,5 +1,5 @@
 
-1. efetuar o download da batch file isMyWebsiteInsecure.bat
+1. efetuar o download da batch file [isMyWebsiteInsecure.bat](isMyWebsiteInsecure.bat)
 
 2. no windows, pasta documentos, tecla lado direito do rato > propriedades, clicar em desbloquear
 
