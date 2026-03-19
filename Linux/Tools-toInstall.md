@@ -182,7 +182,7 @@ nuclei
 
 ```bash
 # Ubuntu installation
-# on /etc/profile, add at the end export GOPATH=$HOME/tools/go
+# on /etc/profile, add at the end, export GOPATH=$HOME/tools/go
 if ! grep -Fxq "export GOPATH=\$HOME/tools/go" /etc/profile; then echo "export GOPATH=\$HOME/tools/go" | sudo tee -a /etc/profile > /dev/null; echo "Added to /etc/profile"; else echo "Line already exists in /etc/profile."; fi
 source /etc/profile
 
