@@ -20,7 +20,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - backup's diários online e offline
 
 2. **"Ferramentas" Cibersegurança**
-   - a forma mais simples é utilizar uma VM com o Kali Linux ( https://www.kali.org ) e instalar as seguintes ferramentas, conforme indicado em ***********
+   - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o Ubuntu Desktop e instalar as seguintes ferramentas, conforme indicado em [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
   
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
