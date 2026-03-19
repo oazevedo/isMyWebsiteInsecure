@@ -169,7 +169,7 @@ random_timeout() {
         printf "\r⏳ remaining: %3d seconds" "$i"
         sleep 1
     done
-    printf "\r✅ Done!                    \n"
+    printf "\r✅ Time to work!                    \n"
 }
 
 
