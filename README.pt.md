@@ -34,9 +34,10 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
 
-
-
-
+**Notas:**  
+   - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
+   - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação que não deve ser utilizada para testes formais.
+   - a pasta [windows](https://github.com/oazevedo/isMyWebsiteInsecure/tree/main/Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"  
 
  
 4. **"Requisitos mínimos" Cibersegurança**
