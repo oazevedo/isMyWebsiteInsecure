@@ -101,7 +101,7 @@ sudo snap refresh
 ```bash
 # Kali installation
 sudo apt install -y chromium
-nuclei
+chromium --version
 ```
 
 ```bash
