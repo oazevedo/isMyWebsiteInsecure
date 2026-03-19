@@ -51,6 +51,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - sugere-se a utilização do [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/)
    - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**
    - sequência aconselhada de testes (devem ser todos executados):
+    <br/>
      
      | Ferramenta                            | Descrição                                     |
      |---------------------------------------|-----------------------------------------------|
@@ -60,12 +61,13 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      | isMyWebsiteInsecure-2.sh \<url\>      | # testa 1ª página e alojamento                |
      | ZAP \<url\>                           | # testa toda a aplicação/plataforma web       |
      | Nessus \<host\>                       | # testa todo o alojamento/aplicação           |
-   
+    <br/>
+
    
 6. **"Relatório" Cibersegurança**
    - usar [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) para:
      - registar configuração do alojamento, ferramentas e bibliotecas usadas no website
-     - relatórios de cibersegurança
-   - (*) SHA1 7f1eb3e2322fe761fba852d46d743743e3e3ed11
+     - relatórios de cibersegurança<br/>
+       (*) SHA1 7f1eb3e2322fe761fba852d46d743743e3e3ed11
    
 
