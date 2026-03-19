@@ -93,9 +93,16 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 > Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
 > Releases: []()  
-> To update: `sudo snap refresh dalfox`
+> To update: `sudo snap refresh chromium`
 
 ```bash
+# Kali installation
+sudo apt install -y chromium
+nuclei
+```
+
+```bash
+# Ubuntu installation
 sudo snap install chromium
 chromium --version
 ```
