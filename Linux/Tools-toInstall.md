@@ -42,6 +42,7 @@ sudo systemctl enable snapd
 sudo systemctl start snapd
 sudo systemctl status snapd
 sudo snap refresh
+# Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ```bash
@@ -129,6 +130,7 @@ curl --version
 ```bash
 sudo snap install dalfox
 dalfox version
+# Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ### Dnsrecon
