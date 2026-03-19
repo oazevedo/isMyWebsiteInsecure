@@ -117,6 +117,20 @@ sudo apt install -y dnsrecon
 dnsrecon --version
 ```
 
+### Nessus
+
+> Website: [https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)  
+> Releases: [https://www.tenable.com/downloads/nessus?loginAttempted=true](https://www.tenable.com/downloads/nessus?loginAttempted=true)  
+> To update: `git pull`  
+
+```bash
+cd $HOME/Downloads
+curl --request GET \ --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb' \ --output 'Nessus-10.11.3-ubuntu1604_amd64.deb'
+sudo dpkg -i Nessus-10.11.3-ubuntu1604_amd64.deb
+/bin/systemctl start nessusd.service
+# go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner
+```
+
 ### Nikto
 
 > Website: [https://cirt.net/Nikto2](https://cirt.net/Nikto2)  
