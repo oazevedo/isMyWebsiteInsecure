@@ -171,6 +171,8 @@ sudo apt remove -y nikto
 git clone --depth 1 https://github.com/sullo/nikto.git $HOME/tools/nikto
 sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/bin/nikto
 nikto -Version
+# Kali, already installed, sudo apt install -y nikto
+# Error: /usr/bin/nikto: 5: exec: /var/lib/nikto/nikto.pl: not found
 ```
 
 ### Nmap
