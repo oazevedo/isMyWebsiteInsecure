@@ -7,6 +7,7 @@
    - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
+   - [Nessus](#nessus)
    - [Nikto](#nikto)
    - [Nmap](#nmap)
    - [Nuclei](#nuclei)
