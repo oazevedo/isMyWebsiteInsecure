@@ -43,7 +43,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
 5. **"Testes" Cibersegurança**
-   - sugere-se a utilização do [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/)
+   - sugere-se a utilização do [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/)
    - pretende-se que a solução/plataforma **não apresente erros ou vulnerabilidades de grau superior a "informativo".**
    - sequência aconselhada de testes (devem ser todos executados):
      
