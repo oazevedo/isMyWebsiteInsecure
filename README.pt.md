@@ -22,8 +22,8 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
       - como instalar: [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
-      - como utilizar: [HowToUse.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse.md), [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md) <br>
-      
+      - como utilizar: [HowToUse.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse.md), [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md)
+        <br>
   
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
@@ -36,9 +36,9 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
    **Notas:**
       - **não são aceites testes com outras ferramentas**, a não ser se expressamente autorizado.
       - [HostedScan](https://hostedscan.com) é uma ferramenta em avaliação mas que não deve ser utilizada para testes formais.
-      - a pasta windows tem instruções de como instalar e correr a batch isMyWebsiteInsecure.bat
-
-  
+      - a pasta [windows](https://github.com/oazevedo/isMyWebsiteInsecure/tree/main/Windows) tem instruções de como instalar e correr a batch "isMyWebsiteInsecure.bat"        
+        
+    
 4. **"Requisitos mínimos" Cibersegurança**
    - seguir o guia [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
 
