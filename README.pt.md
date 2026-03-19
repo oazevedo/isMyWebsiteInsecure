@@ -18,12 +18,14 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      - com 2FA duplo factor autenticação
      - implementam a sequência de autenticação: login + password complexa + reCaptcha + 2FA
    - backup's diários online e offline
-
+   >
+   
 2. **"Ferramentas" Cibersegurança**
    - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
       - como instalar: [Tools-toInstall.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/Tools-toInstall.md)
       - como utilizar: [HowToUse.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse.md), [HowToUse-AI.md](https://github.com/oazevedo/isMyWebsiteInsecure/blob/main/Linux/HowToUse-AI.md)
-        <br>
+      >
+     
   
      | Ferramenta                                                  | Alternativa             |
      |-------------------------------------------------------------|-------------------------|
