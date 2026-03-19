@@ -71,7 +71,7 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
 ```bash
-# Install only on Ubuntu?, Kaly já vem instalado? verificar.
+# Ubuntu only?, Kaly já vem instalado? verificar.
 sudo snap install go --classic
 go version        # verify installation
 ```
