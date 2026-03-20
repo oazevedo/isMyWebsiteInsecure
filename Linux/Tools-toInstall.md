@@ -41,12 +41,26 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
 ```bash
+# Kali only, need it for Dalfox, Shodan nrich
+# https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
+sudo apt update
+sudo apt install snapd
+systemctl enable --now snapd apparmor
+reboot
+
+# to test
+snap install hello-world
+$ hello-world
+```
+
+
+```bash
+# Ubuntu only?, ver se é necessário ou se está pré-instalado
 sudo apt install -y snapd
 sudo systemctl enable snapd
 sudo systemctl start snapd
 sudo systemctl status snapd
 sudo snap refresh
-# Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ```bash
@@ -129,13 +143,6 @@ curl --version
 > To update: `sudo snap refresh dalfox`
 
 ```bash
-sudo apt install -y snapd
-sudo systemctl enable snapd
-sudo systemctl start snapd
-sudo systemctl enable --now snapd.apparmor
-sudo systemctl status snapd
-sudo snap refresh
-
 sudo snap install dalfox
 dalfox version
 # Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
