@@ -5,7 +5,6 @@
 1. [Libraries Installation](#1-libraries-installation)
 2. [Tools Installation](#2-tools-installation)
    - [Chromium](#chromium)
-   - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
    - [Nessus](#nessus)
@@ -85,16 +84,6 @@ chromium --version
 # Ubuntu installation
 sudo snap install chromium
 chromium --version
-```
-
-### Curl
-
-> Website: [https://curl.se/](https://curl.se/)  
-> Releases: [https://github.com/curl/curl/releases](https://github.com/curl/curl/releases)  
-
-```bash
-sudo apt install -y curl
-curl --version
 ```
 
 ### Dalfox
