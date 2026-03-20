@@ -60,18 +60,18 @@ sudo snap list
 ```
 
 ```bash
-# Ubuntu only: need for WPScan installation
+# Ubuntu only: need for WPScan installation   EM TESTES / NAO INSTALAR
 # Gem is a Ruby package manager and comes bundled with Ruby.
 sudo apt install -y ruby-full
 ```
 
 ```bash
-# Ubuntu only, need for Nikto installation
+# Ubuntu only, need for Nikto installation    EM TESTES / NAO INSTALAR
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
 ```bash
-# Ubuntu only, need for Nuclei installation
+# Ubuntu only, need for Nuclei installation   EM TESTES / NAO INSTALAR
 sudo snap install go --classic
 go version        # verify installation
 ```
