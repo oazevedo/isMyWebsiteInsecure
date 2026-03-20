@@ -123,16 +123,12 @@ dnsrecon --version
 
 > Website: [https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)  
 > Releases: [https://www.tenable.com/downloads/nessus?loginAttempted=true](https://www.tenable.com/downloads/nessus?loginAttempted=true)  
-> To update:  
-
+> How to use: go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
 ```bash
 cd $HOME/Downloads
-curl --request GET \ --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb' \ --output 'Nessus-10.11.3-ubuntu1604_amd64.deb'
+wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb
 sudo dpkg -i Nessus-10.11.3-ubuntu1604_amd64.deb
 sudo /bin/systemctl start nessusd.service
-# go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
-# Error: dpkg: error: cannot access archive 'Nessus-10.11.3-ubuntu1604_amd64.deb': No such file or directory
-# Failed to start nessusd.service: Unit nessusd.service not found.
 ```
 
 ### Nikto
