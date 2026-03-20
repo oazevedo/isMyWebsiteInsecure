@@ -55,6 +55,7 @@ sudo systemctl status snapd
 
 ```bash
 sudo snap refresh
+sudo snap list
 ```
 
 ```bash
