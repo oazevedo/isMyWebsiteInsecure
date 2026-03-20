@@ -123,7 +123,7 @@ dnsrecon --version
 
 > Website: [https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)  
 > Releases: [https://www.tenable.com/downloads/nessus?loginAttempted=true](https://www.tenable.com/downloads/nessus?loginAttempted=true)  
-> How to use: go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
+> Go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
 ```bash
 cd $HOME/Downloads
 wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb
