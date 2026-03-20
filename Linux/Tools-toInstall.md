@@ -33,6 +33,11 @@ sudo reboot
 ```
 
 ```bash
+# it is advised
+sudo reboot
+```
+
+```bash
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
