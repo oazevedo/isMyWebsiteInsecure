@@ -12,6 +12,6 @@ cd $HOME/tools
 rm -f isMyWebsiteInsecure-*.sh  
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh  
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh  
-chmod +x isMyWebsiteInsecure-*.sh  
+chmod +x isMyWebsiteInsecure-\*.sh  
 
 
