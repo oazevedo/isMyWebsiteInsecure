@@ -172,6 +172,13 @@ sudo /bin/systemctl start nessusd.service
 > To enable global access: `ln -s`
 
 ```bash
+# Kaly installation
+sudo apt install -y nikto
+nikto -Version
+```
+
+```bash
+# Ubuntu installation
 sudo apt remove -y nikto
 git clone --depth 1 https://github.com/sullo/nikto.git $HOME/tools/nikto
 sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/bin/nikto
