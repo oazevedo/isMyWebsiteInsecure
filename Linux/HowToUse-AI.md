@@ -4,7 +4,7 @@ Note: tested only on Kali linux
 mkdir $HOME/Gemini  
 
 **Get GEMINI.md**  
-Copy, from this repository, GEMINI.md to $HOME/Gemini  
+Copy, from this repository, [GEMINI.md](GEMINI.md) to $HOME/Gemini  
 
 **Install Gemini AI** (need a Google Account)  
 https://github.com/google-gemini/gemini-cli  
