@@ -59,12 +59,6 @@ sudo snap refresh
 sudo snap list
 ```
 
-```bash
-# Ubuntu only: need for WPScan installation   EM TESTES / NAO INSTALAR
-# Gem is a Ruby package manager and comes bundled with Ruby.
-sudo apt install -y ruby-full
-```
-
 ---
 
 ## 2. Tools Installation
