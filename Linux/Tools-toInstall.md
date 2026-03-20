@@ -40,13 +40,12 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
 
 sudo apt install -y snapd
-
 sudo systemctl enable snapd
 sudo systemctl enable apparmor
+sudo reboot
 
 sudo systemctl start snapd
 sudo systemctl start apparmor
-
 sudo reboot
 
 sudo systemctl status snapd
