@@ -65,17 +65,6 @@ sudo snap list
 sudo apt install -y ruby-full
 ```
 
-```bash
-# Ubuntu only, need for Nikto installation    EM TESTES / NAO INSTALAR
-sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
-```
-
-```bash
-# Ubuntu only, need for Nuclei installation   EM TESTES / NAO INSTALAR
-sudo snap install go --classic
-go version        # verify installation
-```
-
 ---
 
 ## 2. Tools Installation
