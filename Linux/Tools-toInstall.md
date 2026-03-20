@@ -129,6 +129,13 @@ curl --version
 > To update: `sudo snap refresh dalfox`
 
 ```bash
+sudo apt install -y snapd
+sudo systemctl enable snapd
+sudo systemctl start snapd
+sudo systemctl enable --now snapd.apparmor
+sudo systemctl status snapd
+sudo snap refresh
+
 sudo snap install dalfox
 dalfox version
 # Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
@@ -333,6 +340,7 @@ chmod +x isMyWebsiteInsecure-*.sh
 
 ```bash
 # Ubuntu installation
+# Not work on Kali Linux
 cd $HOME/Downloads
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb
