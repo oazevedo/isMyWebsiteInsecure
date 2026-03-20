@@ -257,6 +257,9 @@ wpscan --version
 ```bash
 # Ubuntu installation
 # To update: `sudo gem update wpscan`
+
+sudo apt-get install -y ruby-full rubygems
+
 sudo gem install wpscan
 wpscan --version
 ```
