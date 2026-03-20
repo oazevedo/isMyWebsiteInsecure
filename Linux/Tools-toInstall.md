@@ -176,7 +176,6 @@ nmap --version
 
 > Website: [https://projectdiscovery.io/nuclei](https://projectdiscovery.io/nuclei)  
 > Releases: [https://github.com/projectdiscovery/nuclei/releases](https://github.com/projectdiscovery/nuclei/releases)  
-> To enable global access: `ln -s`
 
 ```bash
 # Kali installation
