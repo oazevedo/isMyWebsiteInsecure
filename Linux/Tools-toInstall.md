@@ -48,6 +48,9 @@ sudo reboot
 
 sudo systemctl start snapd.apparmor
 sudo systemctl start snapd
+
+sudo systemctl status snapd.apparmor
+sudo systemctl status snapd
 ```
 
 ```bash
