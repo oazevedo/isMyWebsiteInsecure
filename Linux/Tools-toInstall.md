@@ -28,12 +28,7 @@
 ## 1. Libraries Installation
 
 ```bash
-sudo apt update && sudo apt dist-upgrade -y
-```
-
-```bash
-# it is advised
-sudo reboot
+sudo apt update && sudo apt dist-upgrade -y && sudo reboot
 ```
 
 ```bash
