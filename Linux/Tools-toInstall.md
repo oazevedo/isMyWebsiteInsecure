@@ -50,9 +50,8 @@ sudo systemctl start snapd.apparmor
 sudo systemctl start snapd
 ```
 
-
 ```bash
-# Ubuntu only?, ver se é necessário ou se está pré-instalado
+# Ubuntu only, se já está pré-instalado
 sudo apt install -y snapd
 sudo systemctl enable snapd
 sudo systemctl start snapd
@@ -67,22 +66,6 @@ sudo apt install -y ruby-full
 ```
 
 ```bash
-sudo apt install -y git
-```
-
-```bash
-sudo apt install -y libcurl4-openssl-dev
-```
-
-```bash
-sudo apt install -y python-is-python3
-```
-
-```bash
-sudo apt install -y perl libwww-perl libnet-ssleay-perl
-```
-
-```bash
 # Ubuntu only, need for Nikto installation
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
@@ -91,7 +74,6 @@ sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 # Ubuntu only, need for Nuclei installation
 sudo snap install go --classic
 go version        # verify installation
-# The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ---
