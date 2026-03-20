@@ -124,7 +124,6 @@ curl --version
 ```bash
 sudo snap install dalfox
 dalfox version
-# Kali: The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ### Dnsrecon
