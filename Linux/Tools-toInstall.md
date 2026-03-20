@@ -193,6 +193,7 @@ go version        # verify installation
 mkdir -p "$HOME/tools/go"
 if ! grep -Fxq "export GOPATH=\$HOME/tools/go" /etc/profile; then echo "export GOPATH=\$HOME/tools/go" | sudo tee -a /etc/profile > /dev/null; echo "Added to /etc/profile"; else echo "Line already exists in /etc/profile."; fi
 source /etc/profile
+echo $GOPATH
 
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo ln -s $HOME/tools/go/bin/nuclei /usr/bin/nuclei
