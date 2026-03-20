@@ -45,11 +45,16 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
 sudo apt update
 sudo apt install snapd
-systemctl enable --now snapd apparmor
+
+# very important reboot!
+sudo reboot
+
+sudo systemctl enable --now snapd apparmor
 
 # very important reboot!
 reboot
 
+sudo systemctl status snapd
 # to test
 snap install hello-world
 $ hello-world
