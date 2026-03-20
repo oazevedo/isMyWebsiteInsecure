@@ -73,7 +73,7 @@ sudo apt install -y perl libwww-perl libnet-ssleay-perl
 ```
 
 ```bash
-# Need for Nikto installation; not necessary for Kali Linux => sudo apt install -y nikto
+# Ubuntu only, need for Nikto installation
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
 ```
 
