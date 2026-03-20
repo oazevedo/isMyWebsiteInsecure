@@ -196,7 +196,6 @@ nuclei
 ```bash
 sudo snap install nrich
 nrich --version
-# Error: Kali, The command could not be located because '/snap/bin' is not included in the PATH environment variable.
 ```
 
 ### Sqlmap
