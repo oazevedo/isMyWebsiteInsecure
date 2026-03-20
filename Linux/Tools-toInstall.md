@@ -43,20 +43,13 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```bash
 # Kali only, need it for Dalfox, Shodan nrich
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
-sudo apt update
-sudo apt install snapd
+sudo apt install snapd && sudo reboot
 
-# very important reboot!
-sudo reboot
-
-sudo systemctl enable --now snapd apparmor
-
-# very important reboot!
-reboot
+sudo systemctl enable --now snapd apparmor  && reboot
 
 sudo systemctl status snapd
-# to test
-snap install hello-world
+
+snap install hello-world  # to test
 $ hello-world
 ```
 
