@@ -43,7 +43,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```bash
 # Kali only, need it for Dalfox, Shodan nrich
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
-sudo apt install snapd && sudo reboot
+sudo apt install -y snapd && sudo reboot
 
 sudo systemctl enable --now snapd apparmor  && sudo reboot
 
