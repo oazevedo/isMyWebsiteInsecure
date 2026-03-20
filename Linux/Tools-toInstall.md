@@ -54,7 +54,7 @@ sudo systemctl status snapd
 ```
 
 ```bash
-# Ubuntu, installed by default
+# Ubuntu, snapd installed by default
 sudo snap refresh
 ```
 
