@@ -88,10 +88,6 @@ go version        # verify installation
 ## 2. Tools Installation
 
 ```bash
-mkdir $HOME/tools             # tools folder
-```
-
-```bash
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
@@ -322,6 +318,7 @@ sudo snap install zaproxy --classic
 > `raw.githubusercontent.com` downloads the file directly as it is intended to be used (e.g., a shell script, text file, etc.)
 
 ```bash
+mkdir $HOME/tools             # tools folder
 cd $HOME/tools
 rm -f isMyWebsiteInsecure-*.sh
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh
