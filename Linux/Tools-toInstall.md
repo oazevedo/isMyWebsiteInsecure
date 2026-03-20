@@ -20,7 +20,6 @@
    - [Whois](#whois)
    - [WPScan](#wpscan)
    - [ZAProxy](#zaproxy)
-   - [isMyWebsiteInsecure](#ismywebsiteinsecure)
    - [ProtonVPN CLI *(Optional - only for Ubuntu)*](#protonvpn-cli-optional)
 
 ---
@@ -274,20 +273,6 @@ sudo apt install -y zaproxy
 ```bash
 # Ubuntu installation
 sudo snap install zaproxy --classic
-```
-
-### isMyWebsiteInsecure
-
-> Repository: [https://github.com/oazevedo/isMyWebsiteInsecure](https://github.com/oazevedo/isMyWebsiteInsecure)  
-> `raw.githubusercontent.com` downloads the file directly as it is intended to be used (e.g., a shell script, text file, etc.)
-
-```bash
-mkdir $HOME/tools             # tools folder
-cd $HOME/tools
-rm -f isMyWebsiteInsecure-*.sh
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh
-chmod +x isMyWebsiteInsecure-*.sh
 ```
 
 ### ProtonVPN CLI *(Optional - only for Ubuntu)*
