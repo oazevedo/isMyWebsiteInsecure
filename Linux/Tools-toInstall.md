@@ -44,8 +44,8 @@ sudo systemctl enable --now snapd       # --now  Start or stop unit after enabli
 sudo systemctl enable --now apparmor
 sudo reboot
 
-sudo snap warnings
 sudo snap refresh
+sudo systemctl enable --now snapd.apparmor
 sudo systemctl status snapd
 
 snap install hello-world  # to test
