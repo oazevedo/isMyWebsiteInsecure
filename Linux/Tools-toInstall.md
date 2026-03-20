@@ -54,11 +54,7 @@ sudo systemctl status snapd
 ```
 
 ```bash
-# Ubuntu only, se já está pré-instalado
-sudo apt install -y snapd
-sudo systemctl enable snapd
-sudo systemctl start snapd
-sudo systemctl status snapd
+# Ubuntu only, installed by default
 sudo snap refresh
 ```
 
