@@ -46,6 +46,8 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 sudo apt update
 sudo apt install snapd
 systemctl enable --now snapd apparmor
+
+# very important reboot!
 reboot
 
 # to test
