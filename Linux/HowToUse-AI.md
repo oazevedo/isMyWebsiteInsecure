@@ -1,5 +1,7 @@
 Note: tested only on Kali linux  
 
+***How to use AI to check for vulnerabilities***
+
 **Create working directory**  
 mkdir $HOME/Gemini  
 
