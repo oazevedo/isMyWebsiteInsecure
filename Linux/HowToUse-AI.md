@@ -22,8 +22,9 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/G
 <br/>
 
 **Run Gemini AI** (not run as root, need a free Google Account)  
+```
 cd $HOME/Gemini  
 gemini  
-\> your target is www.aeportugal.com  &nbsp;&nbsp; # example to check for vulnerabilities on www.aeportugal.com
-
+ > your target is www.aeportugal.com  &nbsp;&nbsp; # example to check for vulnerabilities on www.aeportugal.com
+```
  
