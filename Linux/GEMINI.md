@@ -17,7 +17,7 @@ You are performing ethical reconnaissance.
 - Under `$HOME/websitesScan`, for each target, create a folder and sub-folder with format `full_name_target/yyy-mm-dd` and place the results of each command and your report there.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
-- If you are unable to complete a task, explain and report why.
+- If you are unable to complete a task explain and report why.
 
 ## TASKS
 0. **Warning**: Show an ethical warning message and ask user if agree, if not exit.
