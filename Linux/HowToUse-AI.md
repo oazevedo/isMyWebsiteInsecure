@@ -14,7 +14,8 @@ sudo npm install -g @google/gemini-cli@latest
 **Get GEMINI.md**  
 
 ```
-mkdir $HOME/Gemini   # Gemini work folder
+mkdir $HOME/Gemini   # Gemini folder
+mkdir $HOME/websitesScan   # assessment results folder
 cd $HOME/Gemini
 rm -f GEMINI.md
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/GEMINI.md  
