@@ -1,5 +1,6 @@
 
-***How to use Gemini AI to check for vulnerabilities***
+***How to use Gemini AI to check for vulnerabilities***  
+<br/>
 
 **Install Gemini AI**    
 > Website: https://github.com/google-gemini/gemini-cli  
@@ -8,6 +9,7 @@
 ```
 sudo npm install -g @google/gemini-cli@latest  
 ```
+<br/>
 
 **Get GEMINI.md**  
 
@@ -15,10 +17,9 @@ sudo npm install -g @google/gemini-cli@latest
 mkdir $HOME/Gemini   # Gemini work folder
 cd $HOME/Gemini
 rm -f GEMINI.md
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/GEMINI.md
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/GEMINI.md  
 ``` 
-
-
+<br/>
 
 **Run Gemini AI** (not run as root, need a free Google Account)  
 cd $HOME/Gemini  
