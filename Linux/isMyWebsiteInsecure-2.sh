@@ -132,7 +132,7 @@ validate_url() {
 
 # ──── Function to check if required tools are installed ──────────────────────
 check_tools() {
-    required_tools=(whois dnsrecon whatweb wpscan sqlmap curl nmap sslscan nrich dig dalfox nuclei nikto)
+    required_tools=(curl dalfox dnsrecon nessus nikto nmap nuclei nrich sqlmap sslscan whatweb whois wpscan)
     missing=()
     for tool in "${required_tools[@]}"; do
         command -v "$tool" &> /dev/null || missing+=("$tool")
@@ -143,7 +143,7 @@ check_tools() {
     fi
 }
 
-
+ 
 # ──── Function to rotate VPN public IP Address ────────────────────────────────
 vpn_rotate_ip() {
     if [[ "$VPN" != "true" ]]; then
