@@ -18,13 +18,18 @@
 <br/>
 
 **Imagens:**  
-- figura-1 download da batch file  
+- *figura-1:*  download da batch file<br/>
   <img width="1197" height="436" alt="image" src="https://github.com/user-attachments/assets/5becf577-3f8a-4aec-93f0-0215a7b03e64" />  
-<br/>
-- figura-2 desbloquear a batch file  
+<br/><br/>
+- *figura-2:*  desbloquear a batch file<br/> 
   <img width="518" height="667" alt="image" src="https://github.com/user-attachments/assets/3aaf3d1a-a8a5-424f-90d4-a4f2972dcb79" />  
-<br/>
-- figura-3 
+<br/><br/>
+- *figura-3:*  correr a batch file<br/>
+  <img width="771" height="757" alt="image" src="https://github.com/user-attachments/assets/d57fca97-9e1a-483a-b29e-42c25e306499" />
+  <img width="850" height="372" alt="image" src="https://github.com/user-attachments/assets/79efd119-cbc1-4642-97cd-d67fc0cc6a3c" />
+  
+
+
 
 
 
