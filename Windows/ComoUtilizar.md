@@ -11,7 +11,7 @@
    > \- tecla lado direito do rato \> propriedades \> desbloquear, ver figura-2.
 <br/>  
 
-3. **correr a batch isMyWebsiteInsecure.bat para avaliação rápida da segurança de website**
+3. **correr a batch isMyWebsiteInsecure.bat para avaliação rápida da segurança do website**
    > ex. avaliação rápida da segurança do website www.aeportugal.com  
    > \- duplo click em cima de `isMyWebsitInsecure.bat` , ver figura-3.  
    > \- escolher opção 1. e digitar www.aeportugal.com
