@@ -154,8 +154,8 @@ nmap --version
 
 ### Npm
 
-> Website: []()  
-> Releases: []()  
+> Website: [https://docs.npmjs.com/about-npm](https://docs.npmjs.com/about-npm)  
+> Releases: [https://docs.npmjs.com/cli/v11/commands/npm-install](https://docs.npmjs.com/cli/v11/commands/npm-install)  
 
 ```bash
 sudo apt install -y npm
