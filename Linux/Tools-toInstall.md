@@ -34,8 +34,6 @@ sudo apt update && sudo apt dist-upgrade -y && sudo reboot
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
-> [!CAUTION]  
-> Kaly only  
 ```bash
 # Kali only
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
