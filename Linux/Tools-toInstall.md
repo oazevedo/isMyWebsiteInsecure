@@ -11,6 +11,7 @@
    - [Nessus](#nessus)
    - [Nikto](#nikto)
    - [Nmap](#nmap)
+   - [Npm](#npm)
    - [Nuclei](#nuclei)
    - [Shodan nrich](#shodan-nrich)
    - [Sqlmap](#sqlmap)
@@ -150,6 +151,17 @@ nikto -Version
 sudo apt install -y nmap
 nmap --version
 ```
+
+### Npm
+
+> Website: []()  
+> Releases: []()  
+
+```bash
+sudo apt install -y npm
+npm --version
+```
+
 
 ### Nuclei
 
