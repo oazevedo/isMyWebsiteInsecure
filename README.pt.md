@@ -22,7 +22,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
 
    
 2. **"Ferramentas" Cibersegurança**
-   - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
+   - a forma mais simples é utilizar uma VM com o [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) ou o [Ubuntu Desktop](https://ubuntu.com/download/desktop) e seguir os seguintes documentos:
      - como instalar: [Tools-toInstall.md](Linux/Tools-toInstall.md)
      - como utilizar: [HowToUse.md](Linux/HowToUse.md) e [HowToUse-AI.md](Linux/HowToUse-AI.md)
      <br/>
