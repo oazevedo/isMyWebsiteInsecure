@@ -278,6 +278,10 @@ sudo snap install zaproxy --classic
 
 ### isMyWebsiteInsecure
 
+> scripts that detect vulnerabilities in websites:
+>  \- isMyWebsiteInsecure-1.sh , using public free web tools.
+>  \- isMyWebsiteInsecure-2.sh , using public free command-line tools.
+
 ```
 mkdir $HOME/tools # tools folder
 cd $HOME/tools
