@@ -1,33 +1,21 @@
-Kali linux
-Ubuntu desktop
 
+***How to use isMyWebsiteInsecure\*.sh scripts to check for vulnerabilities***  
+<br/>
 
-isMyWebsiteInsecure
+**Install Linux Virtual Machine**
+> get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) or [Ubuntu desktop](https://ubuntu.com/download/desktop) VM  
+> install all tools as indicated on [Tools-toInstall](Tools-toInstall.md)
+<br/>
 
-    Repository: https://github.com/oazevedo/isMyWebsiteInsecure
-    raw.githubusercontent.com downloads the file directly as it is intended to be used (e.g., a shell script, text file, etc.)  
+**Check for vulnerabilities**  
+> quick assessment using public web tools
+```
+cd $HOME/tools
+./isMyWebsiteInsecure-1.sh <url>   # ex. ./isMyWebsiteInsecure-1.sh https://www.aeportugal.com 
+```
 
-mkdir $HOME/tools             # tools folder  
-cd $HOME/tools  
-rm -f isMyWebsiteInsecure-*.sh  
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh  
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh  
-chmod +x isMyWebsiteInsecure-\*.sh  
-
-
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
-
-> [!TIP]
-> Helpful advice for doing things better or more easily.
-
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
-
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
-
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
-
-
+> more detailed evaluation using free command-line tools
+```
+cd $HOME/tools
+./isMyWebsiteInsecure-2.sh <url>   # ex. ./isMyWebsiteInsecure-2.sh https://www.aeportugal.com 
+```
