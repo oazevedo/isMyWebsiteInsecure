@@ -1,5 +1,7 @@
 
-***Como fazer uma avaliação rápida da segurança de um website.***  
+***Como fazer uma <ins>avaliação rápida</ins> da segurança de um website.***  
+> [!NOTE]
+> sendo uma avaliação rápida é insuficiente, pelo que posteriormente deverá ser efetuada uma avaliação mais detalhada conforme indicado em [HowToUse](/Linux/HowToUse.md).
 <br/>  
 
 1. **fazer o download da batch file [isMyWebsiteInsecure](isMyWebsiteInsecure.bat)**
