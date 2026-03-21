@@ -52,7 +52,7 @@ sudo systemctl status snapd
 ```
 
 ```bash
-# Ubuntu and Kali
+# Kali and Ubuntu
 sudo snap refresh
 sudo snap list
 ```
