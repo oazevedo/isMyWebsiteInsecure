@@ -89,8 +89,8 @@ chromium --version
 
 ### Curl
 
-> Website: []()  
-> Releases: []()  
+> Website: [https://curl.se/](https://curl.se/)  
+> Releases: [https://curl.se/download.html](https://curl.se/download.html)  
 
 ```bash
 sudo apt install -y curl
