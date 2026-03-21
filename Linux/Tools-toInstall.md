@@ -20,7 +20,7 @@
    - [Whois](#whois)
    - [WPScan](#wpscan)
    - [ZAProxy](#zaproxy)
-   - [isMyWebsiteInsecure](isMyWebsiteInsecure)
+   - [isMyWebsiteInsecure](#isMyWebsiteInsecure)
    - [ProtonVPN CLI *(Optional - only for Ubuntu)*](#protonvpn-cli-optional)
 
 ---
