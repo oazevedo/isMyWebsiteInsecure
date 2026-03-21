@@ -284,7 +284,7 @@ sudo snap install zaproxy --classic
 >  TIP: both must be used  
 
 ```
-mkdir $HOME/tools # tools folder
+mkdir $HOME/tools   # tools folder
 cd $HOME/tools
 rm -f isMyWebsiteInsecure-*.sh
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh
