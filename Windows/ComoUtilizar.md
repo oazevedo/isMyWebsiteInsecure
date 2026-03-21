@@ -1,5 +1,5 @@
 
-***Como fazer uma avalição rápida da segurança de um website***  
+***Como fazer uma avaliação rápida da segurança de um website.***  
 <br/>  
 
 1. **fazer o download do ficheiro [isMyWebsiteInsecure](isMyWebsiteInsecure.bat)**
