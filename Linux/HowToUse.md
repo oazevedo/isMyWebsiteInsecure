@@ -1,5 +1,5 @@
 
-***How to use isMyWebsiteInsecure\*.sh scripts to check for vulnerabilities***  
+***How to use isMyWebsiteInsecure\*.sh scripts to check for website vulnerabilities.***  
 <br/>
 
 **Install Linux Virtual Machine**
