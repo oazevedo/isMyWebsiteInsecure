@@ -1,5 +1,5 @@
 
-***How to use Gemini AI to check for vulnerabilities***  
+***How to use Gemini AI to check for website vulnerabilities***  
 <br/>
 
 **Install Gemini AI**    
