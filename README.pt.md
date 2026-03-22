@@ -28,7 +28,7 @@ Breve resumo dos **requisitos mínimos de Cibersegurança** para o Alojamento, D
      <br/>
      
      | Ferramenta                                                  | Alternativa             |
-     |------------------------------------------------------------:|-------------------------|
+     |-------------------------------------------------------------|-------------------------|
      | [isMyWebsiteInsecure-1.sh](Linux/isMyWebsiteInsecure-1.sh)  | [isMyWebsiteInsecure.bat](Windows/isMyWebsiteInsecure.bat) |
      | [isMyWebsiteInsecure-2.sh](Linux/isMyWebsiteInsecure-2.sh)  | [HowToUse-AI.md](Linux/HowToUse-AI.md) |
      | Browser Lighthouse                                          | [Google Page speed](https://pagespeed.web.dev/) |
