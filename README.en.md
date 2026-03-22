@@ -17,18 +17,28 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
      - complex and long passwords ( +13 characters )
      - with 2FA two-factor authentication
      - implement the authentication sequence: login + complex password + reCaptcha + 2FA
-   - Daily backups online and offline
+   - Daily backups online and offline  
+   <br/>
 
 2. **Cybersecurity "Tools"**
-   - The simplest approach is to use a virtual machine (VM) with [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) or [Ubuntu Desktop](https://ubuntu.com/download/desktop) and following documents:<br/>
+   - The simplest approach is to use a virtual machine (VM) with [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) or [Ubuntu Desktop](https://ubuntu.com/download/desktop) along with the following documents:<br/>
       - how to install: [Tools-toInstall.md](/Linux/Tools-toInstall.md)  
-      - how to use: [HowToUse.md](/Linux/HowtoUse.md) and [HowToUse-AI.md](/Linux/HowToUse-AI-md)<br/><br/>
-      |      tool      |    Alternative   |
-      |----------------|------------------|
-
-      -  
+      - how to use: [HowToUse.md](/Linux/HowtoUse.md) and [HowToUse-AI.md](/Linux/HowToUse-AI-md)  
+     <br/>
      
-   - Do not use tools other than the ones listed unless explicitly authorized.
+     |  Tool                                                  |  Alternative             |
+     |------------------------------------------------------------|-------------------------|
+     | [isMyWebsiteInsecure-1.sh](Linux/isMyWebsiteInsecure-1.sh)  | [isMyWebsiteInsecure.bat](Windows/isMyWebsiteInsecure.bat) |
+     | [isMyWebsiteInsecure-2.sh](Linux/isMyWebsiteInsecure-2.sh)  | [HowToUse-AI.md](Linux/HowToUse-AI.md) |
+     | Browser Lighthouse                                          | [Google Page speed](https://pagespeed.web.dev/) |
+     | [ZAP Proxy](https://www.zaproxy.org/)                       | [Burp suite](https://portswigger.net/burp/pro) |
+     | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
+   
+     **Notes:**
+     - **tests using other tools are not accepted.**, unless expressly authorized.
+     - [HostedScan](https://hostedscan.com) it is an assessment tool that should not be used for formal testing.
+     - the [Windows](Windows) includes instructions on how to install and run the batch `isMyWebsiteInsecure.bat`
+    <br/>
 
 3. **Cybersecurity "minimum Requirements"**
    - Refer to the document [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
