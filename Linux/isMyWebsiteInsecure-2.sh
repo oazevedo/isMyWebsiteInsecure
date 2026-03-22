@@ -19,6 +19,28 @@
 # v1.8, modified on 2026-03-22
 #  - sqlmap, changed some parameters
 #
+# v1.9, modified on 2026-03-22
+#  - added CLI flags: -h/--help, -v/--version, -u/--url, -nv/--novpn
+#
+
+
+VERSION="1.9"
+
+
+# ──── Show help ───────────────────────────────────────────────────────────────
+show_help() {
+    echo -e "Usage: $0 [OPTIONS] -u <url>"
+    echo -e ""
+    echo -e "Options:"
+    echo -e "  -h,  --help       Show this help message and exit"
+    echo -e "  -v,  --version    Show script version and exit"
+    echo -e "  -u,  --url        Target URL to scan (required)"
+    echo -e "  -nv, --novpn      Disable ProtonVPN IP rotation even if ProtonVPN is installed"
+    echo -e ""
+    echo -e "Examples:"
+    echo -e "  $0 -u https://example.com"
+    echo -e "  $0 --url https://example.com --novpn"
+}
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
@@ -172,21 +194,61 @@ random_timeout() {
         printf "\r⏳ remaining: %3d seconds" "$i"
         sleep 1
     done
-   printf "\r🔨 Time to work!                    \n"
+    printf "\r🔨 Time to work!                    \n"
 }
 
 
 # Main script
 main() {
 
-    # Check if a URL parameter is provided
-    if [ "$#" -ne 1 ]; then
-        echo -e "Usage: $0 <url>"
+    # ──── Parse CLI arguments ─────────────────────────────────────────────────
+    url=""
+    NOVPN="false"
+
+    if [ "$#" -eq 0 ]; then
+        show_help
+        exit 1
+    fi
+
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            -h|--help)
+                show_help
+                exit 0
+                ;;
+            -v|--version)
+                echo "isMyWebsiteInsecure version $VERSION"
+                exit 0
+                ;;
+            -u|--url)
+                if [[ -z "$2" || "$2" == -* ]]; then
+                    echo "Error: --url requires a URL argument."
+                    exit 1
+                fi
+                url="$2"
+                shift 2
+                ;;
+            -nv|--novpn)
+                NOVPN="true"
+                shift
+                ;;
+            *)
+                echo "Error: Unknown option '$1'"
+                echo ""
+                show_help
+                exit 1
+                ;;
+        esac
+    done
+
+    if [[ -z "$url" ]]; then
+        echo "Error: -u/--url is required."
+        echo ""
+        show_help
         exit 1
     fi
 
     # Validate the URL format
-    url="$1"
     validate_url "$url"
 
 
@@ -199,9 +261,9 @@ main() {
     echo -e "   but this script runs fully without one — VPN is optional."
     echo -e "   When ProtonVPN is installed, the script detects it and rotates the IP automatically between scans."
     echo -e "   Any other VPN with CLI support and random server switching can be used instead of ProtonVPN.\e[0m\n"
-	
-	
-	# Display ethical use warning
+
+
+    # Display ethical use warning
     echo -e "\e[1;33m⚠️  Warning: Ensure you have explicit authorization before running these tests."
     echo -e "             Unauthorized testing is illegal and unethical.\e[0m\n"
 
@@ -216,7 +278,7 @@ main() {
     # Start Date
     start_ts=$(date +%s)
     echo -e "\n\nStart date: $(date +"%Y-%m-%d %H:%M") \n\n"
-		
+
 
     # host, domain, port and ipv4 were all set by validate_url above
     echo "Host=$host"
@@ -229,9 +291,12 @@ main() {
 
     # ProtonVPN is installed?
     VPN="false"
-    if command -v protonvpn &> /dev/null; then
+    if [[ "$NOVPN" == "false" ]] && command -v protonvpn &> /dev/null; then
         VPN="true"
         echo "ProtonVPN is installed."
+        echo -e "\n"
+    elif [[ "$NOVPN" == "true" ]]; then
+        echo "ProtonVPN rotation disabled via --novpn."
         echo -e "\n"
     fi
 
