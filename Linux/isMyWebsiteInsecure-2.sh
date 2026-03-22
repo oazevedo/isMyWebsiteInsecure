@@ -524,10 +524,10 @@ main() {
     # Nmap vulnerabilities scan
     #  note: Nmap gives incorrect results with VPN enabled	
     echo -e "[+] Nmap vulnerabilities scan..."
-    run_cmd timeout 600 \
-	        sudo \
+    run_cmd sudo \
             nmap "$host" \
-                 -sS \
+                 --host-timeout 600s \
+				 -sS \
 				 -Pn \
 				 -n \
 				 --source-port 53 \
