@@ -36,22 +36,18 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - It is suggested to use the OWASP Web Security Testing Guide (https://owasp.org/www-project-web-security-testing-guide/stable/)
    - The solution/platform **must not present errors or vulnerabilities higher than "informational" level.**  
    - Recommended test sequence (all must be performed):
-      | Tool                               | Description                                      |
-      |------------------------------------|--------------------------------------------------|
-      | isMyWebsiteInsecure-1.sh \<url\> (*)   | # tests the first page and hosting           |
+      | Tool                                | Description                                     |
+      |-------------------------------------|-------------------------------------------------|
+      | isMyWebsiteInsecure-1.sh \<url\>    | # tests the first page and hosting              |
       | Chrome Browser > Console \<url\>    | # validates if there are errors on the pages    |
       | Chrome Browser > Lighthouse \<url\> | # tests web page and performance                |
-      | HostedScan ( https://hostedscan.com ) | # vulnerability scanner (optional)            |  
       | isMyWebsiteInsecure-2.sh \<url\>    | # tests the first page and hosting              |
-      | Gemini AI                           | # Gemini AI cybersecurity analysis (optional)   |
-      | ZAP \<url\> or Burp Suite \<url\>   | # tests the entire web application/platform     |
-      | Nessus \<host\> or Greenbone OpenVAS \<host\> | # tests the entire hosting/application |
+      | ZAP \<url\>                         | # tests the entire web application/platform     |
+      | Nessus \<host\>                     | # tests the entire hosting/application          |
 
-       (*) or [isMyWebsiteInsecure.bat](windows/isMyWebsiteInsecure.bat)  
 
 5. **Cybersecurity "Reporting"**
-   - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) (*) to:   
+   - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) to:   
         - document hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
-   - (*) SHA1 7f1eb3e2322fe761fba852d46d743743e3e3ed11
 
