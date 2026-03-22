@@ -17,5 +17,5 @@ cd $HOME/tools
 > more detailed evaluation using free command-line tools
 ```
 cd $HOME/tools
-./isMyWebsiteInsecure-2.sh https://www.aeportugal.com   # example to check for vulnerabilities on website www.aeportugal.com
+./isMyWebsiteInsecure-2.sh -u https://www.aeportugal.com   # example to check for vulnerabilities on website www.aeportugal.com
 ```
