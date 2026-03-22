@@ -20,22 +20,24 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    - Daily backups online and offline
 
 2. **Cybersecurity "Tools"**
-   - The simplest approach is to use a virtual machine (VM) with Kali Linux (https://www.kali.org) and install the following tools:
-      - [isMyWebsiteInsecure-1.sh](isMyWebsiteInsecure-1.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 8c2ae9250d5f5f91837b770e0174f17a50737f14    
-      - [isMyWebsiteInsecure-2.sh](isMyWebsiteInsecure-2.sh) &nbsp;&nbsp;&nbsp; (*) SHA1 5e5ade0e8f5585649bf4081ec00f2b442167b4c7  
-      - [Gemini AI](GeminiAI.md)   
-      - ZAP (https://www.zaproxy.org/) or Burp Suite (https://portswigger.net/burp/pro)
-      - Nessus (https://www.tenable.com/products/nessus) or Greenbone OpenVAS (https://openvas.org/)  
-      (*) available in this repository
+   - The simplest approach is to use a virtual machine (VM) with [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) or [Ubuntu Desktop](https://ubuntu.com/download/desktop) and following documents:<br/>
+      - how to install: [Tools-toInstall.md](/Linux/Tools-toInstall.md)  
+      - how to use: [HowToUse.md](/Linux/HowtoUse.md) and [HowToUse-AI.md](/Linux/HowToUse-AI-md)<br/><br/>
+      |      tool      |    Alternative   |
+      |----------------|------------------|
+
+      -  
+     
    - Do not use tools other than the ones listed unless explicitly authorized.
 
 3. **Cybersecurity "minimum Requirements"**
    - Refer to the document [DigitalProductCybersecurityRequirements.md](DigitalProductCybersecurityRequirements.md)  
+   <br/>
 
 4. **Cybersecurity "Tests"**
    - It is suggested to use the OWASP Web Security Testing Guide (https://owasp.org/www-project-web-security-testing-guide/stable/)
    - The solution/platform **must not present errors or vulnerabilities higher than "informational" level.**  
-   - Recommended test sequence (all must be performed):
+   - Recommended test sequence (all must be performed):<br/><br/>
       | Tool                                | Description                                     |
       |-------------------------------------|-------------------------------------------------|
       | isMyWebsiteInsecure-1.sh \<url\>    | # tests the first page and hosting              |
@@ -44,9 +46,9 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
       | isMyWebsiteInsecure-2.sh \<url\>    | # tests the first page and hosting              |
       | ZAP \<url\>                         | # tests the entire web application/platform     |
       | Nessus \<host\>                     | # tests the entire hosting/application          |
+<br/>
 
-
-5. **Cybersecurity "Reporting"**
+5. **Cybersecurity "Reporting"**<br/><br/>
    - Use [DigitalProductCybersecurityReport.xlsx](DigitalProductCybersecurityReport.xlsx) to:   
         - document hosting configurations, tools and libraries used on the website
         - cybersecurity test reports
