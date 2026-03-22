@@ -17,7 +17,8 @@
 #  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto/releases
 #  
 # v1.8, modified on 2026-03-22
-#  - sqlmap, changed some parameters
+#  - sqlmap, added --time-limit, removed --tamper
+#  - nmap, added --host-timeout
 #
 # v1.9, modified on 2026-03-22
 #  - added CLI flags: -h/--help, -v/--version, -u/--url, -nv/--novpn
