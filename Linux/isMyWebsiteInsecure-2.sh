@@ -16,6 +16,9 @@
 #  - added sudo before nmap, ex. sudo nmap ...
 #  - updated script to run latest Nikto version 2.6.0 https://github.com/sullo/nikto/releases
 #  
+# v1.8, modified on 2026-03-22
+#  - sqlmap, changed some parameters
+#
 
 
 # ──── Evasion User-Agent ──────────────────────────────────────────────────────
@@ -438,27 +441,16 @@ main() {
     # --level=3 --risk=2: broader coverage without overly destructive payloads
     # --hpp: HTTP parameter pollution to confuse WAF parameter parsing
     # --hex: encodes payloads in hex to bypass keyword-based WAF signatures
-    # --tamper chain (layered obfuscation — order matters):
-    #   space2comment   → replaces spaces with /**/ to break keyword+space patterns
-    #   between         → rewrites AND/OR comparisons to evade boolean-logic rules
-    #   randomcase      → randomizes SQL keyword casing (SeLeCt, UnIoN, etc.)
-    #   charunicodeencode → Unicode-encodes characters (%u0053%u0045...)
-    #   charencode      → URL-encodes characters (%53%45...)
-    #   equaltolike     → replaces = with LIKE to evade equality-check signatures
-    #   multiplespaces  → inserts multiple spaces between keywords
-    #   percentage      → adds % between characters to break simple regex rules
-    #   unmagicquotes   → escapes quotes with backslash to bypass quote filters
     echo -e "[+] SQLmap check for SQL injection"
-    run_cmd timeout 2700 \
-	        sqlmap -u "$url" \
-                   --batch \
+    run_cmd sqlmap -u "$url" \
+                   --time-limit=2700 \
+				   --batch \
                    --random-agent \
                    --delay=3 \
                    --level=3 \
                    --risk=2 \
                    --hpp \
-                   --hex \
-                   --tamper=space2comment,between,randomcase,charunicodeencode,charencode,equaltolike,multiplespaces,percentage,unmagicquotes
+                   --hex
     echo -e "\n\n"
 
 
