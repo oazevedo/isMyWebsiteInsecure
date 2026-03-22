@@ -41,6 +41,7 @@ show_help() {
     echo -e "Examples:"
     echo -e "  $0 -u https://example.com"
     echo -e "  $0 --url https://example.com --novpn"
+    echo -e ""	
 }
 
 
