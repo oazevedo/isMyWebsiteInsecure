@@ -23,9 +23,12 @@
 # v1.9, modified on 2026-03-22
 #  - added CLI flags: -h/--help, -v/--version, -u/--url, -nv/--novpn
 #
+# v1.10, modified on 2026-03-24
+#  - sqlmap, added --crawl=2, --forms, changed --level=1  --risk=1
+#
 
 
-VERSION="1.9"
+VERSION="1.10"
 
 
 # ──── Show help ───────────────────────────────────────────────────────────────
@@ -506,6 +509,9 @@ main() {
     # --random-agent: rotates User-Agent to avoid UA-based blocking
     # --delay=3: 3s between requests to evade rate-based WAF rules
     # --level=3 --risk=2: broader coverage without overly destructive payloads
+	# --level=1 --risk=1: low-risk payloads only, minimal test intensity (few payloads)
+	# --crawl=2 crawl the site up to depth 2 to discover injectable URLs/parameters, 
+	# --forms: test HTML forms for injection points
     # --hpp: HTTP parameter pollution to confuse WAF parameter parsing
     # --hex: encodes payloads in hex to bypass keyword-based WAF signatures
     echo -e "[+] SQLmap check for SQL injection"
@@ -514,10 +520,12 @@ main() {
 				   --batch \
                    --random-agent \
                    --delay=3 \
-                   --level=3 \
-                   --risk=2 \
+                   --level=1 \
+                   --risk=1 \
                    --hpp \
-                   --hex
+                   --hex \
+				   --crawl=2 \
+				   --forms 
     echo -e "\n\n"
 
 
