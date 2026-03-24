@@ -25,6 +25,7 @@
 #
 # v1.10, modified on 2026-03-24
 #  - sqlmap, added --crawl=2, --forms, changed --level=1  --risk=1
+#  - nmap, added -T2
 #
 
 
@@ -542,7 +543,8 @@ main() {
 				 -n \
 				 --source-port 53 \
 				 -D RND:10 \
-                 --script vuln 
+                 --script vuln \
+				 -T2 
     echo -e "\n\n"  
 
 
