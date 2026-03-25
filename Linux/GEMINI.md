@@ -24,7 +24,7 @@ You are performing ethical reconnaissance.
 0. **Warning**: Show an ethical warning message and ask user if agree, if not exit.
 1. **Nmap**: Run nmap to find open ports and identify running services.
 2. **Nikto**: Use nikto to scan the web server for known vulnerabilities, misconfigurations, and outdated software.
-3. **ZAP**: Use zaproxy to scan web app for vulnerabilities
+3. **ZAP**: Use zaproxy to scan web app for vulnerabilities.
 4. **Nuclei**: Use nuclei to identify security issues and weaknesses.
 5. **Wpscan**: Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.
 6. **Sqlmap**: Use sqlmap to check for SQL injection.
