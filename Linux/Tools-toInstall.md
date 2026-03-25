@@ -276,16 +276,19 @@ wpscan --version
 
 > Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
 > Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/)   
-> To update: `sudo snap refresh zaproxy`
+> 
 
 ```bash
 # Kali installation
-sudo apt install -y zaproxy 
+sudo apt install -y zaproxy
+zaproxy -version
 ```
 
 ```bash
 # Ubuntu installation
+# To update: `sudo snap refresh zaproxy`
 sudo snap install zaproxy --classic
+zaproxy -version
 ```
 
 ### isMyWebsiteInsecure
