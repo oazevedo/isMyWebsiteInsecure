@@ -12,6 +12,7 @@ You are performing ethical reconnaissance.
 - For Dalfox, always use `--waf-evasion`.
 - For Nikto, use by default `-ssl`.
 - Use Sslscan when Sslyze is not installed.
+- For ZAP, use zaproxy -cmd, output in html format.
 - Always use the stealth mode in all tools.
 - Your workspace directory is `$HOME/Gemini`, create a folder `$HOME/Gemini/websitesScan`.
 - Under `$HOME/Gemini/websitesScan`, for each target, create a folder and sub-folder with format `full_name_target/yyy-mm-dd` and place the results of each command and your report there. It is importante that folder = target, example, if target is `www.aeportugal.pt` folder name must be `www.aeportugal.pt`
@@ -23,7 +24,7 @@ You are performing ethical reconnaissance.
 0. **Warning**: Show an ethical warning message and ask user if agree, if not exit.
 1. **Nmap**: Run nmap to find open ports and identify running services.
 2. **Nikto**: Use nikto to scan the web server for known vulnerabilities, misconfigurations, and outdated software.
-3. **OWASP ZAP**: Use `zaproxy -cmd`  to scan web app for vulnerabilities, output in html format.
+3. **ZAP**: Use zaproxy to scan web app for vulnerabilities
 4. **Nuclei**: Use nuclei to identify security issues and weaknesses.
 5. **Wpscan**: Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.
 6. **Sqlmap**: Use sqlmap to check for SQL injection.
