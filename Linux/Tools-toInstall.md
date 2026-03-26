@@ -54,12 +54,6 @@ sudo systemctl status snapd.apparmor
 sudo systemctl status snapd
 ```
 
-```bash
-# Kali and Ubuntu
-sudo snap refresh
-sudo snap list
-```
-
 ---
 
 ## 2. Tools Installation
@@ -70,6 +64,13 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 ```bash
 sudo snap refresh
+```
+
+```bash
+# only to run isMyWebsiteInsecure-2.sh script
+sudo visudo
+ # add following line to change default timestamp_timeout from 60 min to 270 min
+ Defaults timestamp_timeout=270
 ```
 
 ### Chromium
