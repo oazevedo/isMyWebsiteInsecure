@@ -11,10 +11,11 @@ You are performing ethical reconnaissance.
 - For WPScan, always use `--stealthy`, don't use `api-token` option.
 - For Dalfox, always use `--waf-evasion`.
 - For Nikto, use by default `-ssl`.
+- For Nmap, do not use parameters that require root privileges.
 - Use Sslscan when Sslyze is not installed.
 - Always use the stealth mode, random agent, waf and ids evasion in all tools.
 - Your workspace directory is `$HOME/websitesScan`, if it doesn't exist, create it.
-- All results must be stored on `$HOME/websitesScan/<full-name-target>/yyyy-mm-dd`.
+- All results must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
 - If you are unable to complete a task explain and report why.
