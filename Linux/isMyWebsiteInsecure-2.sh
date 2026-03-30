@@ -333,7 +333,7 @@ main() {
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
     echo -e "[+] Running WHOIS lookup..."
-    run_cmd whois "$domain"
+    run_cmd whois "$domain" | tee $outputDir/whois-results.txt
     echo -e "\n\n"
 
 
@@ -343,7 +343,8 @@ main() {
     # Using Google and Cloudflare public's DNS (8.8.8.8 and 1.1.1.1) to avoid querying target's nameserver directly
     echo -e "[+] Running DNS reconnaissance..."
     run_cmd dnsrecon --domain "$domain" \
-                     --name_server 8.8.8.8,1.1.1.1
+                     --name_server 8.8.8.8,1.1.1.1 \
+					 | tee $outputDir/dnsrecon-results.txt
     echo -e "\n\n"
 
     
@@ -352,7 +353,7 @@ main() {
     # SSLScan - SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "[+] Running SSL/TLS scan..."
-    run_cmd sslscan "$host"
+    run_cmd sslscan "$host" | tee $outputDir/sslscan-results.txt
     echo -e "\n\n"
 
     
@@ -363,7 +364,8 @@ main() {
     echo -e "[+] Getting HTTP Headers..."
     run_cmd curl "$url" \
                  --head \
-                 --user-agent "$USER_AGENT"
+                 --user-agent "$USER_AGENT" \
+				 | tee $outputDir/curl-results.txt
     echo -e "\n\n"
 
 
@@ -383,7 +385,7 @@ main() {
     echo -e "[+] Identifying technologies used on the website..."
 	whatweb_output=$(run_cmd whatweb --aggression 1 \
 	                                 --user-agent "$USER_AGENT" \
-									 "$url")
+									 "$url" | tee $outputDir/whatweb-results.txt)
     echo -e "$whatweb_output"
 	echo -e "\n\n"
 
@@ -398,7 +400,8 @@ main() {
         run_cmd wpscan --url "$url" \
                        --update \
                        --no-banner \
-                       --stealthy
+                       --stealthy \
+					   | tee $outputDir/wpscan-results.txt
     else
         echo -e "[-] WordPress not detected — skipping wpscan."
     fi
@@ -472,7 +475,8 @@ main() {
     echo -e "[+] Dalfox xss scan..."
     run_cmd dalfox url "$url" \
                    --waf-evasion \
-                   "${WAF_BYPASS_HEADERS[@]}"
+                   "${WAF_BYPASS_HEADERS[@]}" \
+				   --output dalfox-results.txt
     echo -e "\n\n"
 
 
@@ -493,7 +497,8 @@ main() {
                    -retries 3 \
                    -no-mhe \
                    -H "User-Agent: $USER_AGENT" \
-                   "${WAF_BYPASS_HEADERS[@]}"
+                   "${WAF_BYPASS_HEADERS[@]}" \
+				   -o nuclei-results.txt
     echo -e "\n\n"
 	
 	
@@ -510,7 +515,8 @@ main() {
     echo -e "[+] Nikto vulnerabilities scan..."
     run_cmd nikto -h "$url" \
                   -maxtime 1800 \
-                  -evasion 1234678 
+                  -evasion 1234678 \
+				  -o nikto-results.txt
     echo -e "\n\n"
 
 	
@@ -536,7 +542,8 @@ main() {
                    --hpp \
                    --hex \
 				   --crawl=2 \
-				   --forms 
+				   --forms \
+				   --output-dir=$outputDir/sqlmap
     echo -e "\n\n"
 
 
@@ -554,7 +561,8 @@ main() {
 				 --source-port 53 \
 				 -D RND:10 \
                  --script vuln \
-				 -T2 
+				 -T2 \
+				 -oN nmap-results.txt
     echo -e "\n\n"  
 
 
