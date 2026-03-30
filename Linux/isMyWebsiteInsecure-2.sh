@@ -27,9 +27,12 @@
 #  - sqlmap, added --crawl=2, --forms, changed --level=1  --risk=1
 #  - nmap, added -T2
 #
+# v.1.11, modified on 2026-03-30
+#  - add output log
+#
 
 
-VERSION="1.10"
+VERSION="1.11"
 
 
 # ──── Show help ───────────────────────────────────────────────────────────────
@@ -295,6 +298,13 @@ main() {
     echo -e "\n"
 
 
+	# output directory
+	outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
+    mkdir -p "$outputDir"
+    echo "Output directory : "$outputDir"
+    echo -e "\n"
+
+	
     # ProtonVPN is installed?
     VPN="false"
     if [[ "$NOVPN" == "false" ]] && command -v protonvpn &> /dev/null; then
