@@ -13,8 +13,8 @@ You are performing ethical reconnaissance.
 - For Nikto, use by default `-ssl`.
 - Use Sslscan when Sslyze is not installed.
 - Always use the stealth mode, random agent, waf and ids evasion in all tools.
-- Your workspace directory is `$HOME/Gemini`, create a folder `$HOME/Gemini/websitesScan`.
-- Under `$HOME/Gemini/websitesScan`, for each target, create a folder and sub-folder with format `full_name_target/yyy-mm-dd` and place the results of each command and your report there. It is importante that folder = target, example, if target is `www.aeportugal.pt` folder name must be `www.aeportugal.pt`
+- Your workspace directory is `$HOME/websitesScan`, if it doesn't exist, create it.
+- All results must be stored on `$HOME/websitesScan/<full-name-target>/yyyy-mm-dd`.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
 - If you are unable to complete a task explain and report why.
@@ -38,4 +38,3 @@ You are performing ethical reconnaissance.
 
 ## Reporting
 Summarize the findings, provide security recommendations, and hardening suggestions.
-                                                                                      
