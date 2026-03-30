@@ -299,13 +299,10 @@ main() {
 
 
 	# output directory
-	# outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
-	outputDir="$HOME/websitesScan/$host/2026-03-30"
+	outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
     mkdir -p "$outputDir"
     echo "Output directory : "$outputDir"
     echo -e "\n"
-
-	read -r -p "Press Enter to continue..."
 
 	
     # ProtonVPN is installed?
