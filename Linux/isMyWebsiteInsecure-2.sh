@@ -333,7 +333,7 @@ main() {
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
     echo -e "[+] Running WHOIS lookup..."
-    run_cmd whois "$domain" | tee $outputDir/whois-results.txt
+    run_cmd whois "$domain" | tee $outputDir/whois.txt
     echo -e "\n\n"
 
 
@@ -344,7 +344,7 @@ main() {
     echo -e "[+] Running DNS reconnaissance..."
     run_cmd dnsrecon --domain "$domain" \
                      --name_server 8.8.8.8,1.1.1.1 \
-					  | tee $outputDir/dnsrecon-results.txt
+					  | tee $outputDir/dnsrecon.txt
     echo -e "\n\n"
 
     
@@ -353,7 +353,7 @@ main() {
     # SSLScan - SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "[+] Running SSL/TLS scan..."
-    run_cmd sslscan "$host" | tee $outputDir/sslscan-results.txt
+    run_cmd sslscan "$host" | tee $outputDir/sslscan.txt
     echo -e "\n\n"
 
     
@@ -365,7 +365,7 @@ main() {
     run_cmd curl "$url" \
                  --head \
                  --user-agent "$USER_AGENT" \
-				  | tee $outputDir/curl-results.txt
+				  | tee $outputDir/curl.txt
     echo -e "\n\n"  
 
 
@@ -386,7 +386,7 @@ main() {
 	whatweb_output=$(run_cmd whatweb --aggression 1 \
 	                                 --user-agent "$USER_AGENT" \
 									 "$url" \
-									  | tee $outputDir/whatweb-results.txt)  
+									  | tee $outputDir/whatweb.txt)  
     echo -e "$whatweb_output"
 	echo -e "\n\n"
 
@@ -402,7 +402,7 @@ main() {
                        --update \
                        --no-banner \
                        --stealthy \
-					    | tee $outputDir/wpscan-results.txt 
+					    | tee $outputDir/wpscan.txt 
     else
         echo -e "[-] WordPress not detected — skipping wpscan."
     fi
@@ -477,7 +477,7 @@ main() {
     run_cmd dalfox url "$url" \
                    --waf-evasion \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   --output $outputDir/dalfox-results.txt  
+				   --output $outputDir/dalfox.txt  
     echo -e "\n\n"
 
 
@@ -499,7 +499,7 @@ main() {
                    -no-mhe \
                    -H "User-Agent: $USER_AGENT" \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   -o $outputDir/nuclei-results.txt  
+				   -o $outputDir/nuclei.txt  
     echo -e "\n\n"
 	
 	
@@ -517,7 +517,7 @@ main() {
     run_cmd nikto -h "$url" \
                   -maxtime 1800 \
                   -evasion 1234678 \
-				  -o $outputDir/nikto-results.txt  
+				  -o $outputDir/nikto.txt  
     echo -e "\n\n"
 
 	
@@ -563,7 +563,7 @@ main() {
 				 -D RND:10 \
                  --script vuln \
 				 -T2 \
-				 -oN $outputDir/nmap-results.txt  
+				 -oN $outputDir/nmap.txt  
     echo -e "\n\n"  
 
 
