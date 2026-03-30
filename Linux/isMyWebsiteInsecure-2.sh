@@ -301,7 +301,7 @@ main() {
 	# output directory
 	outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
     mkdir -p "$outputDir"
-    echo "Output directory : $outputDir"
+    echo "Output directory: $outputDir"
     echo -e "\n"
 
 	
