@@ -344,7 +344,7 @@ main() {
     echo -e "[+] Running DNS reconnaissance..."
     run_cmd dnsrecon --domain "$domain" \
                      --name_server 8.8.8.8,1.1.1.1 \
-					 | tee $outputDir/dnsrecon-results.txt
+					 | tee $outputDir/dnsrecon-results.txt  
     echo -e "\n\n"
 
     
@@ -353,7 +353,7 @@ main() {
     # SSLScan - SSL/TLS scan
     # No evasion available — TLS handshake is inherently identifiable
     echo -e "[+] Running SSL/TLS scan..."
-    run_cmd sslscan "$host" | tee $outputDir/sslscan-results.txt
+    run_cmd sslscan "$host" | tee $outputDir/sslscan-results.txt  
     echo -e "\n\n"
 
     
@@ -365,8 +365,8 @@ main() {
     run_cmd curl "$url" \
                  --head \
                  --user-agent "$USER_AGENT" \
-				 | tee $outputDir/curl-results.txt
-    echo -e "\n\n"
+				 | tee $outputDir/curl-results.txt  
+    echo -e "\n\n"  
 
 
     vpn_rotate_ip
@@ -374,7 +374,7 @@ main() {
     # Shodan Search Engine (nrich)
     # Passive lookup — no direct contact with target, no evasion needed
     echo -e "[+] Running Shodan scan..."
-    run_cmd bash -c "echo \"$ipv4\" | nrich -"
+    run_cmd bash -c "echo \"$ipv4\" | nrich -"  
     echo -e "\n\n"
 
 
@@ -385,7 +385,7 @@ main() {
     echo -e "[+] Identifying technologies used on the website..."
 	whatweb_output=$(run_cmd whatweb --aggression 1 \
 	                                 --user-agent "$USER_AGENT" \
-									 "$url" | tee $outputDir/whatweb-results.txt)
+									 "$url")  
     echo -e "$whatweb_output"
 	echo -e "\n\n"
 
@@ -401,7 +401,7 @@ main() {
                        --update \
                        --no-banner \
                        --stealthy \
-					   | tee $outputDir/wpscan-results.txt
+					   | tee $outputDir/wpscan-results.txt  
     else
         echo -e "[-] WordPress not detected — skipping wpscan."
     fi
@@ -417,7 +417,7 @@ main() {
 	                                            -o /dev/null \
 												-w "%{http_code}" \
                                                 -A "$USER_AGENT" \
-                                                -H "Host: malicious.example.com" "$url")
+                                                -H "Host: malicious.example.com" "$url")  
     echo -e "Host header injection test, HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
         echo -e " Vulnerable."
@@ -437,7 +437,7 @@ main() {
                                    -A "$USER_AGENT" \
 								   "${WAF_BYPASS_HEADERS[@]}" \
                                    --max-time 20 \
-								   "$url/xmlrpc.php")
+								   "$url/xmlrpc.php")  
       echo -e "$url/xmlrpc.php detection, HTTP code: $xmlrpc_status"
       if [ "$xmlrpc_status" -eq 200 ]; then
 	    echo -e " Vulnerable."
@@ -459,7 +459,7 @@ main() {
                                    -A "$USER_AGENT" \
 								   "${WAF_BYPASS_HEADERS[@]}" \
                                    --max-time 20 \
-								   "$url/readme.html")
+								   "$url/readme.html")  
       echo -e "$url/readme.html detection, HTTP code: $readme_status"
       if [ "$readme_status" -eq 200 ]; then
 	    echo -e "Vulnerable."
@@ -476,7 +476,7 @@ main() {
     run_cmd dalfox url "$url" \
                    --waf-evasion \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   --output dalfox-results.txt
+				   --output dalfox-results.txt  
     echo -e "\n\n"
 
 
@@ -498,7 +498,7 @@ main() {
                    -no-mhe \
                    -H "User-Agent: $USER_AGENT" \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   -o nuclei-results.txt
+				   -o nuclei-results.txt  
     echo -e "\n\n"
 	
 	
@@ -516,7 +516,7 @@ main() {
     run_cmd nikto -h "$url" \
                   -maxtime 1800 \
                   -evasion 1234678 \
-				  -o nikto-results.txt
+				  -o nikto-results.txt  
     echo -e "\n\n"
 
 	
@@ -543,7 +543,7 @@ main() {
                    --hex \
 				   --crawl=2 \
 				   --forms \
-				   --output-dir=$outputDir/sqlmap
+				   --output-dir=$outputDir/sqlmap  
     echo -e "\n\n"
 
 
@@ -562,7 +562,7 @@ main() {
 				 -D RND:10 \
                  --script vuln \
 				 -T2 \
-				 -oN nmap-results.txt
+				 -oN nmap-results.txt  
     echo -e "\n\n"  
 
 
