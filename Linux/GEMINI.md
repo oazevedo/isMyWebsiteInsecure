@@ -14,7 +14,9 @@ You are performing ethical reconnaissance.
 - Use Sslscan when Sslyze is not installed.
 - Always use the stealth mode, random agent, waf and ids evasion in all tools.
 - Your workspace directory is `$HOME/websitesScan`, if it doesn't exist, create it.
-- All results must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`. Include your report.md file as well.
+- Your working directory is `$HOME/websitesScan`.
+- All results must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`.
+- The reconnaissance report, report.md, must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
 - If you are unable to complete a task explain and report why.
