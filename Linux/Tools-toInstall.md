@@ -126,6 +126,7 @@ dnsrecon --version
 > Website: [https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)  
 > Releases: [https://www.tenable.com/downloads/nessus?loginAttempted=true](https://www.tenable.com/downloads/nessus?loginAttempted=true)  
 > Go to https://NESSUS_HOSTNAME_OR_IP:8834/ to configure your scanner, ex: https://127.0.0.1:8834/
+
 ```bash
 cd $HOME/Downloads
 wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb
@@ -139,9 +140,20 @@ sudo /bin/systemctl start nessusd.service
 > Releases: [https://github.com/sullo/nikto/releases](https://github.com/sullo/nikto/releases)  
 
 ```bash
+# Kali installation
 sudo apt install -y nikto
 nikto -Version
 ```
+
+```bash
+# Ubuntu installation
+# to update: git pull
+sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
+git clone --depth 1 https://github.com/sullo/nikto.git $HOME/tools/nikto 
+sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/local/bin/nikto
+nikto -Version
+```
+
 
 ### Nmap
 
