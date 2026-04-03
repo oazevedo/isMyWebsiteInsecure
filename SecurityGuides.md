@@ -8,6 +8,7 @@
 | Secure cookie configuration | https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies |
 | Security on the web | https://developer.mozilla.org/en-US/docs/Web/Security |
 | Practical security implementation guides | https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides |
+| Web Application Security Testing | https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing | 
 
 
 
