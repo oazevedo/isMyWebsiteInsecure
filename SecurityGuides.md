@@ -25,7 +25,7 @@
 | Validator Tool | url |
 |--------------------|-----------|  
 | HTTP Observatory | https://developer.mozilla.org/en-US/observatory |
-| CSS Validator    | https://validator.w3.org |
+| CSS Validator    |  https://jigsaw.w3.org/css-validator |
 | HTML Validator   | https://validator.w3.org/nu |
 | Link Checker     | https://validator.w3.org/checklink |
 
