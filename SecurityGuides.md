@@ -22,9 +22,13 @@
 <br/><br/>
 **Tools**
 
-| Reference / Guides | url |
-|--------------------|-----------|
-| HTTP Observatory | https://developer.mozilla.org/en-US/observatory | 
+| Validator Tool | url |
+|--------------------|-----------|  
+| HTTP Observatory | https://developer.mozilla.org/en-US/observatory |
+| CSS Validator    | https://validator.w3.org |
+| HTML Validator   | https://validator.w3.org/nu |
+| Link Checker     | https://validator.w3.org/checklink |
+
 
 
 
