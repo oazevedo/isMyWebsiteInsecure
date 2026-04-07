@@ -22,7 +22,7 @@
    - [WPScan](#wpscan)
    - [ZAProxy](#zaproxy)
    - [isMyWebsiteInsecure](#isMyWebsiteInsecure)
-   - [ProtonVPN CLI *(Optional - only for Ubuntu)*](#protonvpn)
+   - [ProtonVPN](#protonvpn)
 
 ---
 
@@ -319,7 +319,7 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/i
 chmod +x isMyWebsiteInsecure-*.sh  
 ```
 
-### ProtonVPN CLI *(Optional - only for Ubuntu)*
+### ProtonVPN
 
 > Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
 > CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
