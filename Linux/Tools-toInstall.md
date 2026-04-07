@@ -13,7 +13,7 @@
    - [Nmap](#nmap)
    - [Npm](#npm)
    - [Nuclei](#nuclei)
-   - [ProtonVPN](#protonvpn)
+   - [Proton VPN](#protonvpn)
    - [Shodan nrich](#shodan-nrich)
    - [Sqlmap](#sqlmap)
    - [Sslscan](#sslscan)
