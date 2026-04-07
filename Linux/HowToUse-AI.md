@@ -14,9 +14,8 @@ sudo npm install -g @google/gemini-cli@latest
 **Get GEMINI.md**  
 
 ```
-mkdir $HOME/Gemini   # Gemini folder
-mkdir $HOME/Gemini/websitesScan   # assessment results folder
-cd $HOME/Gemini
+mkdir $HOME/websitesScan   # Websites assessment results folder
+cd $HOME/websitesScan
 rm -f GEMINI.md
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/GEMINI.md  
 ``` 
@@ -24,7 +23,7 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/G
 
 **Run Gemini AI** (not run as root, need a free Google Account)  
 ```
-cd $HOME/Gemini  
+cd $HOME/websitesScan  
 gemini  
  > your target is www.aeportugal.com   # example to check for vulnerabilities on website www.aeportugal.com
 ```
