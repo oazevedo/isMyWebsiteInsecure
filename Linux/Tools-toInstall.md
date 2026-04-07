@@ -207,13 +207,13 @@ nuclei
 ### ProtonVPN
 
 > Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
-> CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
+> CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)  
 
 ```bash
 # Ubuntu optional installation. A paid license is required.
 # Not work on Kali Linux.
 cd $HOME/Downloads
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb 
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb
 sudo apt update
 sudo apt install -y proton-vpn-cli
@@ -328,12 +328,10 @@ zaproxy -version
 >  TIP: both must be used  
 
 ```
-mkdir $HOME/tools   # tools folder  
-cd $HOME/tools  
-rm -f isMyWebsiteInsecure-*.sh  
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh  
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh  
-chmod +x isMyWebsiteInsecure-*.sh  
+mkdir $HOME/tools   # tools folder
+cd $HOME/tools
+rm -f isMyWebsiteInsecure-*.sh 
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-1.sh
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/isMyWebsiteInsecure-2.sh
+chmod +x isMyWebsiteInsecure-*.sh
 ```
-
-
