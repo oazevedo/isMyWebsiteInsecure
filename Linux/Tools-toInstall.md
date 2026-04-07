@@ -13,6 +13,7 @@
    - [Nmap](#nmap)
    - [Npm](#npm)
    - [Nuclei](#nuclei)
+   - [ProtonVPN](#protonvpn)
    - [Shodan nrich](#shodan-nrich)
    - [Sqlmap](#sqlmap)
    - [Sslscan](#sslscan)
@@ -22,7 +23,7 @@
    - [WPScan](#wpscan)
    - [ZAProxy](#zaproxy)
    - [isMyWebsiteInsecure](#isMyWebsiteInsecure)
-   - [ProtonVPN](#protonvpn)
+
 
 ---
 
@@ -203,6 +204,22 @@ sudo ln -s $HOME/tools/go/bin/nuclei /usr/bin/nuclei
 nuclei
 ```
 
+### ProtonVPN
+
+> Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
+> CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
+
+```bash
+# Ubuntu installation 
+# Not work on Kali Linux. A paid license is required.
+cd $HOME/Downloads
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb 
+sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb
+sudo apt update
+sudo apt install -y proton-vpn-cli
+protonvpn --help
+```
+
 ### Shodan nrich
 
 > Website: [https://gitlab.com/shodan-public/nrich](https://gitlab.com/shodan-public/nrich)  
@@ -319,18 +336,4 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/i
 chmod +x isMyWebsiteInsecure-*.sh  
 ```
 
-### ProtonVPN
 
-> Reference: [https://protonvpn.com/support/official-linux-vpn-ubuntu](https://protonvpn.com/support/official-linux-vpn-ubuntu)  
-> CLI docs: [https://protonvpn.com/support/linux-cli](https://protonvpn.com/support/linux-cli)
-
-```bash
-# Ubuntu installation  
-# Not work on Kali Linux. A paid license is required.  
-cd $HOME/Downloads  
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb  
-sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb  
-sudo apt update  
-sudo apt install -y proton-vpn-cli  
-protonvpn --help  
-```
