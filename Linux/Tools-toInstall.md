@@ -289,7 +289,6 @@ wpscan --version
 
 > Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
 > Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/)   
-> 
 
 ```bash
 # Kali installation
