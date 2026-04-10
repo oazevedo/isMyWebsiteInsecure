@@ -489,7 +489,7 @@ main() {
     # -concurrency 10 slows requests templates to be executed in parallel (default 25)
     # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
     echo -e "[+] Nuclei vulnerabilities scan..."
-    run_cmd timeout 2700 \
+    run_cmd timeout 3600 \
 	        sudo \
             nuclei -u "$url" \
                    -rate-limit 10 \
