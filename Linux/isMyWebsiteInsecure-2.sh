@@ -534,7 +534,7 @@ main() {
     # --hex: encodes payloads in hex to bypass keyword-based WAF signatures
     echo -e "[+] SQLmap check for SQL injection"
     run_cmd sqlmap -u "$url" \
-                   --time-limit=2700 \
+                   --time-limit=3600 \
 				   --batch \
                    --random-agent \
                    --delay=3 \
