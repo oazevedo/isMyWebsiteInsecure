@@ -506,7 +506,7 @@ main() {
 	vpn_rotate_ip
     random_timeout
     # Nikto vulnerabilities scan
-    # -maxtime 1800: 30 minutes	to run scan, after abort
+    # -maxtime 2700: 45 minutes	to run scan, after abort
     # -evasion 1234678 applies all available evasion techniques:
     #   1=random URI encoding, 2=directory self-reference (/./),
     #   3=premature URL ending (%00), 4=prepend long random string,
@@ -515,7 +515,7 @@ main() {
 	#  Nikto v2.6.0 - default: Randomized User-Agent selection per request
     echo -e "[+] Nikto vulnerabilities scan..."
     run_cmd nikto -h "$url" \
-                  -maxtime 1800 \
+                  -maxtime 2700 \
                   -evasion 1234678 \
 				  -o $outputDir/nikto.txt  
     echo -e "\n\n"
