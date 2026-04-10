@@ -484,7 +484,7 @@ main() {
     vpn_rotate_ip
     random_timeout
     # Nuclei vulnerabilities scan
-    # timeout 2700, kill nuclei after 2700 seconds	
+    # timeout xxxx, kill nuclei after xxxx seconds	
     # -rate-limit 10 slows requests to avoid triggering rate-based WAF rules, (default 150)
     # -concurrency 10 slows requests templates to be executed in parallel (default 25)
     # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
