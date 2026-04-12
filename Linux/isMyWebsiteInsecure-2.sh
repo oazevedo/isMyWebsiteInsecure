@@ -79,7 +79,7 @@ WAF_BYPASS_HEADERS=(
 # ──── Helper: print then execute a command ────────────────────────────────────
 # Usage: run_cmd cmd arg1 arg2 ...
 run_cmd() {
-	echo -e "\e[1;32m $* \e[0m" >&2
+    echo -e "\e[1;32m $* \e[0m" >&2
     "$@"
 }
 
@@ -298,13 +298,13 @@ main() {
     echo -e "\n"
 
 
-	# output directory
-	outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
+    # output directory
+    outputDir="$HOME/websitesScan/$host/$(date +"%Y-%m-%d")"
     mkdir -p "$outputDir"
     echo "Output directory: $outputDir"
     echo -e "\n"
 
-	
+
     # ProtonVPN is installed?
     VPN="false"
     if [[ "$NOVPN" == "false" ]] && command -v protonvpn &> /dev/null; then
@@ -320,15 +320,15 @@ main() {
     # ──── Let's go to Work! ───────────────────────────────────────────────────
 
     # sudo -v , update user's timestamp
-	# to run every two and half hours:
-	#  sudo visudo
-	#    Defaults timestamp_timeout=150
+    # to run every two and half hours:
+    #  sudo visudo
+    #    Defaults timestamp_timeout=150
     echo -e "[+] Running sudo update timestamp.. "
     run_cmd sudo -v
     echo -e "\n\n"
     
-	
-	vpn_rotate_ip
+    
+    vpn_rotate_ip
     random_timeout
     # WHOIS lookup for domain information
     # No evasion available — query goes to registry server, not the target
@@ -344,7 +344,7 @@ main() {
     echo -e "[+] Running DNS reconnaissance..."
     run_cmd dnsrecon --domain "$domain" \
                      --name_server 8.8.8.8,1.1.1.1 \
-					  | tee $outputDir/dnsrecon.txt
+                     | tee $outputDir/dnsrecon.txt
     echo -e "\n\n"
 
     
@@ -365,7 +365,7 @@ main() {
     run_cmd curl "$url" \
                  --head \
                  --user-agent "$USER_AGENT" \
-				  | tee $outputDir/curl.txt
+                 | tee $outputDir/curl.txt
     echo -e "\n\n"  
 
 
@@ -383,12 +383,12 @@ main() {
     # WhatWeb - Identify technologies used on the website
     # --aggression 1 = stealthy mode (single request, passive fingerprinting)
     echo -e "[+] Identifying technologies used on the website..."
-	whatweb_output=$(run_cmd whatweb --aggression 1 \
-	                                 --user-agent "$USER_AGENT" \
-									 "$url" \
-									  | tee $outputDir/whatweb.txt)  
+    whatweb_output=$(run_cmd whatweb --aggression 1 \
+                                     --user-agent "$USER_AGENT" \
+                                     "$url" \
+                                     | tee $outputDir/whatweb.txt)  
     echo -e "$whatweb_output"
-	echo -e "\n\n"
+    echo -e "\n\n"
 
 
     # WPScan - Wordpress vulnerability scan (only if WordPress detected by whatweb)
@@ -402,7 +402,7 @@ main() {
                        --update \
                        --no-banner \
                        --stealthy \
-					    | tee $outputDir/wpscan.txt 
+                       | tee $outputDir/wpscan.txt 
     else
         echo -e "[-] WordPress not detected — skipping wpscan."
     fi
@@ -415,10 +415,10 @@ main() {
     # Random User-Agent added to blend in with normal browser traffic
     echo -e "[+] Running Host header injection test..."
     host_header_injection_status=$(run_cmd curl -s \
-	                                            -o /dev/null \
-												-w "%{http_code}" \
+                                                -o /dev/null \
+                                                -w "%{http_code}" \
                                                 -A "$USER_AGENT" \
-                                                -H "Host: malicious.example.com" "$url")  
+                                                -H "Host: malicious.example.com" "$url")
     echo -e "Host header injection test, HTTP code: $host_header_injection_status"
     if [ "$host_header_injection_status" -eq 200 ]; then
         echo -e " Vulnerable."
@@ -433,18 +433,18 @@ main() {
       # Random User-Agent added to blend in with normal browser traffic
       echo -e "[+] XML RPC file detection..."
       xmlrpc_status=$(run_cmd curl -s \
-	                               -o /dev/null \
-								   -w "%{http_code}" \
+                                   -o /dev/null \
+                                   -w "%{http_code}" \
                                    -A "$USER_AGENT" \
-								   "${WAF_BYPASS_HEADERS[@]}" \
+                                   "${WAF_BYPASS_HEADERS[@]}" \
                                    --max-time 20 \
-								   "$url/xmlrpc.php")  
+                                   "$url/xmlrpc.php")  
       echo -e "$url/xmlrpc.php detection, HTTP code: $xmlrpc_status"
       if [ "$xmlrpc_status" -eq 200 ]; then
-	    echo -e " Vulnerable."
-	  fi
+         echo -e " Vulnerable."
+      fi
       echo -e "\n\n"
-	fi
+    fi
 
 
 
@@ -455,21 +455,21 @@ main() {
       # Random User-Agent added to blend in with normal browser traffic
       echo -e "[+] Readme file detection..."
       readme_status=$(run_cmd curl -s \
-	                               -o /dev/null \
-								   -w "%{http_code}" \
+                                   -o /dev/null \
+                                   -w "%{http_code}" \
                                    -A "$USER_AGENT" \
-								   "${WAF_BYPASS_HEADERS[@]}" \
+                                   "${WAF_BYPASS_HEADERS[@]}" \
                                    --max-time 20 \
-								   "$url/readme.html")  
+                                  "$url/readme.html")  
       echo -e "$url/readme.html detection, HTTP code: $readme_status"
       if [ "$readme_status" -eq 200 ]; then
-	    echo -e "Vulnerable."
-	  fi
+         echo -e "Vulnerable."
+      fi
       echo -e "\n\n"
-	fi
-	
-	
-	vpn_rotate_ip
+    fi
+
+
+    vpn_rotate_ip
     random_timeout
     # Dalfox XSS Scanner
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
@@ -477,7 +477,7 @@ main() {
     run_cmd dalfox url "$url" \
                    --waf-evasion \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   --output $outputDir/dalfox.txt  
+                   --output $outputDir/dalfox.txt
     echo -e "\n\n"
 
 
@@ -490,7 +490,7 @@ main() {
     # -timeout 15 -retries 3 -no-mhe, 15s before timeout, 3 retries and don't skip unresponsive hosts
     echo -e "[+] Nuclei vulnerabilities scan..."
     run_cmd timeout 3600 \
-	        sudo \
+            sudo \
             nuclei -u "$url" \
                    -rate-limit 10 \
                    -concurrency 10 \
@@ -499,11 +499,11 @@ main() {
                    -no-mhe \
                    -H "User-Agent: $USER_AGENT" \
                    "${WAF_BYPASS_HEADERS[@]}" \
-				   -o $outputDir/nuclei.txt  
+                   -o $outputDir/nuclei.txt
     echo -e "\n\n"
-	
-	
-	vpn_rotate_ip
+
+
+    vpn_rotate_ip
     random_timeout
     # Nikto vulnerabilities scan
     # -maxtime 2700: 45 minutes	to run scan, after abort
@@ -512,39 +512,39 @@ main() {
     #   3=premature URL ending (%00), 4=prepend long random string,
     #   6=TAB as request spacer, 7=random case sensitivity,
     #   8=Windows path separator (\)
-	#  Nikto v2.6.0 - default: Randomized User-Agent selection per request
+    #  Nikto v2.6.0 - default: Randomized User-Agent selection per request
     echo -e "[+] Nikto vulnerabilities scan..."
     run_cmd nikto -h "$url" \
                   -maxtime 2700 \
                   -evasion 1234678 \
-				  -o $outputDir/nikto.txt  
+                  -o $outputDir/nikto.txt
     echo -e "\n\n"
 
-	
+
     vpn_rotate_ip
     random_timeout
     # SQLmap check for SQL injection
     # --random-agent: rotates User-Agent to avoid UA-based blocking
     # --delay=3: 3s between requests to evade rate-based WAF rules
     # --level=3 --risk=2: broader coverage without overly destructive payloads
-	# --level=1 --risk=1: low-risk payloads only, minimal test intensity (few payloads)
-	# --crawl=2 crawl the site up to depth 2 to discover injectable URLs/parameters, 
-	# --forms: test HTML forms for injection points
+    # --level=1 --risk=1: low-risk payloads only, minimal test intensity (few payloads)
+    # --crawl=2 crawl the site up to depth 2 to discover injectable URLs/parameters, 
+    # --forms: test HTML forms for injection points
     # --hpp: HTTP parameter pollution to confuse WAF parameter parsing
     # --hex: encodes payloads in hex to bypass keyword-based WAF signatures
     echo -e "[+] SQLmap check for SQL injection"
     run_cmd sqlmap -u "$url" \
                    --time-limit=3600 \
-				   --batch \
+                   --batch \
                    --random-agent \
                    --delay=3 \
                    --level=1 \
                    --risk=1 \
                    --hpp \
                    --hex \
-				   --crawl=2 \
-				   --forms \
-				   --output-dir=$outputDir/sqlmap
+                   --crawl=2 \
+                   --forms \
+                   --output-dir=$outputDir/sqlmap
     echo -e "\n\n"
 
 
@@ -556,14 +556,14 @@ main() {
     run_cmd sudo \
             nmap "$host" \
                  --host-timeout 600s \
-				 -sS \
-				 -Pn \
-				 -n \
-				 --source-port 53 \
-				 -D RND:10 \
+                 -sS \
+                 -Pn \
+                 -n \
+                 --source-port 53 \
+                 -D RND:10 \
                  --script vuln \
-				 -T2 \
-				 -oN $outputDir/nmap.txt  
+                 -T2 \
+                 -oN $outputDir/nmap.txt
     echo -e "\n\n"  
 
 
