@@ -71,6 +71,8 @@ sudo ln -s /var/lib/snapd/snap /snap    # if needed
 
 sudo snap install core
 snap version
+
+mkdir cd $HOME/Downloads
 ```
 
 ---
