@@ -38,7 +38,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
 
 ```bash
-# Kali only
+# Kali only on Virtual Box or VMware
 # https://snapcraft.io/docs/tutorials/install-the-daemon/kali/
 
 sudo apt install -y snapd
