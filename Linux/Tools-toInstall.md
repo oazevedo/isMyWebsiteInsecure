@@ -55,6 +55,24 @@ sudo systemctl status snapd.apparmor
 sudo systemctl status snapd
 ```
 
+```bash
+# Kali only on WSL - Windows Subsystem Linux
+
+Edit /etc/wsl.conf (create if missing) and add: 
+  [boot]
+  systemd=true
+Exit all WSL instances and run in PowerShell: wsl --shutdown
+Start distro again
+
+sudo apt update
+sudo apt install -y snapd
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap    # if needed
+
+sudo snap install core
+snap version
+```
+
 ---
 
 ## 2. Tools Installation
