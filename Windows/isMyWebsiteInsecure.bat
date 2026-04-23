@@ -292,7 +292,7 @@ timeout /t 2 >nul
 start "" "!browser!" -new-tab --%private% "https://www.immuniweb.com/websec/"
 timeout /t 2 >nul
 
-start "" "!browser!" -new-tab --%private% "https://www.immuniweb.com/websec/"
+start "" "!browser!" -new-tab --%private% "https://nuxtseo.com/tools/robots-txt-validator?url=!url!"
 timeout /t 2 >nul
 
 start "" "!browser!" -new-tab --%private% "https://www.zaproxy.org/"
