@@ -48,7 +48,7 @@ echo    IMPORTANT: Only analyze websites you have permission
 echo    to test. Always follow up with a full vulnerability
 echo    scan (e.g. OWASP ZAP). This is a free tool.
 echo.
-echo    (c) !current_year! r3.0 Oscar Azevedo
+echo    (c) !current_year! r3.1 Oscar Azevedo
 echo  ===========================================================
 echo.
 
