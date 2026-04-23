@@ -2,17 +2,7 @@
 color 1f
 cls
 
-rem ===========================================================
-rem  Is my Website inSecure?
-rem  Developed by Oscar Azevedo
-rem  oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
-rem  Run web tools to check if a website is insecure.
-rem
-rem  IMPORTANT: Only use on websites you have permission to test.
-rem
-rem  Version: r3.1
-rem  Modified: 2026-04-23
-rem ===========================================================
+rem modified on 2026-04-23
 
 setlocal enableextensions enabledelayedexpansion
 
