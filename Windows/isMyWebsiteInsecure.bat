@@ -10,8 +10,8 @@ rem  Run web tools to check if a website is insecure.
 rem
 rem  IMPORTANT: Only use on websites you have permission to test.
 rem
-rem  Version: r3.0
-rem  Modified: 2026-02-27
+rem  Version: r3.1
+rem  Modified: 2026-04-23
 rem ===========================================================
 
 setlocal enableextensions enabledelayedexpansion
@@ -287,6 +287,9 @@ start "" "!browser!" -new-tab --%private% "https://pentest-tools.com/network-vul
 timeout /t 2 >nul
 
 start "" "!browser!" -new-tab --%private% "https://pentest-tools.com/website-vulnerability-scanning/website-scanner"
+timeout /t 2 >nul
+
+start "" "!browser!" -new-tab --%private% "https://www.immuniweb.com/websec/"
 timeout /t 2 >nul
 
 start "" "!browser!" -new-tab --%private% "https://www.immuniweb.com/websec/"
