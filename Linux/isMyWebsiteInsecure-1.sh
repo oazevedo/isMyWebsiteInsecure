@@ -1,7 +1,7 @@
 #!/bin/bash
 # isMyWebsiteInsecure-1.sh
 # developed by Oscar Azevedo, oscar.azevedo@aeportugal.pt, oscar.msazevedo@gmail.com
-# v1.1
+# v1.2
 # check the security of a given website with public web tools
 
 # Function to validate URL format
@@ -61,6 +61,7 @@ main() {
                          --new-tab "https://developer.mozilla.org/en-US/observatory/analyze?host=$host" \
                          --new-tab "https://webcheck.pt/pt/dns/loading.php?domain=$domain" \
                          --new-tab "https://internet.nl/site/$host/" \
+                         --new-tab "https://nuxtseo.com/tools/robots-txt-validator?url=$url"
                          --new-tab "https://www.immuniweb.com/websec/" \
                          --new-tab "https://pentest-tools.com/website-vulnerability-scanning/website-scanner" \
                          --new-tab "https://www.shodan.io/domain/$domain" \
