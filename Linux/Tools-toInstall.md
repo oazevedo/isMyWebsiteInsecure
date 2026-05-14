@@ -170,6 +170,8 @@ nikto -Version
 # Ubuntu installation
 # to update: git pull
 sudo apt install -y cpanminus && sudo cpanm JSON && sudo cpanm XML::Writer
+
+sudo apt install -y git
 git clone --depth 1 https://github.com/sullo/nikto.git $HOME/tools/nikto 
 sudo ln -s $HOME/tools/nikto/program/nikto.pl /usr/local/bin/nikto
 nikto -Version
