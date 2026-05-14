@@ -150,8 +150,8 @@ dnsrecon --version
 
 ```bash
 cd $HOME/Downloads
-wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.11.3-ubuntu1604_amd64.deb
-sudo dpkg -i Nessus-10.11.3-ubuntu1604_amd64.deb
+wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.12.0-ubuntu1604_amd64.deb
+sudo dpkg -i Nessus-10.12.0-ubuntu1604_amd64.deb
 sudo /bin/systemctl start nessusd.service
 ```
 
