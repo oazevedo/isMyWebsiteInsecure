@@ -90,8 +90,8 @@ sudo snap refresh
 ```bash
 # only to run isMyWebsiteInsecure-2.sh script
 sudo visudo
- # add following line to change default timestamp_timeout from 60 min to 270 min
- Defaults timestamp_timeout=270
+# add following line to change default timestamp_timeout from 60 min to 270 min
+Defaults timestamp_timeout=270
 ```
 
 ### Chromium
