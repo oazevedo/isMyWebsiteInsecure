@@ -72,19 +72,11 @@ Defaults timestamp_timeout=270
 ```
 
 ### Chromium
-
 > Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
 > Releases: []()  
 
 ```bash
-# Kali installation
 sudo apt install -y chromium
-chromium --version
-```
-
-```bash
-# Ubuntu installation
-sudo snap install chromium
 chromium --version
 ```
 
