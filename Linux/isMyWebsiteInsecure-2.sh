@@ -314,9 +314,6 @@ main() {
     VPN="false"
     if [[ "$NOVPN" == "false" ]] && command -v mullvad &> /dev/null; then
 
-        #!/usr/bin/env bash
-        set -euo pipefail
-
         TOKEN_FILE="$HOME/.mullvad_token"
         if [[ ! -r "$TOKEN_FILE" ]]; then
            echo "Token file missing or unreadable" >&2
