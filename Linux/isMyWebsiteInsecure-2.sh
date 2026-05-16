@@ -194,9 +194,10 @@ vpn_rotate_ip() {
     fi
 
     echo -e "\e[34m[*] Mullvad VPN — switching to a new random server...\e[0m"
-    mullvad disconnect && sleep 5
-    mullvad connect && sleep 5
-    mullvad status
+    mullvad disconnect
+    sleep 5 && mullvad relay set location any 
+    sleep 5 && mullvad connect
+    sleep 5 && mullvad status
 }
 
 
