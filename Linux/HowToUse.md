@@ -3,7 +3,7 @@
 <br/>
 
 **Install Linux Virtual Machine**
-> get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) or [Ubuntu desktop](https://ubuntu.com/download/desktop) VM  
+> get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) VM  
 > install all tools as indicated on [Tools-toInstall](Tools-toInstall.md)
 <br/>
 
