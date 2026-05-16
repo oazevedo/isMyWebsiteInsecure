@@ -210,6 +210,7 @@ random_timeout() {
         sleep 1
     done
     printf "\r🔨 Time to work!                    \n"
+    echo -e "\n"
 }
 
 
@@ -503,7 +504,7 @@ main() {
     echo -e "\n\n"
 
 
-    vpn_rotate_ip
+    vpn_rotate_ip no
     random_timeout
     # Nuclei vulnerabilities scan
     # timeout 3600, kill nuclei after 60 minutes	
