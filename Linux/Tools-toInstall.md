@@ -8,7 +8,7 @@
    - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
-   - [Mullvad](#mullvad)- 
+   - [Mullvad](#mullvad) 
    - [Nessus](#nessus)
    - [Nikto](#nikto)
    - [Nmap](#nmap)
