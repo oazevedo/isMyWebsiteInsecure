@@ -272,8 +272,8 @@ main() {
 
     # Display VPN recommendation
     echo -e "\n\e[33m💡 Tip: Using a VPN with IP rotation is recommended as a WAF evasion technique,"
-    echo -e "   This script runs fully without one — VPN is optional."
     echo -e "   When Mullvad VPN is installed, the script detects it and rotates the IP automatically between scans."
+    echo -e "   This script runs fully without one — VPN is optional."
 
 
     # Display ethical use warning
@@ -312,7 +312,21 @@ main() {
     # Mullvad VPN is installed?
     VPN="false"
     if [[ "$NOVPN" == "false" ]] && command -v mullvad &> /dev/null; then
-        
+
+        #!/usr/bin/env bash
+        set -euo pipefail
+
+        TOKEN_FILE="$HOME/.mullvad_token"
+        if [[ ! -r "$TOKEN_FILE" ]]; then
+           echo "Token file missing or unreadable" >&2
+           exit 1
+        fi
+
+        TOKEN="$(<"$TOKEN_FILE")"
+
+        # login (creates a local session; token not stored in script)
+        mullvad account login "$TOKEN"
+
         VPN="true"
         echo "Mullvad VPN is installed."
         echo -e "\n"
