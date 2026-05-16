@@ -73,7 +73,6 @@ Defaults timestamp_timeout=270
 ### Chromium
 > Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
 > Releases: []()  
-
 ```bash
 sudo apt install -y chromium
 chromium --version
