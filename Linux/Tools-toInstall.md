@@ -182,7 +182,6 @@ nuclei
 ```
 
 ### Shodan nrich
-
 > Website: [https://gitlab.com/shodan-public/nrich](https://gitlab.com/shodan-public/nrich)  
 > Releases: [https://gitlab.com/shodan-public/nrich/-/releases](https://gitlab.com/shodan-public/nrich/-/releases)  
 
@@ -192,7 +191,6 @@ nrich --version
 ```
 
 ### Sqlmap
-
 > Website: [https://sqlmap.org/](https://sqlmap.org/)  
 > Releases: [https://github.com/sqlmapproject/sqlmap/releases](https://github.com/sqlmapproject/sqlmap/releases)  
 
@@ -202,7 +200,6 @@ sqlmap --version
 ```
 
 ### Sslscan
-
 > Website: [https://github.com/rbsec/sslscan](https://github.com/rbsec/sslscan)  
 > Releases: [https://github.com/rbsec/sslscan/releases](https://github.com/rbsec/sslscan/releases)  
 
@@ -212,18 +209,15 @@ sslscan --version
 ```
 
 ### Sslyze
-
 > Website: [https://github.com/nabla-c0d3/sslyze](https://github.com/nabla-c0d3/sslyze)  
 > Releases: [https://github.com/nabla-c0d3/sslyze/releases](https://github.com/nabla-c0d3/sslyze/releases)  
 
 ```bash
-# Kali installation
 sudo apt install -y sslyze
 sslyze --help | grep -i "sslyze version"
 ```
 
 ### Whatweb
-
 > Website: [https://morningstarsecurity.com/research/whatweb](https://morningstarsecurity.com/research/whatweb)  
 > Releases: [https://github.com/urbanadventurer/WhatWeb/releases](https://github.com/urbanadventurer/WhatWeb/releases)  
 
@@ -233,7 +227,6 @@ whatweb --version
 ```
 
 ### Whois
-
 > Website: [https://github.com/rfc1036/whois](https://github.com/rfc1036/whois)  
 > Releases: [https://github.com/rfc1036/whois/tags](https://github.com/rfc1036/whois/tags)
 
@@ -243,46 +236,24 @@ whois --version
 ```
 
 ### WPScan
-
 > Website: [https://wpscan.com/](https://wpscan.com/)  
 > Releases: [https://github.com/wpscanteam/wpscan/releases](https://github.com/wpscanteam/wpscan/releases)  
 
 ```bash
-# Kali installation
 sudo apt install -y wpscan
 wpscan --version
 ```
 
-```bash
-# Ubuntu installation
-# To update: `sudo gem update wpscan`
-
-sudo apt-get install -y ruby-full rubygems
-
-sudo gem install wpscan
-wpscan --version
-```
-
 ### ZAProxy
-
 > Website: [https://www.zaproxy.org/](https://www.zaproxy.org/)  
 > Downloads: [https://www.zaproxy.org/download/](https://www.zaproxy.org/download/)   
 
 ```bash
-# Kali installation
 sudo apt install -y zaproxy
 zaproxy -version
 ```
 
-```bash
-# Ubuntu installation
-# To update: `sudo snap refresh zaproxy`
-sudo snap install zaproxy --classic
-zaproxy -version
-```
-
 ### isMyWebsiteInsecure
-
 > scripts that detect vulnerabilities in websites:  
 >  \- isMyWebsiteInsecure-1.sh , using public free web tools.  
 >  \- isMyWebsiteInsecure-2.sh , using public free command-line tools.  
