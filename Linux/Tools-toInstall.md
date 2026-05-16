@@ -145,12 +145,29 @@ dnsrecon --version
 
 ### Mullvad
 
-> Website: [https://github.com/darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon)  
-> Releases: [https://github.com/darkoperator/dnsrecon/releases](https://github.com/darkoperator/dnsrecon/releases)  
+> Website: [https://mullvad.net/en/vpn](https://mullvad.net/en/vpn)  
+> Releases: [https://mullvad.net/en/download/vpn/linux](https://mullvad.net/en/download/vpn/linux)  
+> How to use: [https://mullvad.net/en/help/how-use-mullvad-cli](https://mullvad.net/en/help/how-use-mullvad-cli)  
 
 ```bash
-sudo apt install -y dnsrecon
-dnsrecon --version
+# VPN optional installation. A paid license is required (5€/month)
+
+# Download the Mullvad signing key
+sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
+
+# Add the Mullvad repository server to apt
+echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$( dpkg --print-architecture )] https://repository.mullvad.net/deb/stable stable main" | sudo tee /etc/apt/sources.list.d/mullvad.list
+
+# Install the package
+sudo apt update
+sudo apt install mullvad-vpn
+
+# Create token file to use on isMyWebsiteInsecure-2.sh
+# Replace "YOUR_API_TOKEN" with your Mullvad Account number
+echo "YOUR_API_TOKEN" > $HOME/.mullvad_token
+chmod 600 ~/.mullvad_token
+
+mullvad status
 ```
 
 ### Nessus
