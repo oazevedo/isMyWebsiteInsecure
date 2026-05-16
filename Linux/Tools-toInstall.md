@@ -150,7 +150,7 @@ dnsrecon --version
 > How to use: [https://mullvad.net/en/help/how-use-mullvad-cli](https://mullvad.net/en/help/how-use-mullvad-cli)  
 
 ```bash
-# VPN optional installation. A paid license is required (5€/month)
+# VPN optional installation. A paid license is required (5€/month).
 
 # Download the Mullvad signing key
 sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
