@@ -271,10 +271,9 @@ main() {
 
 
     # Display VPN recommendation
-    echo -e "\n\e[33m💡 VPN Tip: Using a VPN with IP rotation is recommended as a WAF evasion technique,"
-    echo -e "   but this script runs fully without one — VPN is optional."
-    echo -e "   When ProtonVPN is installed, the script detects it and rotates the IP automatically between scans."
-    echo -e "   Any other VPN with CLI support and random server switching can be used instead of ProtonVPN.\e[0m\n"
+    echo -e "\n\e[33m💡 Tip: Using a VPN with IP rotation is recommended as a WAF evasion technique,"
+    echo -e "   This script runs fully without one — VPN is optional."
+    echo -e "   When Mullvad VPN is installed, the script detects it and rotates the IP automatically between scans."
 
 
     # Display ethical use warning
@@ -310,14 +309,15 @@ main() {
     echo -e "\n"
 
 
-    # ProtonVPN is installed?
+    # Mullvad VPN is installed?
     VPN="false"
-    if [[ "$NOVPN" == "false" ]] && command -v protonvpn &> /dev/null; then
+    if [[ "$NOVPN" == "false" ]] && command -v mullvad &> /dev/null; then
+        
         VPN="true"
-        echo "ProtonVPN is installed."
+        echo "Mullvad VPN is installed."
         echo -e "\n"
     elif [[ "$NOVPN" == "true" ]]; then
-        echo "ProtonVPN rotation disabled via --novpn."
+        echo "Mullvad VPN rotation disabled via --novpn."
         echo -e "\n"
     fi
 
