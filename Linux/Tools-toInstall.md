@@ -165,7 +165,7 @@ sudo apt install mullvad-vpn
 # Create token file to use on isMyWebsiteInsecure-2.sh
 # Replace "YOUR_API_TOKEN" with your Mullvad Account number
 echo "YOUR_API_TOKEN" > $HOME/.mullvad_token
-chmod 600 ~/.mullvad_token
+sudo chmod 600 ~/.mullvad_token
 
 mullvad status
 ```
