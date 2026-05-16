@@ -78,7 +78,8 @@ Defaults timestamp_timeout=270
 sudo apt install -y chromium
 chromium --version
 ```
-  
+<br>
+
 ### Curl
 > Website: [https://curl.se/](https://curl.se/)  
 > Releases: [https://curl.se/download.html](https://curl.se/download.html)  
@@ -87,7 +88,8 @@ chromium --version
 sudo apt install -y curl
 curl --version
 ```
-  
+<br>
+
 ### Dalfox
 > Website: [https://dalfox.hahwul.com/](https://dalfox.hahwul.com/)  
 > Releases: [https://github.com/hahwul/dalfox/releases](https://github.com/hahwul/dalfox/releases)  
