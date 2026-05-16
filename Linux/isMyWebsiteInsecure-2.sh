@@ -194,8 +194,8 @@ vpn_rotate_ip() {
     fi
 
     echo -e "\e[34m[*] Mullvad VPN — switching to a new random server...\e[0m"
-    mullvad disconnect
-    mullvad connect
+    mullvad disconnect && sleep 5
+    mullvad connect && sleep 5
     mullvad status
 }
 
@@ -274,7 +274,7 @@ main() {
     echo -e "\n\e[33m💡 Tip: Using a VPN with IP rotation is recommended as a WAF evasion technique,"
     echo -e "   When Mullvad VPN is installed, the script detects it and rotates the IP automatically between scans."
     echo -e "   This script runs fully without one — VPN is optional."
-    echo -e ""
+    echo -e "\n"
 
 
     # Display ethical use warning
@@ -325,6 +325,8 @@ main() {
         # login (creates a local session; token not stored in script)
         echo -e "mullvad account login $TOKEN" 
         mullvad account login "$TOKEN"
+
+        mullvad relay update
 
         VPN="true"
         echo "Mullvad VPN is installed."
