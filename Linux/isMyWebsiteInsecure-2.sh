@@ -188,13 +188,15 @@ vpn_rotate_ip() {
     fi
 
     if [[ "$1" == "no" ]]; then
-        echo -e "\e[34m[*] ProtonVPN — disconnecting...\e[0m"
-        protonvpn disconnect
+        echo -e "\e[34m[*] Mullvad VPN — disconnecting...\e[0m"
+        mullvad disconnect
         return 0
     fi
 
-    echo -e "\e[34m[*] ProtonVPN — switching to a new random server...\e[0m"
-    protonvpn disconnect && protonvpn connect --random
+    echo -e "\e[34m[*] Mullvad VPN — switching to a new random server...\e[0m"
+    mullvad disconnect
+    mullvad connect
+    mullvad status
 }
 
 
