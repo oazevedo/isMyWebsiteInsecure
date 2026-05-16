@@ -27,12 +27,15 @@
 #  - sqlmap, added --crawl=2, --forms, changed --level=1  --risk=1
 #  - nmap, added -T2
 #
-# v.1.11, modified on 2026-03-30
+# v1.11, modified on 2026-03-30
 #  - add output log
 #
+# v1.12, modified on 2026-05-16
+# - removed ProtonVPN
+# - added Mulltivad VPN
 
 
-VERSION="1.11"
+VERSION="1.12"
 
 
 # ──── Show help ───────────────────────────────────────────────────────────────
