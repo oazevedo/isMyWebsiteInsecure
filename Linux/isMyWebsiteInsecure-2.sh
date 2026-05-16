@@ -32,7 +32,7 @@
 #
 # v1.12, modified on 2026-05-16
 # - removed ProtonVPN
-# - added Mulltivad VPN
+# - added Mullvad VPN
 
 
 VERSION="1.12"
