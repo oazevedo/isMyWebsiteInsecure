@@ -8,6 +8,7 @@
    - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
+   - [Mullvad](#mullvad)- 
    - [Nessus](#nessus)
    - [Nikto](#nikto)
    - [Nmap](#nmap)
@@ -133,6 +134,16 @@ dalfox version
 ```
 
 ### Dnsrecon
+
+> Website: [https://github.com/darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon)  
+> Releases: [https://github.com/darkoperator/dnsrecon/releases](https://github.com/darkoperator/dnsrecon/releases)  
+
+```bash
+sudo apt install -y dnsrecon
+dnsrecon --version
+```
+
+### Mullvad
 
 > Website: [https://github.com/darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon)  
 > Releases: [https://github.com/darkoperator/dnsrecon/releases](https://github.com/darkoperator/dnsrecon/releases)  
