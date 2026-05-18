@@ -2,4 +2,4 @@
 | Tool                                       | SHA1 Hash                                |
 |--------------------------------------------|------------------------------------------|
 | DigitalProductCybersecurityReport.xlsx     | 7f1eb3e2322fe761fba852d46d743743e3e3ed11 |
-| DigitalProductCybersecurityRequirements.md | *************************************    | 
+| DigitalProductCybersecurityRequirements.md | afbcc5b5502e7cb626664a12a755f105ed3e4b92 | 
