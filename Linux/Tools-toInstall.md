@@ -8,6 +8,7 @@
    - [Curl](#curl)
    - [Dalfox](#dalfox)
    - [Dnsrecon](#dnsrecon)
+   - [Lighthouse](#lighthouse)
    - [Mullvad](#mullvad) 
    - [Nessus](#nessus)
    - [Nikto](#nikto)
@@ -105,6 +106,15 @@ dalfox version
 ```bash
 sudo apt install -y dnsrecon
 dnsrecon --version
+```
+
+### Lighthouse
+> Website: [https://developer.chrome.com/docs/lighthouse](https://developer.chrome.com/docs/lighthouse/)  
+> Releases: [https://github.com/GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse)  
+
+```bash
+sudo npm install -g lighthouse
+lighthouse --version
 ```
 
 ### Mullvad
