@@ -19,6 +19,7 @@ You are performing ethical reconnaissance.
 - The reconnaissance report, report.md, must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
+- Allways do all tasks even for deeper scans.
 - If you are unable to complete a task explain and report why.
 
 ## TASKS
