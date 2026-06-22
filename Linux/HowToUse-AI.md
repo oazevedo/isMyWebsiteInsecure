@@ -1,13 +1,13 @@
 
-***How to use Gemini AI to check for website vulnerabilities.***  
+***How to use Copilot CLI AI to check for website vulnerabilities.***  
 <br/>
 
-**Install Gemini AI**    
-> Website: https://github.com/google-gemini/gemini-cli  
-> Releases: https://github.com/google-gemini/gemini-cli/releases  
+**Install Copilot CLI**    
+> Website: https://docs.github.com/copilot/how-tos/copilot-cli    
+> Releases: https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli  
 
 ```
-sudo npm install -g @google/gemini-cli@latest
+sudo npm install -g @github/copilot@latest
 ```
 <br/>
 
@@ -21,10 +21,11 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/G
 ``` 
 <br/>
 
-**Run Gemini AI** (not run as root, need a free Google Account)  
+**Run Copilot CLI AI** (not run as root, need a free GitHub Account)  
 ```
 cd $HOME/websitesScan
-gemini 
+copilot
+ > read @GEMINI.md
  > your target is www.aeportugal.com   # example to check for vulnerabilities on website www.aeportugal.com
 ```
  
