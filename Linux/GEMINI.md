@@ -26,18 +26,20 @@ You are performing ethical reconnaissance.
 1. **Nmap**: Run nmap to find open ports and identify running services.
 2. **Nikto**: Use nikto to scan the web server for known vulnerabilities, misconfigurations, and outdated software.
 3. **Nuclei**: Use nuclei to identify security issues and weaknesses.
-4. **Wpscan**: Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.
-5. **Sqlmap**: Use sqlmap to check for SQL injection.
-6. **Dalfox**: Use dalfox to check for XSS.
-7. **Sslyze**: Use sslyze to check tls/ssl security.
-8. **DNS**: Validate DNSSec security.
-9. **Whois**: Use target domain name and get owner and admin information.
-10. **Whatweb**: Use whatweb for technology fingerprint.
-11. **Security Headers**: Validate security headers.
-12. **Outdated Software**: Check for outdated software, apps, frameworks, and libraries.
-13. **Web Server Hardening**: Check for correct web server hardening.
-14. **Tools Suggestions**: Suggest other tools, but do not use them.
-15. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
+4. **Zaproxy**: Use zaproxy for web application security testing and to detect vulnerabilities.
+5. **Wpscan**: Run wpscan to check if it's a WordPress site, and if so, identify the theme, plugins, and any associated vulnerabilities.
+6. **Sqlmap**: Use sqlmap to check for SQL injection.
+7. **Dalfox**: Use dalfox to check for XSS.
+8. **Sslyze**: Use sslyze to check tls/ssl security.
+9. **Lighthouse**: Use lighthouse to check accessability, performance and SEO.
+10. **DNS**: Validate DNSSec security.
+11. **Whois**: Use target domain name and get owner and admin information.
+12. **Whatweb**: Use whatweb for technology fingerprint.
+13. **Security Headers**: Validate security headers.
+14. **Outdated Software**: Check for outdated software, apps, frameworks, and libraries.
+15. **Web Server Hardening**: Check for correct web server hardening.
+16. **Tools Suggestions**: Suggest other tools, but do not use them.
+17. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
 
 ## Reporting
 Summarize the findings, provide security recommendations, and hardening suggestions.
