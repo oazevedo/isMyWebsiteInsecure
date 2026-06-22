@@ -10,6 +10,7 @@ You are performing ethical reconnaissance.
 - For WPScan, always use `--stealthy`, don't use `api-token` option.
 - For Dalfox, always use `--waf-evasion`.
 - For Nikto, use by default `-ssl`.
+- For Zaproxy, Use AJAX Spider for better coverage of dynamically-loaded content.
 - For Nmap, do not use parameters that require root privileges, do not use -T<0-5> higher than -T3.
 - Use Sslscan when Sslyze is not installed.
 - Always use the stealth mode, random agent, waf and ids evasion in all tools.
