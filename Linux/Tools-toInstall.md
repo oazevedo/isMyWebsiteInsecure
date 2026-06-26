@@ -71,6 +71,17 @@ sudo visudo
 Defaults timestamp_timeout=270
 ```
 
+```bash
+# you can install all tools from here
+sudo apt install -y chromium curl dnsrecon nikto nmap npm nuclei 
+sudo apt install -y sqlmap sslscan sslyze whatweb whois wpscan zaproxy
+
+sudo npm install -g lighthouse
+
+sudo snap install dalfox nrich
+```
+
+
 ### Chromium
 > Website: [https://www.chromium.org/Home/](https://www.chromium.org/Home/)  
 > Releases: []()  
