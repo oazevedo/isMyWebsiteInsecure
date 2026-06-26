@@ -72,7 +72,7 @@ Defaults timestamp_timeout=270
 ```
 
 ```bash
-# you can install all tools from here
+# you can install almost all the tools from here
 sudo apt install -y chromium curl dnsrecon nikto nmap npm nuclei 
 sudo apt install -y sqlmap sslscan sslyze whatweb whois wpscan zaproxy
 
