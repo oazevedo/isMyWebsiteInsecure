@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/A
 ``` 
 <br/>
 
-**Run GitHub Copilot CLI** (not run as root, need a free GitHub Account)  
+**Run GitHub Copilot CLI** (not run as root, need a free [GitHub Account](https://github.com/features/copilot/plans))  
 > Website \> Plans & Pricing: https://github.com/features/copilot/plans
 ```
 cd $HOME/websitesScan
