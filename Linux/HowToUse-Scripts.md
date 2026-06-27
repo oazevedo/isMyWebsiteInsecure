@@ -3,8 +3,7 @@
 <br/>
 
 **Install Linux Virtual Private Server (VPS) or Virtual Machine (VM)**
-> how to get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-cloud) VPS    
-> how to get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) VM  
+> how to get and install a [Kali Linux](https://www.kali.org/get-kali/#kali-cloud) VPS or a [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) VM  
 > install all tools as indicated on [Tools-toInstall](Tools-toInstall.md)
 <br/>
 
