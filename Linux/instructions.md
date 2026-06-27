@@ -44,4 +44,4 @@ You are performing ethical reconnaissance.
 17. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
 
 ## Reporting
-Summarize the findings, provide security recommendations, and hardening suggestions.
+Summarize the findings, provide security recommendations and hardening suggestions. Include what model was used.
