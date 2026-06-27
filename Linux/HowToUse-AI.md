@@ -16,7 +16,7 @@ sudo npm install -g @github/copilot@latest
 mkdir $HOME/websitesScan   # Websites assessment results folder
 cd $HOME/websitesScan
 rm -f agentInstructions.md
-wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/Agent-Instructions.md 
+wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/agentInstructions.md 
 ``` 
 <br/>
 
