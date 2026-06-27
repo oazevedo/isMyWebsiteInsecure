@@ -11,7 +11,7 @@ sudo npm install -g @github/copilot@latest
 ```
 <br/>
 
-**Get Agent-Instructions.md**  
+**Get Agent Instructions**  
 ```
 mkdir $HOME/websitesScan   # Websites assessment results folder
 cd $HOME/websitesScan
