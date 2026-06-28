@@ -33,9 +33,13 @@
 # v1.12, modified on 2026-05-16
 # - removed ProtonVPN
 # - added Mullvad VPN
+#
+# v1.13, modified on 2026-06-28
+# - dalfox, use new scan parameter, add at version 3.1.2
+#
 
 
-VERSION="1.12"
+-V-ERSION="1.13"
 
 
 # ──── Show help ───────────────────────────────────────────────────────────────
