@@ -32,7 +32,8 @@ copilot
 **Tips**
  ```
 cd $HOME/websitesScan
-copilot mcp add dalfox -- dalfox mcp   # add Dalfox MCP and ask dalfox to check website for xss vulnerabilities
+copilot mcp add dalfox -- dalfox mcp   # add Dalfox MCP
 copilot
- > /model claude-haiku-4.5   # Claude Haiku 4.5 model has lower price with good performance
+ > /model claude-haiku-4.5   # Claude Haiku 4.5 model has lower price with good performance.
+ > use dalfox MCP, check www.aeportugal.com for xss vulnerabilities    # ex. of using Dalfox MCP
 ```
