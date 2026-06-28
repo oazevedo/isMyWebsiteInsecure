@@ -29,9 +29,10 @@ copilot
 ```
 <br/>
 
-**Tip: run model Claude Haiku 4.5**
+**Tips**
  ```
 cd $HOME/websitesScan
+copilot mcp add dalfox -- dalfox mcp   # add Dalfox MCP and ask dalfox to check website for xss vulnerabilities
 copilot
- > /model claude-haiku-4.5
+ > /model claude-haiku-4.5   # Claude Haiku 4.5 model has lower price with good performance
 ```
