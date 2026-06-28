@@ -497,7 +497,7 @@ main() {
     # Dalfox XSS Scanner
     # --waf-evasion enable WAF evasion by adjusting speed when detecting WAF (worker=1, delay=3s)  
     echo -e "[+] Dalfox xss scan..."
-    run_cmd dalfox --url "$url" \
+    run_cmd dalfox scan "$url" \
                    --waf-evasion \
                    "${WAF_BYPASS_HEADERS[@]}" \
                    --output $outputDir/dalfox.txt
