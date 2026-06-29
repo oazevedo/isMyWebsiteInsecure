@@ -21,7 +21,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
    <br/>
 
 2. **Cybersecurity "Tools"**
-   - The simplest approach is to use a [VPS](https://www.hostinger.com/pt?REFERRALCODE=FRNOSCARALKR) - virtual private server or a [VM](https://www.kali.org/get-kali/#kali-virtual-machines) - virtual machine with [Kali Linux](https://www.kali.org) along with the following documents:<br/>
+   - The simplest approach is to use a [VPS](https://www.hostinger.com/pt?REFERRALCODE=FRNOSCARALKR) or a [VM](https://www.kali.org/get-kali/#kali-virtual-machines) with [Kali Linux](https://www.kali.org) along with the following documents:<br/>
       - how to install: [Tools-toInstall.md](Linux/Tools-toInstall.md)  
       - how to use: [HowToUse.md](Linux/HowToUse.md) and [HowToUse-AI.md](Linux/HowToUse-AI.md)  
      <br/>
