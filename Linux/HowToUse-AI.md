@@ -34,6 +34,6 @@ copilot
 cd $HOME/websitesScan
 copilot mcp add dalfox -- dalfox mcp   # add Dalfox MCP
 copilot
- > /model claude-haiku-4.5   # Claude Haiku 4.5 model has lower price with good performance.
+ > /model claude-haiku-4.5   # Models Claude Haiku 4.5, GPT-5.6 Luna or GPT-5.4 mini offer a lower price and good performance/price.
  > use dalfox MCP, check www.aeportugal.com for xss vulnerabilities    # ex. of using Dalfox MCP
 ```
