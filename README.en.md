@@ -35,7 +35,7 @@ A brief overview of the **minimum Cybersecurity requirements** for Hosting, Deve
      | [Tenable Nessus]( https://www.tenable.com/products/nessus ) | [Greenbone OpenVAS](https://openvas.org/) |
    
      **Notes:**
-     - **tests using other tools are not accepted.**, unless expressly authorized.
+     - **tests using other tools are not accepted**, unless expressly authorized.
      - [HostedScan](https://hostedscan.com) it is an assessment tool that should not be used for formal testing.
      - the [Windows](Windows) includes instructions on how to install and run the batch `isMyWebsiteInsecure.bat`
     <br/>
