@@ -12,7 +12,7 @@ sudo npm install -g @github/copilot@latest
 <br/>
 
 **Get Agent Instructions**  
-> Agents info: https://agents.md/  
+> Agents info: https://agents.md  
 ```
 mkdir $HOME/websitesScan   # Websites assessment results folder
 cd $HOME/websitesScan
@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/A
 ``` 
 <br/>
 
-**Run GitHub Copilot CLI** (not run as root, need a free [GitHub Account](https://github.com/features/copilot/plans))  
+**Run GitHub Copilot CLI** ( not run as root, need a free [GitHub Account](https://github.com/features/copilot/plans) )  
 ```
 cd $HOME/websitesScan
 copilot
