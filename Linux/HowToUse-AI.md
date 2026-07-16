@@ -15,7 +15,7 @@ sudo npm install -g @github/copilot@latest
 ```
 mkdir $HOME/websitesScan   # Websites assessment results folder
 cd $HOME/websitesScan
-rm -f agentInstructions.md
+rm -f AGENTS.md
 wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/agentInstructions.md 
 ``` 
 <br/>
@@ -24,7 +24,6 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/a
 ```
 cd $HOME/websitesScan
 copilot
- > read @agentInstructions.md
  > your target is www.aeportugal.com   # example to check for vulnerabilities on website www.aeportugal.com
 ```
 <br/>
