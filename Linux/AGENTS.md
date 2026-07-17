@@ -20,9 +20,9 @@ You are performing ethical reconnaissance.
 - The reconnaissance report, report.md, must be stored on `$HOME/websitesScan/<full-name-target>/<yyyy-mm-dd>`.
 - Before run check if you have all tools you need, if not stop and show what tools are missing.
 - Allways assume target is alive.
-- Allways do all tasks even for deeper scans.
 - If you are unable to complete a task explain and report why.
-- Use OWASP Top 10 standard document.
+- Allways do all tasks even for deeper scans.
+- Always check if you have completed all the tasks.  
 
 ## TASKS
 0. **Warning**: Show an ethical warning message and ask user if agree, if not exit.
@@ -38,11 +38,15 @@ You are performing ethical reconnaissance.
 10. **DNS**: Validate DNSSec security.
 11. **Whois**: Use target domain name and get owner and admin information.
 12. **Whatweb**: Use whatweb for technology fingerprint.
-13. **Security Headers**: Validate security headers.
-14. **Outdated Software**: Check for outdated software, apps, frameworks, and libraries.
-15. **Web Server Hardening**: Check for correct web server hardening.
-16. **Tools Suggestions**: Suggest other tools, but do not use them.
-17. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
+13. **Shodan**: Use Shodan to get public information (OSINT)
+14. **Security Headers**: Validate security headers.
+15. **Outdated Software**: Check for outdated software, apps, frameworks, and libraries.
+16. **Web Server Hardening**: Check for correct web server hardening.
+17. **OWASP Top 10**: Use OWASP Top 10 standard document to check for security risks.
+18. **GDPR Compliance**: Check for GDPR compliance.
+19. **Tools Suggestions**: Suggest other tools, but do not use them.
+20. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
 
 ## Reporting
-Summarize the findings, provide security recommendations and hardening suggestions. Include which model was used and how many AI credits were consumed.
+Summarize the findings. Provide security score, recommendations and hardening suggestions. Include which model was used and how many AI credits were consumed.
+
