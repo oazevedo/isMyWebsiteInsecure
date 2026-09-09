@@ -22,8 +22,8 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/A
 <br/>
 
 **Add Anthropic Cybersecurity Skills**  
-> Skills info: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
-> add all skills   
+> Skills info: https://github.com/mukul975/Anthropic-Cybersecurity-Skills  
+> Suggestion: add all skills 
 ```
 sudo npx skills add mukul975/Anthropic-Cybersecurity-Skills
 ``` 
