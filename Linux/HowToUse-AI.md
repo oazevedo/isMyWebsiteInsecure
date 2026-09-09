@@ -21,6 +21,14 @@ wget https://raw.githubusercontent.com/oazevedo/isMyWebsiteInsecure/main/Linux/A
 ``` 
 <br/>
 
+**Add Anthropic Cybersecurity Skills**  
+> Skills info: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+> add all skills   
+```
+sudo npx skills add mukul975/Anthropic-Cybersecurity-Skills
+``` 
+<br/>
+
 **Run GitHub Copilot CLI** ( not run as root, need a free [GitHub Account](https://github.com/features/copilot/plans) )  
 ```
 cd $HOME/websitesScan
