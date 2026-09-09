@@ -42,7 +42,7 @@ You are performing ethical reconnaissance.
 14. **Security Headers**: Validate security headers.
 15. **Outdated Software**: Check for outdated software, apps, frameworks, and libraries.
 16. **Web Server Hardening**: Check for correct web server hardening.
-17. **OWASP Top 10**: Use OWASP Top 10 standard document to check for security risks.
+17. **OWASP Top 10:2025**: Use OWASP Top 10 standard document to check for security risks.
 18. **GDPR Compliance**: Check for GDPR compliance.
 19. **Tools Suggestions**: Suggest other tools, but do not use them.
 20. **Reconnaissance Report**: Prepare a reconnaissance report following the reporting instructions, display it, and save it as report.md.
