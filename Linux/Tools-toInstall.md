@@ -107,7 +107,7 @@ curl --version
 > To update: `sudo snap refresh dalfox`
 
 ```bash
-sudo snap install dalfox
+sudo apt install -y dalfox
 dalfox version
 ```
 
