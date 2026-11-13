@@ -104,7 +104,6 @@ curl --version
 ### Dalfox
 > Website: [https://dalfox.hahwul.com/](https://dalfox.hahwul.com/)  
 > Releases: [https://github.com/hahwul/dalfox/releases](https://github.com/hahwul/dalfox/releases)  
-> To update: `sudo snap refresh dalfox`
 
 ```bash
 sudo apt install -y dalfox
